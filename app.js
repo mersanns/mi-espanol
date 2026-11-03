@@ -2,7 +2,7 @@
 (function(){
 "use strict";
 if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(e=>console.warn("SW",e)));
-const FILES=["decks","cards","exercises","lessons","lex","tr","verbs","facts","sobre","icons","flags"];
+const FILES=["decks","cards","exercises","lessons","lex","tr","zachet","verbs","facts","sobre","icons","flags"];
 const getJSON=p=>fetch(p).then(r=>{if(!r.ok)throw new Error(p+" "+r.status);return r.json()});
 Promise.all([...FILES.map(f=>getJSON("data/"+f+".json")),getJSON("data/stickers.json")])
  .then(parts=>{const STK=parts.pop();run(Object.assign({},...parts),STK)})
@@ -225,9 +225,9 @@ function renderPlay(){
   if(SES.i>=SES.qs.length)return renderSummary();
   const q=SES.qs[SES.i],n=SES.qs.length;SES.checked=false;let body="";
   const visual=q.card?pic(q.card,"big"):q.chain?pic({fl:FLAGOF(q.chain.es),es:q.chain.es},"big"):"";
-  if(q.kind==="mc"){body+='<div class="row" style="flex-wrap:nowrap;gap:16px">'+(q.card&&q.ipa?visual:"")+'<div class="stack" style="gap:6px;min-width:0"><div class="q-prompt">'+esc(q.prompt)+'</div>'+(q.ipa?'<div class="row"><span class="ipa">['+esc(q.ipa)+']</span>'+spk(q.speak)+'</div>':"")+'</div></div>';
+  if(q.kind==="mc"){body+='<div class="row" style="flex-wrap:nowrap;gap:16px">'+(q.card&&q.ipa?visual:"")+'<div class="stack" style="gap:6px;min-width:0"><div class="q-prompt">'+(q.html||esc(q.prompt))+'</div>'+(q.ipa?'<div class="row"><span class="ipa">['+esc(q.ipa)+']</span>'+spk(q.speak)+'</div>':"")+'</div></div>';
     body+='<div class="popts">'+q.opts.map((o,i)=>'<button class="popt" data-act="opt" data-i="'+i+'">'+esc(o.t)+'</button>').join("")+'</div>'}
-  else if(q.kind==="type"){body+='<div class="q-prompt">'+esc(q.prompt)+'</div>';body+=q.fields.map((f,i)=>'<div class="field"><label for="f'+i+'">'+esc(f.label)+'</label><input type="text" id="f'+i+'" data-f="'+i+'" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"></div>').join("")}
+  else if(q.kind==="type"){body+='<div class="q-prompt">'+(q.html||esc(q.prompt))+'</div>';body+=q.fields.map((f,i)=>'<div class="field"><label for="f'+i+'">'+esc(f.label)+'</label><input type="text" id="f'+i+'" data-f="'+i+'" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"></div>').join("")}
   else{let h="";q.parts.forEach((p,i)=>{h+=words(p);if(i<q.parts.length-1)h+='<input type="text" data-f="'+i+'" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="пропуск">'});body+='<div class="sentence">'+h+'</div><div class="muted">'+esc(q.sub)+'</div>'}
   view.innerHTML='<div class="stack"><div class="row between"><span class="eyebrow">'+esc(SES.title)+' · '+(SES.i+1)+' из '+n+'</span><button class="btn ghost sm" data-act="quit">Выйти</button></div><div class="bar"><i style="width:'+(SES.i/n*100)+'%"></i></div>'+
    '<div class="card stack">'+(q.kind!=="gap"&&q.sub?'<div class="hand">'+esc(q.sub)+'</div>':"")+body+'<div id="fb"></div><div class="row" id="acts">'+(q.kind==="mc"?"":'<button class="btn" data-act="check">Проверить</button>')+'<button class="btn ghost" data-act="idk">Не помню — покажи</button></div></div></div>';
@@ -388,6 +388,95 @@ function ptile(a,t,s,i){return'<button class="deck" data-act="'+(a==="quick"?"qu
 
 /* ---------- GRAMATICA ---------- */
 const vt=(v,k)=>vcard({v,k,ru:"",f:conj({v,k})});
+/* ---------- зачёт: вопросы к тексту ---------- */
+const ZQW=["a qué hora","desde cuándo","de dónde","a dónde","adónde","con quién","de quién","a quién","para qué","por qué","con qué","de qué","en qué","a qué","cuántos","cuántas","cuánto","cuánta","cuáles","cuál","quiénes","quién","qué","cómo","dónde","cuándo"];
+const zvars=q=>q.split("|");
+const zplain=a=>a.replace(/[\[\]]/g,"");
+const zmark=a=>{let h="";a.split(/(\[[^\]]*\])/).forEach(p=>{h+=p.startsWith("[")?'<mark class="zf">'+words(p.slice(1,-1),"")+'</mark>':words(p,"")});return h};
+function zword(q){const s=q.replace(/^¿/,"").toLowerCase();const w=ZQW.find(x=>s.startsWith(x+" "));return w==="a dónde"?"adónde":w||"да / нет"}
+const zall=()=>{const r=[];D.zt.forEach(t=>t.q.forEach(([q,a])=>r.push({t,q,a})));return r};
+function qZword(){const it=pick(zall()),ok=zword(it.q),pool=[...new Set(ZQW.filter(x=>x!=="a dónde").concat("да / нет"))].filter(x=>!zvars(it.q).map(zword).includes(x));
+  return{kind:"mc",key:"zw:"+zvars(it.q)[0],prompt:zplain(it.a),html:'<span class="zq">'+zmark(it.a)+'</span>',sub:"Какое слово спросит про выделенное?",opts:shuffle([ok].concat(shuffle(pool).slice(0,3))).map(t=>({t:t==="да / нет"?t:"¿"+t.replace(/^./,c=>c.toUpperCase())+"…?",ok:t===ok})),answerText:zvars(it.q)[0],why:it.t.t,speak:zvars(it.q)[0]}}
+function qZask(){const it=pick(zall());
+  return{kind:"type",key:"zq:"+zvars(it.q)[0],prompt:zplain(it.a),html:'<span class="zq">'+zmark(it.a)+'</span>',sub:"Задай вопрос к выделенной части",fields:[{label:"Вопрос",ans:zvars(it.q)}],answerText:zvars(it.q)[0],why:"Текст: "+it.t.t,speak:zvars(it.q)[0]}}
+let ZMODE="ask";
+const ZRULES=`<div class="th">
+<h3>Какие бывают вопросы</h3>
+<ul><li><b>Да / нет.</b> Порядок слов можно не менять — работает интонация. Или глагол вперёд: <span class="ex">Marta estudia español. → ¿Marta estudia español? / ¿Estudia Marta español?</span></li>
+<li><b>С вопросительным словом:</b> слово + глагол + кто + остальное. <span class="ex">Ana vive en Madrid. → ¿Dónde vive Ana?</span> (не <s>¿Dónde Ana vive?</s>)</li>
+<li><b>Или — или:</b> <span class="ex">¿Estudias o trabajas? — Estudio.</span></li>
+<li><b>Переспрос:</b> <span class="ex">Eres rusa, ¿verdad? / ¿no? — Sí, soy rusa.</span></li></ul>
+<h3>Вопрос к выделенной части — по шагам</h3>
+<ol><li>Пойми, что выделено: место, время, причина, человек, число…</li><li>Выбери вопросительное слово (таблица ниже).</li><li>Выкинь выделенное из предложения.</li><li>В начало — вопросительное слово (с предлогом, если он был), сразу за ним глагол, потом кто делает.</li></ol>
+<div class="note"><span class="ex">Pablo trabaja [en una cafetería] por las tardes.</span> → место → dónde → <span class="ex">¿Dónde trabaja Pablo por las tardes?</span></div>
+<div class="tw"><table><thead><tr><th>что выделено</th><th>пример</th><th>вопрос</th></tr></thead><tbody>
+<tr><td>место (en…)</td><td class="ex">Vive en Valencia.</td><td class="ex">¿Dónde vive?</td></tr>
+<tr><td>откуда (de + место)</td><td class="ex">Es de Roma.</td><td class="ex">¿De dónde es?</td></tr>
+<tr><td>куда (a + место)</td><td class="ex">Viaja a México.</td><td class="ex">¿Adónde viaja?</td></tr>
+<tr><td>время</td><td class="ex">Trabaja por las tardes.</td><td class="ex">¿Cuándo trabaja?</td></tr>
+<tr><td>число</td><td class="ex">Tiene tres hijas.</td><td class="ex">¿Cuántas hijas tiene?</td></tr>
+<tr><td>возраст</td><td class="ex">Tiene veinte años.</td><td class="ex">¿Cuántos años tiene?</td></tr>
+<tr><td>причина (porque…)</td><td class="ex">Estudia porque le gusta.</td><td class="ex">¿Por qué estudia?</td></tr>
+<tr><td>цель (para + инф.)</td><td class="ex">Viaja para visitar a su hermana.</td><td class="ex">¿Para qué viaja?</td></tr>
+<tr><td>с кем (con…)</td><td class="ex">Vive con su amiga.</td><td class="ex">¿Con quién vive?</td></tr>
+<tr><td>кто (подлежащее)</td><td class="ex">Su hermana lo acompaña.</td><td class="ex">¿Quién lo acompaña?</td></tr>
+<tr><td>что (предмет, действие)</td><td class="ex">Estudia Psicología.</td><td class="ex">¿Qué estudia?</td></tr>
+<tr><td>профессия</td><td class="ex">Es abogado.</td><td class="ex">¿Qué es? / ¿A qué se dedica?</td></tr>
+<tr><td>имя</td><td class="ex">Se llama Yoko.</td><td class="ex">¿Cómo se llama?</td></tr>
+<tr><td>какой (характер)</td><td class="ex">Es muy simpática.</td><td class="ex">¿Cómo es?</td></tr>
+<tr><td>как, каким способом</td><td class="ex">Va en bicicleta.</td><td class="ex">¿Cómo va?</td></tr>
+<tr><td>какой из (с ser)</td><td class="ex">Su apellido es Doré.</td><td class="ex">¿Cuál es su apellido?</td></tr>
+<tr><td>чей</td><td class="ex">Es el cuaderno de Ana.</td><td class="ex">¿De quién es el cuaderno?</td></tr>
+<tr><td>да / нет</td><td class="ex">Sí, está casada.</td><td class="ex">¿Está casada?</td></tr>
+</tbody></table></div>
+<h3>Важно помнить</h3>
+<ul><li>¿ в начале, ? в конце.</li>
+<li>Вопросительные слова всегда с ударением: qué, quién, cómo, dónde, cuándo, cuánto, cuál. В ответе без ударения: <span class="ex">porque, cuando, donde, que</span>.</li>
+<li>Предлог не отрывается от вопросительного слова: <span class="ex">¿Con quién vives?</span> (не <s>¿Quién vives con?</s>)</li>
+<li>Вопрос к тексту — в 3-м лице, даже если текст от «я»: <span class="ex">Me llamo Catherine. → ¿Cómo se llama?</span></li>
+<li>Притяжательные меняются: <span class="ex">mi amiga → su amiga</span>, <span class="ex">mis compañeros → sus compañeros</span>.</li></ul>
+<h3>Как отвечать</h3>
+<ul><li>Полным предложением, повторяя глагол: <span class="ex">¿Dónde vive Pablo? — Pablo vive en Valencia.</span> Коротко тоже можно: <span class="ex">En Valencia.</span></li>
+<li>Меняй лицо: <span class="ex">¿Dónde vives? — Vivo en Peterhof. ¿Dónde vivís? — Vivimos…</span></li>
+<li>Да: <span class="ex">Sí, estudia español.</span> Нет — два no: <span class="ex">No, no estudia español.</span></li>
+<li><span class="ex">¿Por qué…? — Porque…</span> · <span class="ex">¿Para qué…? — Para + инфинитив.</span></li>
+<li>Если не знаешь: <span class="ex">No lo sé. / En el texto no se dice. / ¿Puede repetir, por favor?</span></li></ul>
+<h3>Частые ошибки</h3>
+<div class="tw"><table><tbody>
+<tr><td><s>¿Dónde Ana vive?</s></td><td class="ex">¿Dónde vive Ana?</td></tr>
+<tr><td><s>¿Porque estudias?</s></td><td class="ex">¿Por qué estudias?</td></tr>
+<tr><td><s>¿Cuántos años es?</s></td><td class="ex">¿Cuántos años tiene?</td></tr>
+<tr><td><s>¿Qué es tu nombre?</s></td><td class="ex">¿Cuál es tu nombre? / ¿Cómo te llamas?</td></tr>
+<tr><td><s>¿Adónde vive?</s></td><td class="ex">¿Dónde vive? (adónde — только «куда»)</td></tr>
+<tr><td><s>¿Qué idioma habla en?</s></td><td class="ex">¿En qué idioma habla?</td></tr>
+</tbody></table></div></div>`;
+function vZachet(sub){
+  const T=D.zt.find(t=>t.id===sub);if(T)return vZtext(T);
+  const n=zall().length;
+  let h='<div class="stack"><div class="row between" style="align-items:flex-end"><div><h1 class="poster">Зачёт</h1><div class="hand">задать вопрос к тексту и ответить</div></div>'+img("stamp_sagrada","stkin","width:90px;transform:rotate(-4deg)")+'</div>'+
+   '<div class="card tape stack" style="gap:10px"><div class="h3">Что нужно уметь</div><p style="margin:0">Прочитать текст, задать к нему вопросы с разными вопросительными словами и ответить на них полным предложением. Здесь '+D.zt.length+' текстов и '+n+' вопросов к ним.</p>'+
+   '<div class="row"><button class="btn" data-act="ztrain" data-k="ask">'+ic("pencil")+'Задай вопрос</button><button class="btn soft" data-act="ztrain" data-k="word">'+ic("question")+'Какое слово?</button></div><div class="muted" style="font-size:.9rem">10 случайных предложений из всех текстов</div></div>'+
+   '<div class="divider">тексты</div><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr))">'+D.zt.map(t=>'<a class="extile" href="#zachet-'+t.id+'"><span class="n">'+t.q.length+'</span><span style="min-width:0;display:flex;flex-direction:column;gap:2px"><span class="t">'+esc(t.t)+'</span><span class="s">'+esc(t.d)+'</span></span></a>').join("")+'</div>'+
+   '<div class="divider">вопросительные слова</div><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(290px,1fr))">'+D.zw.map(w=>'<div class="card stack zw" style="gap:6px"><div class="row between" style="flex-wrap:nowrap;align-items:baseline"><div class="serif" style="font-size:1.45rem;font-weight:700;color:var(--wine);line-height:1.1">'+words("¿"+w[0]+"?","")+'</div><b style="text-align:right">'+esc(w[1])+'</b></div><div class="muted" style="font-size:.88rem">'+esc(w[2])+'</div>'+w[3].map(e=>'<div class="row" style="flex-wrap:nowrap;align-items:flex-start;gap:6px"><div class="es-text" style="font-size:1.05rem;flex:1">'+words(e[0])+' <span style="color:var(--blue)">— '+words(e[1])+'</span></div>'+spk(e[0]+" "+e[1])+'</div>').join("")+'</div>').join("")+'</div>'+
+   '<div class="divider">правила</div><details class="g" open><summary><span>Как задать вопрос и как ответить</span></summary>'+ZRULES+'</details></div>';
+  view.innerHTML=h}
+function vZtext(T){
+  let h='<div class="stack"><div class="row between"><a class="btn ghost sm" href="#zachet">'+ic("arrow-left")+'Зачёт</a><span class="tag gold">'+esc(T.d)+'</span></div><h2 class="title" style="margin:0">'+esc(T.t)+'</h2>'+
+   T.b.map((b,i)=>readBlk(b,"z"+i)).join("")+
+   '<div class="chips" role="group" aria-label="Режим"><button class="chip" data-act="zmode" data-m="ask" aria-pressed="'+(ZMODE==="ask")+'">Задаю вопросы</button><button class="chip" data-act="zmode" data-m="ans" aria-pressed="'+(ZMODE==="ans")+'">Отвечаю на вопросы</button></div>'+
+   '<p class="muted" style="margin:0">'+(ZMODE==="ask"?"Напиши вопрос к выделенной части, потом проверь.":"Ответь полным предложением — вслух или письменно, потом сверь с образцом.")+'</p>'+
+   '<div class="card"><div class="items">'+T.q.map(([q,a],i)=>{const q0=zvars(q)[0];
+    return'<div class="item"><div class="body stack" style="gap:6px">'+(ZMODE==="ask"
+     ?'<div class="es-text zq">'+zmark(a)+'</div><input type="text" data-zi="'+i+'" placeholder="¿…?" autocomplete="off" autocapitalize="off" spellcheck="false"><div class="row"><button class="btn soft sm" data-act="zcheck" data-i="'+i+'">Проверить</button><button class="btn ghost sm" data-act="zshow" data-i="'+i+'">Показать</button></div><div id="zr'+i+'" hidden></div>'
+     :'<div class="row between" style="flex-wrap:nowrap;align-items:flex-start"><div class="serif" style="font-size:1.2rem;font-weight:600">'+words(q0)+'</div>'+spk(q0)+'</div><textarea data-zi="'+i+'" rows="2" placeholder="Твой ответ"></textarea><div class="row"><button class="btn soft sm" data-act="zshow" data-i="'+i+'">Сверить с образцом</button></div><div id="zr'+i+'" hidden></div>')+
+     '</div></div>'}).join("")+'</div></div>'+
+   '<div class="row"><button class="btn ghost" data-act="ztrain" data-k="ask">'+ic("shuffle")+'Тренажёр по всем текстам</button></div></div>';
+  view.innerHTML=h;CUR_Z=T}
+let CUR_Z=null;
+function zResult(i,res){const T=CUR_Z,[q,a]=T.q[i],el=$("#zr"+i);if(!el)return;const vs=zvars(q);
+  const model=ZMODE==="ask"?'<div class="row" style="flex-wrap:nowrap;align-items:flex-start"><div class="es-text" style="color:var(--ok);flex:1">'+words(vs[0])+(vs.length>1?'<div class="muted" style="font-size:.85rem">можно и так: '+vs.slice(1).map(esc).join(" · ")+'</div>':"")+'</div>'+spk(vs[0])+'</div>'
+    :'<div class="row" style="flex-wrap:nowrap;align-items:flex-start"><div class="es-text" style="color:var(--ok);flex:1">'+words(zplain(a))+'</div>'+spk(zplain(a))+'</div>';
+  el.innerHTML=(res?'<div class="fb '+res+'"><b>'+(res==="ok"?"¡Muy bien!":res==="acc"?"Почти — проверь ударения":"Пока не то — сравни")+'</b></div>':"")+model;el.hidden=false}
 const TH=[
 {id:"art",t:"Род и артикли",h:()=>`<p>Артикль показывает род: <b class="e">el</b> — мужской, <b class="e">la</b> — женский; мн. ч. <b class="e">los / las</b>. Неопределённые: <b class="e">un / una</b> (<b class="e">unos / unas</b>).</p><ul><li>-o → обычно м. р.: <span class="ex">el libro, el vaso</span>. Но: <span class="ex">la mano, la foto, la moto, la radio</span></li><li>-a → обычно ж. р.: <span class="ex">la casa, la mesa</span>. Но: <span class="ex">el día, el idioma, el problema, el mapa, el planeta, el pijama</span></li><li>-ción, -sión → ж. р.: <span class="ex">la canción, la televisión</span></li><li>-dad, -tad → ж. р.: <span class="ex">la ciudad, la libertad</span></li><li>-e и согласная — бывает по-разному: <span class="ex">el coche, el hotel / la clase, la flor</span></li></ul><div class="note">Перед ударным a- ставят el, хотя слово женского рода: <span class="ex">el águila, el aula</span> (мн. ч. — las aulas).</div>`},
 {id:"plural",t:"Множественное число",h:()=>`<ul><li>гласная + <b class="e">s</b>: <span class="ex">casa → casas, café → cafés</span></li><li>согласная, -í + <b class="e">es</b>: <span class="ex">reloj → relojes, ley → leyes, rubí → rubíes</span></li><li><b class="e">z → ces</b>: <span class="ex">luz → luces, actriz → actrices</span></li><li>-ión теряет акцент: <span class="ex">canción → canciones</span></li><li>не меняются: <span class="ex">el lunes → los lunes, el paraguas → los paraguas</span>; всегда мн. ч.: <span class="ex">gafas, tijeras, pantalones, vaqueros</span></li><li>мужской + женский = мужской мн. ч.: <span class="ex">Pedro y Ana son pequeños</span></li></ul>`},
@@ -449,16 +538,16 @@ function vProgreso(){
    '<div class="card stack"><div class="h3">Сбросить прогресс</div><div class="row" id="rs"><button class="btn ghost sm" data-act="reset1">Сбросить</button></div></div></div>';if(window.MiSync)MiSync.mount($("#sync"))}
 
 /* ---------- routing ---------- */
-const TABS=[["inicio","Inicio","house"],["sobremi","Sobre mí","user"],["cuaderno","Cuaderno","notebook"],["palabras","Palabras","cards"],["verbos","Verbos","lightning"],["practica","Práctica","play"],["gramatica","Gramática","book-open"],["cultura","Cultura","globe-hemisphere-west"],["progreso","Progreso","chart-bar"]];
+const TABS=[["inicio","Inicio","house"],["sobremi","Sobre mí","user"],["zachet","Зачёт","exam"],["cuaderno","Cuaderno","notebook"],["palabras","Palabras","cards"],["verbos","Verbos","lightning"],["practica","Práctica","play"],["gramatica","Gramática","book-open"],["cultura","Cultura","globe-hemisphere-west"],["progreso","Progreso","chart-bar"]];
 $("#tabs").innerHTML=TABS.map(t=>'<a class="tab" href="#'+t[0]+'" data-r="'+t[0]+'">'+ic(t[2])+'<span>'+t[1]+'</span></a>').join("");
 function route(){
   hidePop();const h=location.hash.replace("#","")||"inicio";let r=h,sub="";
-  if(h.startsWith("drill-")){r="practica";sub=h.slice(6)}if(h.startsWith("ex-")){r="ex";sub=h.slice(3)}
+  if(h.startsWith("drill-")){r="practica";sub=h.slice(6)}if(h.startsWith("ex-")){r="ex";sub=h.slice(3)}if(h.startsWith("zachet-")){r="zachet";sub=h.slice(7)}
   const tab=r==="play"?"practica":r==="ex"?"cuaderno":r;
   $(".modes").hidden=r==="play"||!["palabras","verbos","practica","gramatica"].includes(tab);
   document.querySelectorAll("#tabs a").forEach(a=>{if(a.dataset.r===tab){a.setAttribute("aria-current","page");a.scrollIntoView({block:"nearest",inline:"nearest"})}else a.removeAttribute("aria-current")});
   if(r!=="play")window.scrollTo(0,0);
-  ({play:renderPlay,cuaderno:vCuaderno,ex:()=>vEx(sub),palabras:vPalabras,verbos:vVerbos,sobremi:vSobre,practica:()=>vPractica(sub),gramatica:vGram,cultura:vCultura,progreso:vProgreso}[r]||vInicio)()}
+  ({play:renderPlay,cuaderno:vCuaderno,ex:()=>vEx(sub),palabras:vPalabras,verbos:vVerbos,sobremi:vSobre,zachet:()=>vZachet(sub),practica:()=>vPractica(sub),gramatica:vGram,cultura:vCultura,progreso:vProgreso}[r]||vInicio)()}
 function go(h){if(location.hash===h)route();else location.hash=h}
 /* слова в теории тоже нажимаются */
 function wordify(root){
@@ -488,6 +577,10 @@ view.addEventListener("click",e=>{
    case"exth":{const el=$("#exth");if(el){el.hidden=!el.hidden;t.setAttribute("aria-expanded",String(!el.hidden))}break}
    case"extr":{const on=t.getAttribute("aria-pressed")!=="true";t.setAttribute("aria-pressed",String(on));view.querySelectorAll(".trl").forEach(x=>x.hidden=!on);break}
    case"tr":{const el=$("#tr"+t.dataset.i);if(el)el.hidden=!el.hidden;break}
+   case"ztrain":{const mk=()=>Array.from({length:10},t.dataset.k==="word"?qZword:qZask);start(mk(),t.dataset.k==="word"?"Зачёт: какое слово":"Зачёт: задай вопрос",location.hash,mk);break}
+   case"zmode":ZMODE=t.dataset.m;if(CUR_Z)vZtext(CUR_Z);break;
+   case"zshow":zResult(+t.dataset.i,"");break;
+   case"zcheck":{const i=+t.dataset.i,inp=view.querySelector('[data-zi="'+i+'"]');const r=check(inp.value,zvars(CUR_Z.q[i][0]));if(r==="empty"){inp.focus();break}bump("zq:"+zvars(CUR_Z.q[i][0])[0],r==="ok");tick(r==="ok");zResult(i,r);break}
    case"model":{const el=$("#m"+t.dataset.i);if(el)el.hidden=false;break}
    case"deck":CV.deck=t.dataset.id;CV.queue=[];CV.i=0;CV.flip=false;CV.mode="fc";vPalabras();break;
    case"decks":CV.deck=null;vPalabras();break;
@@ -524,6 +617,7 @@ view.addEventListener("keydown",e=>{
   if(e.target.matches&&e.target.matches('.fc[data-act="flip"]')&&(e.key==="Enter"||e.key===" ")){e.preventDefault();CV.flip=!CV.flip;vPalabras();return}
   if(e.key!=="Enter")return;
   if(e.target.classList&&e.target.classList.contains("gapin")){e.preventDefault();const all=[...view.querySelectorAll(".gapin")];const i=all.indexOf(e.target);if(i<all.length-1)all[i+1].focus();else exCheck(false);return}
+  if(e.target.matches&&e.target.matches("input[data-zi]")){e.preventDefault();const b=view.querySelector('[data-act="zcheck"][data-i="'+e.target.dataset.zi+'"]');if(b)b.click();return}
   if(!SES||location.hash!=="#play")return;
   if(e.target.matches("input[data-f]")){e.preventDefault();const ins=[...view.querySelectorAll("input[data-f]")];const i=ins.indexOf(e.target);if(SES.checked)return;if(i<ins.length-1)ins[i+1].focus();else doCheck()}});
 route();

@@ -241,3 +241,8 @@ details.g[open] summary::after{content:"–"}
 .bootscr.err .heartline{animation:none}
 @keyframes bootbeat{50%{opacity:.35}}
 @media (prefers-reduced-motion:reduce){.bootscr .heartline{animation:none}}
+
+mark.zf{background:#F3D9A6;color:inherit;border-radius:4px;padding:0 3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.zq{line-height:1.6}
+.th h3{font-family:var(--serif);font-size:1.3rem;margin:14px 0 6px}
+[id^="zr"] .fb{padding:8px 12px;line-height:1.3}
