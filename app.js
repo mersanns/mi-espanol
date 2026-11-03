@@ -376,6 +376,7 @@ function route(){
   hidePop();const h=location.hash.replace("#","")||"inicio";let r=h,sub="";
   if(h.startsWith("drill-")){r="practica";sub=h.slice(6)}if(h.startsWith("ex-")){r="ex";sub=h.slice(3)}
   const tab=r==="play"?"practica":r==="ex"?"cuaderno":r;
+  $(".modes").hidden=r==="play"||!["palabras","verbos","practica","gramatica"].includes(tab);
   document.querySelectorAll("#tabs a").forEach(a=>{if(a.dataset.r===tab){a.setAttribute("aria-current","page");a.scrollIntoView({block:"nearest",inline:"nearest"})}else a.removeAttribute("aria-current")});
   if(r!=="play")window.scrollTo(0,0);
   ({play:renderPlay,cuaderno:vCuaderno,ex:()=>vEx(sub),palabras:vPalabras,verbos:vVerbos,sobremi:vSobre,practica:()=>vPractica(sub),gramatica:vGram,cultura:vCultura,progreso:vProgreso}[r]||vInicio)()}
