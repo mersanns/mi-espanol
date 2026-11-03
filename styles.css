@@ -140,8 +140,8 @@ a.btn{text-decoration:none}.btn:hover{filter:brightness(1.08)}.btn:active{transf
 .es-text{font-family:var(--serif);font-size:1.32rem;line-height:1.55}
 .ru-text{font-size:.95rem;color:var(--muted);border-left:3px solid var(--rose);padding-left:12px}
 textarea{width:100%;min-height:70px;border:1px solid var(--line2);border-radius:10px;background:#FFFCF5;padding:10px 12px;font-size:1rem;resize:vertical}
-input[type=text],input[type=search]{border:1px solid var(--line2);border-radius:10px;background:#FFFCF5;padding:10px 12px;font-size:1rem;width:100%;min-width:0}
-input[type=text]:focus,textarea:focus,input[type=search]:focus{outline:2px solid var(--wine-soft);border-color:var(--wine)}
+input[type=text],input[type=search],input[type=email]{border:1px solid var(--line2);border-radius:10px;background:#FFFCF5;padding:10px 12px;font-size:1rem;width:100%;min-width:0}
+input[type=text]:focus,input[type=email]:focus,textarea:focus,input[type=search]:focus{outline:2px solid var(--wine-soft);border-color:var(--wine)}
 /* clickable words */
 .w{cursor:pointer;border-radius:3px;transition:background .15s}
 .w:hover{background:var(--gold-soft);box-shadow:0 1px 0 var(--gold)}

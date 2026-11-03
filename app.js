@@ -24,7 +24,7 @@ const KEY="mi-espanol-v2";
 let ST={box:{},due:{},xp:0,days:{},mist:{},mode:"curso",les:"all",ex:{},my:{},myfacts:[],hide:false};
 try{const old=localStorage.getItem("mi-espanol-v1");if(old)Object.assign(ST,JSON.parse(old));const r=localStorage.getItem(KEY);if(r)Object.assign(ST,JSON.parse(r))}catch(e){}
 ST.ex=ST.ex||{};ST.my=ST.my||{};ST.myfacts=ST.myfacts||[];
-const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(ST))}catch(e){}};
+const save=()=>{ST._t=Date.now();try{localStorage.setItem(KEY,JSON.stringify(ST))}catch(e){}if(window.MiSync)MiSync.changed()};
 const dstr=(t=Date.now())=>{const d=new Date(t);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
 const DAY=864e5,INT=[0,1,3,7,14];
 const streak=()=>{let n=0,t=Date.now();if(!ST.days[dstr(t)])t-=DAY;while(ST.days[dstr(t)]){n++;t-=DAY}return n};
@@ -357,7 +357,8 @@ function vProgreso(){
    '<div class="card stack"><div class="h3">Упражнения по занятиям</div>'+LES.map(L=>{const n=L.ex.length,d=L.ex.filter(id=>ST.ex[id]).length;return'<div><div class="row between"><span>'+esc(L.d)+' · '+esc(L.t)+'</span><span class="muted">'+d+'/'+n+'</span></div><div class="bar"><i style="width:'+(d/n*100)+'%"></i></div></div>'}).join("")+'</div>'+
    '<div class="card stack"><div class="h3">Слова</div>'+[["Новые",cnt[0]],["Учу",cnt[1]+cnt[2]+cnt[3]],["Знаю",cnt[4]+cnt[5]]].map(r=>'<div><div class="row between"><span>'+r[0]+'</span><span class="muted">'+r[1]+'</span></div><div class="bar"><i style="width:'+(r[1]/total*100)+'%"></i></div></div>').join("")+'</div>'+
    '<div class="card stack"><div class="h3">Над чем поработать</div>'+(ent.length?ent.map(e=>'<div class="row between" style="flex-wrap:nowrap"><span style="min-width:0;overflow-wrap:anywhere">'+esc(e[0])+'</span><span class="muted">×'+e[1]+'</span></div>').join(""):'<p class="muted">Пока пусто — ошибки появятся здесь после тренировок.</p>')+'</div>'+
-   '<div class="card stack"><div class="h3">Сбросить прогресс</div><div class="row" id="rs"><button class="btn ghost sm" data-act="reset1">Сбросить</button></div></div></div>'}
+   '<div class="card stack" id="sync" hidden></div>'+
+   '<div class="card stack"><div class="h3">Сбросить прогресс</div><div class="row" id="rs"><button class="btn ghost sm" data-act="reset1">Сбросить</button></div></div></div>';if(window.MiSync)MiSync.mount($("#sync"))}
 
 /* ---------- routing ---------- */
 const TABS=[["inicio","Inicio","house"],["cuaderno","Cuaderno","notebook"],["palabras","Palabras","cards"],["verbos","Verbos","lightning"],["sobremi","Sobre mí","user"],["practica","Práctica","play"],["gramatica","Gramática","book-open"],["cultura","Cultura","globe-hemisphere-west"],["progreso","Progreso","chart-bar"]];
@@ -413,7 +414,7 @@ view.addEventListener("click",e=>{
    case"addfact":{const ti=$("#nft").value.trim(),x=$("#nfx").value.trim();if(!ti||!x){toast("Нужны заголовок и текст");return}ST.myfacts.push({t:ti,es:$("#nfe").value.trim(),x});save();FC="mine";vCultura();toast("Факт сохранён ♥");break}
    case"reset1":$("#rs").innerHTML='<span class="muted">Точно?</span><button class="btn sm" data-act="reset2">Да, сбросить</button><button class="btn ghost sm" data-act="reset0">Отмена</button>';break;
    case"reset0":vProgreso();break;
-   case"reset2":ST=Object.assign({},ST,{box:{},due:{},xp:0,days:{},mist:{},ex:{},exv:{}});save();vProgreso();break}
+   case"reset2":ST=Object.assign({},ST,{box:{},due:{},xp:0,days:{},mist:{},ex:{},exv:{},resetAt:Date.now()});save();vProgreso();break}
 });
 view.addEventListener("input",e=>{
   const t=e.target;
@@ -427,6 +428,8 @@ view.addEventListener("keydown",e=>{
   if(!SES||location.hash!=="#play")return;
   if(e.target.matches("input[data-f]")){e.preventDefault();const ins=[...view.querySelectorAll("input[data-f]")];const i=ins.indexOf(e.target);if(SES.checked)return;if(i<ins.length-1)ins[i+1].focus();else doCheck()}});
 route();
+if(window.MiSync)MiSync.attach({get:()=>ST,set:s=>{ST=s;ST.ex=ST.ex||{};ST.my=ST.my||{};ST.myfacts=ST.myfacts||[];try{localStorage.setItem(KEY,JSON.stringify(ST))}catch(e){}},
+  rerender:()=>{const f=document.activeElement;if(location.hash==='#play'||(f&&view.contains(f)&&f.matches('input,textarea,select')))return;route()}});
 })();
 }
 })();
