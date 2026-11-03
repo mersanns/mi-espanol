@@ -2,7 +2,7 @@
 (function(){
 "use strict";
 if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(e=>console.warn("SW",e)));
-const FILES=["decks","cards","exercises","lessons","lex","verbs","facts","sobre","icons","flags"];
+const FILES=["decks","cards","exercises","lessons","lex","tr","verbs","facts","sobre","icons","flags"];
 const getJSON=p=>fetch(p).then(r=>{if(!r.ok)throw new Error(p+" "+r.status);return r.json()});
 Promise.all([...FILES.map(f=>getJSON("data/"+f+".json")),getJSON("data/stickers.json")])
  .then(parts=>{const STK=parts.pop();run(Object.assign({},...parts),STK)})
@@ -45,16 +45,21 @@ const spk=(t,cls)=>'<button class="spk '+(cls||"")+'" data-act="say" data-t="'+e
 
 /* ---------- clickable words ---------- */
 const WRE=/[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+/g;
-function words(t){
-  let out="",last=0;String(t).replace(WRE,(m,i)=>{out+=esc(t.slice(last,i)).replace(/\n/g,"<br>")+'<span class="w" data-w="'+esc(m)+'">'+esc(m)+'</span>';last=i+m.length;return m});
+const TR=D.tr||{},ART=D.art||{},SENT=[],SID=new Map(),NRU={};
+D.cards.forEach(c=>{const m=/^(el|la|los|las) (\S+)$/.exec(c.es);if(m&&!NRU[m[2].toLowerCase()])NRU[m[2].toLowerCase()]=c.ru});
+const sid=ru=>{if(!SID.has(ru)){SID.set(ru,SENT.length);SENT.push(ru)}return SID.get(ru)};
+function words(t,ru){
+  if(ru===undefined)ru=TR[t];const ds=ru?' data-s="'+sid(ru)+'"':"";
+  let out="",last=0;String(t).replace(WRE,(m,i)=>{out+=esc(t.slice(last,i)).replace(/\n/g,"<br>")+'<span class="w" data-w="'+esc(m)+'"'+ds+'>'+esc(m)+'</span>';last=i+m.length;return m});
   return out+esc(String(t).slice(last)).replace(/\n/g,"<br>")}
 const pop=$("#pop");let popEl=null;
 function showPop(el){
-  const w=el.dataset.w,k=w.toLowerCase(),e=D.lex[k]||D.lex[k.normalize("NFD").replace(/[\u0300-\u036f]/g,"")];
+  const w=el.dataset.w,k=w.toLowerCase(),kf=k.normalize("NFD").replace(/[\u0300-\u036f]/g,""),e=D.lex[k]||D.lex[kf],a=ART[k]||ART[kf],ru=el.dataset.s?SENT[el.dataset.s]:"";
   if(popEl)popEl.classList.remove("on");popEl=el;el.classList.add("on");
-  let h='<div class="row between" style="flex-wrap:nowrap"><span class="pw">'+esc(w)+'</span>'+spk(w)+'</div>';
-  if(e){h+='<span class="pr">'+esc(e[0])+'</span>';if(e[1]&&e[1]!==k)h+='<span class="pn">'+(e[2]?esc(e[2])+" · ":"")+'от <b>'+esc(e[1])+'</b></span>';else if(e[2])h+='<span class="pn">'+esc(e[2])+'</span>'}
+  let h='<div class="row between" style="flex-wrap:nowrap"><span class="pw">'+(a?'<span class="part">'+esc(a)+'</span> ':"")+esc(w)+'</span>'+spk(a?a.split("/")[0]+" "+w:w)+'</div>';
+  if(e){h+='<span class="pr">'+esc(a&&NRU[k]||e[0])+'</span>';if(e[1]&&e[1]!==k)h+='<span class="pn">'+(e[2]?esc(e[2])+" · ":"")+'от <b>'+esc(e[1])+'</b></span>';else if(e[2])h+='<span class="pn">'+esc(e[2])+'</span>'}
   else h+='<span class="pn">Нет в словаре — нажми на динамик, чтобы послушать.</span>';
+  if(ru){const blk=el.closest(".readblk");h+=ru.length>220&&blk?'<button class="btn soft sm psent" data-act="poptr">'+ic("translate")+'Перевод всего текста</button>':'<div class="psent">'+esc(ru).replace(/\n/g,"<br>")+'</div>'}
   pop.innerHTML=h;pop.hidden=false;
   const r=el.getBoundingClientRect(),pw=pop.offsetWidth,ph=pop.offsetHeight;
   let x=Math.min(Math.max(12,r.left+r.width/2-pw/2),innerWidth-pw-12),y=r.bottom+8;if(y+ph>innerHeight-10)y=r.top-ph-8;
@@ -62,6 +67,7 @@ function showPop(el){
 function hidePop(){pop.hidden=true;if(popEl)popEl.classList.remove("on");popEl=null}
 document.addEventListener("click",e=>{const w=e.target.closest(".w");if(w){e.stopPropagation();showPop(w);return}
   const s=e.target.closest('[data-act="say"]');if(s){e.preventDefault();say(s.dataset.t);return}
+  const pt=e.target.closest('[data-act="poptr"]');if(pt){e.stopPropagation();const b=popEl&&popEl.closest(".readblk"),r=b&&b.querySelector(".ru-text");if(r){r.hidden=false;r.scrollIntoView({block:"nearest",behavior:"smooth"})}hidePop();return}
   if(!e.target.closest("#pop"))hidePop()},true);
 addEventListener("scroll",hidePop,{passive:true});
 
@@ -214,20 +220,22 @@ function vCuaderno(){
      '<details class="g"><summary><span style="font-size:1.05rem">Что было в классе и дома</span></summary><div class="th"><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))"><div><div class="hand">en clase</div><ul>'+L.cls.map(x=>'<li>'+words(x)+'</li>').join("")+'</ul></div>'+(L.hw.length?'<div><div class="hand">en casa</div><ul>'+L.hw.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div>':"")+'</div></div></details>'+
      (exs.length?'<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr))">'+exs.map(e=>'<a class="extile" href="#ex-'+e.id+'"><span class="n">'+esc(e.id)+'</span><span style="min-width:0;display:flex;flex-direction:column;gap:2px"><span class="t">'+esc(e.t)+'</span><span class="s">стр. '+esc(e.p||"—")+(e.hw?' · <span class="tag">ДЗ</span>':"")+'</span>'+exStatus(e)+'</span></a>').join("")+'</div>':'<p class="muted">Здесь всё решено ♥</p>')+'</section>'});
   view.innerHTML=h+'<p class="muted" style="font-size:.88rem">Аудирование (16B, 18, 21C, 24, 34) без записи здесь не повторить. Упражнения по картинкам (5, 10, 13, 30, 39, 40) я пересобрала в текстовом виде.</p></div>'}
-function gapHtml(s,ri){let h="",k=0;s.split(/(\[[^\]]*\])/).forEach(p=>{if(p.startsWith("[")){const a=p.slice(1,-1);const L=Math.max(...a.split("/").map(x=>x.length));h+='<input class="gapin" data-a="'+esc(a)+'" data-r="'+ri+'" style="width:'+Math.min(28,Math.max(3,L+2))+'ch" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="пропуск">';k++}else h+=words(p)});return h}
-function readBlk(b,i){return'<div class="card readblk"><div class="row between" style="flex-wrap:nowrap"><div class="h3">'+words(b[0])+'</div><div class="row" style="flex-wrap:nowrap">'+spk(b[1])+'<button class="btn soft sm" data-act="tr" data-i="'+i+'">'+ic("translate")+'Перевод</button></div></div><div class="es-text">'+words(b[1])+'</div><div class="ru-text" id="tr'+i+'" hidden>'+esc(b[2]).replace(/\n/g,"<br>")+'</div></div>'}
+function gapHtml(s,ri){let h="",k=0;s.split(/(\[[^\]]*\])/).forEach(p=>{if(p.startsWith("[")){const a=p.slice(1,-1);const L=Math.max(...a.split("/").map(x=>x.length));h+='<input class="gapin" data-a="'+esc(a)+'" data-r="'+ri+'" style="width:'+Math.min(28,Math.max(3,L+2))+'ch" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="пропуск">';k++}else h+=words(p,TR[s]||"")});return h}
+function readBlk(b,i){return'<div class="card readblk"><div class="row between" style="flex-wrap:nowrap"><div class="h3">'+words(b[0])+'</div><div class="row" style="flex-wrap:nowrap">'+spk(b[1])+'<button class="btn soft sm" data-act="tr" data-i="'+i+'">'+ic("translate")+'Перевод</button></div></div><div class="es-text">'+words(b[1],b[2])+'</div><div class="ru-text" id="tr'+i+'" hidden>'+esc(b[2]).replace(/\n/g,"<br>")+'</div></div>'}
+const trl=t=>TR[t]?'<div class="trl" hidden>'+esc(TR[t])+'</div>':"";
 function vEx(id){
   const e=EXBY[id];if(!e){go("#cuaderno");return}
   const L=LESS[e.l],idx=D.ex.indexOf(e),prev=D.ex[idx-1],next=D.ex[idx+1];
+  const hasTh=TH.some(s=>(e.th||[]).includes(s.id)),hasTr=["gap","choice","open"].includes(e.k)&&e.items.some(it=>TR[Array.isArray(it)?it[0]:it]);
   let h='<div class="stack"><div class="row between"><a class="btn ghost sm" href="#cuaderno">'+ic("arrow-left")+'Тетрадь</a><span class="row">'+(e.hw?'<span class="tag">Домашка</span>':"")+'<span class="tag blue">'+(L?esc(L.d):"")+'</span>'+(e.p?'<span class="tag gold">стр. '+esc(e.p)+'</span>':"")+'</span></div>'+
    '<div class="exhead"><div class="exnum">'+esc(e.id)+'</div><div style="flex:1;min-width:220px" class="stack"><div class="title">'+esc(e.t)+'</div><div class="es-text" style="font-size:1.15rem;font-style:italic">'+words(e.es)+' '+spk(e.es)+'</div><div class="muted">'+esc(e.ru)+'</div></div></div>'+
-   (TH.some(s=>(e.th||[]).includes(s.id))?'<div class="stack" style="gap:10px"><div class="row"><button class="btn ghost sm" data-act="exth" aria-expanded="false" aria-controls="exth">'+ic("book-open")+'Теория</button></div><div id="exth" hidden>'+TH.filter(s=>e.th.includes(s.id)).sort((x,y)=>e.th.indexOf(x.id)-e.th.indexOf(y.id)).map(s=>'<details class="g" open><summary><span>'+esc(s.t)+'</span></summary><div class="th">'+s.h()+'</div></details>').join("")+'</div></div>':"")+
+   (hasTh||hasTr?'<div class="stack" style="gap:10px"><div class="row">'+(hasTh?'<button class="btn ghost sm" data-act="exth" aria-expanded="false" aria-controls="exth">'+ic("book-open")+'Теория</button>':"")+(hasTr?'<button class="btn ghost sm" data-act="extr" aria-pressed="false">'+ic("translate")+'Перевод всего</button>':"")+'</div>'+(hasTh?'<div id="exth" hidden>'+TH.filter(s=>e.th.includes(s.id)).sort((x,y)=>e.th.indexOf(x.id)-e.th.indexOf(y.id)).map(s=>'<details class="g" open><summary><span>'+esc(s.t)+'</span></summary><div class="th">'+s.h()+'</div></details>').join("")+'</div>':"")+'</div>':"")+
    (e.note?'<div class="card tape" style="padding:14px 18px;margin-top:14px"><span class="hand" style="font-size:1.25rem">подсказка: </span>'+esc(e.note)+'</div>':"");
   if(e.text)h+='<div class="stack">'+e.text.map((b,i)=>readBlk(b,"t"+i)).join("")+'</div>';
-  if(e.k==="gap")h+='<div class="card"><div class="items">'+e.items.map((s,i)=>'<div class="item"><div class="body">'+gapHtml(s,i)+'</div></div>').join("")+'</div></div><div class="row"><button class="btn" data-act="excheck">'+ic("check")+'Проверить</button><button class="btn soft" data-act="exshow">Показать ответы</button><button class="btn ghost" data-act="exreset">'+ic("arrow-counter-clockwise")+'Заново</button><span id="exres" class="hand"></span></div>';
-  else if(e.k==="choice")h+='<div class="card"><div class="items">'+e.items.map((it,i)=>'<div class="item"><div class="body"><div>'+words(it[0])+'</div><div class="opts">'+it[1].split("|").map((o,j)=>'<button class="opt" data-act="exopt" data-i="'+i+'" data-j="'+j+'">'+esc(o)+'</button>').join("")+'</div></div></div>').join("")+'</div></div><div class="row"><span id="exres" class="hand"></span><button class="btn ghost" data-act="exreset">'+ic("arrow-counter-clockwise")+'Заново</button></div>';
+  if(e.k==="gap")h+='<div class="card"><div class="items">'+e.items.map((s,i)=>'<div class="item"><div class="body">'+gapHtml(s,i)+trl(s)+'</div></div>').join("")+'</div></div><div class="row"><button class="btn" data-act="excheck">'+ic("check")+'Проверить</button><button class="btn soft" data-act="exshow">Показать ответы</button><button class="btn ghost" data-act="exreset">'+ic("arrow-counter-clockwise")+'Заново</button><span id="exres" class="hand"></span></div>';
+  else if(e.k==="choice")h+='<div class="card"><div class="items">'+e.items.map((it,i)=>'<div class="item"><div class="body"><div>'+words(it[0])+'</div>'+trl(it[0])+'<div class="opts">'+it[1].split("|").map((o,j)=>'<button class="opt" data-act="exopt" data-i="'+i+'" data-j="'+j+'">'+esc(o)+'</button>').join("")+'</div></div></div>').join("")+'</div></div><div class="row"><span id="exres" class="hand"></span><button class="btn ghost" data-act="exreset">'+ic("arrow-counter-clockwise")+'Заново</button></div>';
   else if(e.k==="read")h+='<div class="stack">'+e.items.map((b,i)=>readBlk(b,i)).join("")+'</div><div class="row"><button class="btn" data-act="exdone">'+ic("check")+'Прочитала</button></div>';
-  else if(e.k==="open")h+='<div class="card"><div class="items">'+e.items.map((it,i)=>'<div class="item"><div class="body stack" style="gap:6px"><div class="serif" style="font-size:1.2rem;font-weight:600">'+words(it[0])+'</div><textarea data-o="'+i+'" rows="2" placeholder="Твой ответ"></textarea><div class="row"><button class="btn soft sm" data-act="model" data-i="'+i+'">Сверить с образцом</button></div><div id="m'+i+'" hidden class="row" style="flex-wrap:nowrap;align-items:flex-start"><div class="es-text" style="font-size:1.15rem;color:var(--ok)">'+words(it[1])+'</div>'+spk(it[1])+'</div></div></div>').join("")+'</div></div><div class="row"><button class="btn" data-act="exdone">'+ic("check")+'Готово</button></div>';
+  else if(e.k==="open")h+='<div class="card"><div class="items">'+e.items.map((it,i)=>'<div class="item"><div class="body stack" style="gap:6px"><div class="serif" style="font-size:1.2rem;font-weight:600">'+words(it[0])+'</div>'+(/[А-Яа-яЁё]/.test(it[0])?"":trl(it[0]))+'<textarea data-o="'+i+'" rows="2" placeholder="Твой ответ"></textarea><div class="row"><button class="btn soft sm" data-act="model" data-i="'+i+'">Сверить с образцом</button></div><div id="m'+i+'" hidden class="row" style="flex-wrap:nowrap;align-items:flex-start"><div class="es-text" style="font-size:1.15rem;color:var(--ok)">'+words(it[1])+'</div>'+spk(it[1])+'</div></div></div>').join("")+'</div></div><div class="row"><button class="btn" data-act="exdone">'+ic("check")+'Готово</button></div>';
   h+='<div class="divider">♥</div><div class="row between">'+(prev?'<a class="btn ghost sm" href="#ex-'+prev.id+'">'+ic("arrow-left")+esc(prev.id)+'</a>':"<span></span>")+(next?'<a class="btn ghost sm" href="#ex-'+next.id+'">'+esc(next.id)+ic("arrow-right")+'</a>':"")+'</div></div>';
   view.innerHTML=h;CUR_EX=e;CH={};
   const saved=(ST.exv||{})[e.id];if(saved&&e.k==="gap")view.querySelectorAll(".gapin").forEach((x,i)=>{if(saved[i])x.value=saved[i]})}
@@ -399,6 +407,7 @@ view.addEventListener("click",e=>{
      t.parentElement.querySelectorAll(".opt").forEach((b,k)=>{b.disabled=true;if(okset.includes(k))b.classList.add("ok")});if(!ok)t.classList.add("bad");say(t.textContent);
      const n=Object.keys(CH).length;if(n===CUR_EX.items.length){const s=Object.values(CH).filter(Boolean).length;ST.ex[CUR_EX.id]={s,t:n,at:Date.now()};tick(s===n);save();$("#exres").textContent=s===n?"¡Perfecto! "+s+" из "+n:s+" из "+n+" — правильные отмечены зелёным"}break}
    case"exth":{const el=$("#exth");if(el){el.hidden=!el.hidden;t.setAttribute("aria-expanded",String(!el.hidden))}break}
+   case"extr":{const on=t.getAttribute("aria-pressed")!=="true";t.setAttribute("aria-pressed",String(on));view.querySelectorAll(".trl").forEach(x=>x.hidden=!on);break}
    case"tr":{const el=$("#tr"+t.dataset.i);if(el)el.hidden=!el.hidden;break}
    case"model":{const el=$("#m"+t.dataset.i);if(el)el.hidden=false;break}
    case"deck":CV.deck=t.dataset.id;CV.queue=[];CV.i=0;CV.flip=false;CV.mode="fc";vPalabras();break;
