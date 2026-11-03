@@ -67,8 +67,11 @@ nav.idx .in::-webkit-scrollbar{display:none}
 .divider{display:flex;align-items:center;gap:10px;color:var(--wine);font-size:.75rem;margin:6px 0}
 .divider::before,.divider::after{content:"";height:1px;background:var(--line2);flex:1}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow);position:relative;min-width:0}
-.card.tape::before{content:"";position:absolute;top:-11px;left:50%;width:96px;height:22px;transform:translateX(-50%) rotate(-3deg);background:rgba(178,58,46,.18);border-left:2px dashed rgba(255,255,255,.5);border-right:2px dashed rgba(255,255,255,.5)}
-.card.tape.blue::before{background:rgba(45,78,140,.18)}.card.tape.olive::before{background:rgba(94,122,74,.22)}
+/* заметки: рваная бумага и красная кнопка */
+.card.tape,.th .note{background:transparent;border:1px solid transparent;border-image:url("img/note-paper.webp") 24 fill / 16px stretch;border-radius:0;box-shadow:none;filter:drop-shadow(0 5px 9px rgba(58,50,43,.16));position:relative}
+.card.tape::before,.th .note::before{content:"";position:absolute;top:-19px;left:50%;width:30px;height:33px;transform:translateX(-50%);background:url("img/pin.webp") center/contain no-repeat;pointer-events:none}
+.th .note{margin-top:22px;padding:14px 18px}
+
 .btn{background:var(--wine);color:#FBF3EA;border:0;border-radius:999px;padding:11px 20px;font-weight:700;min-height:44px;display:inline-flex;align-items:center;gap:8px;box-shadow:0 2px 0 #5E1D1D}
 a.btn{text-decoration:none}.btn:hover{filter:brightness(1.08)}.btn:active{transform:translateY(1px);box-shadow:none}
 .btn.ghost{background:transparent;color:var(--wine);border:1.5px solid var(--wine);box-shadow:none}
@@ -180,11 +183,11 @@ input[type=text]:focus,input[type=email]:focus,textarea:focus,input[type=search]
 .wi .ru{font-size:.9rem}
 .wi .ipa{font-size:.82rem}
 /* verbs */
-.endings{display:grid;grid-template-columns:auto repeat(3,1fr);gap:0;border:2px solid var(--ink);border-radius:14px;overflow:hidden;background:var(--card)}
-.endings>div{padding:8px 10px;border-bottom:1px solid var(--line2);border-right:1px solid var(--line2);display:flex;align-items:center;min-width:0}
-.endings .hd{background:var(--ink);color:var(--paper);font-family:var(--poster);font-size:clamp(1.4rem,5vw,2.6rem);justify-content:center;letter-spacing:.02em}
+.endings{max-width:760px;display:grid;grid-template-columns:auto repeat(3,1fr);gap:0;border:2px solid var(--ink);border-radius:14px;overflow:hidden;background:var(--card)}
+.endings>div{padding:6px 8px;border-bottom:1px solid var(--line2);border-right:1px solid var(--line2);display:flex;align-items:center;min-width:0}
+.endings .hd{background:var(--ink);color:var(--paper);font-family:var(--poster);font-size:clamp(1.2rem,4.3vw,2.2rem);justify-content:center;letter-spacing:.02em}
 .endings .pr{font-size:.82rem;color:var(--muted);font-weight:700}
-.endings .en{white-space:nowrap;font-family:var(--poster);color:var(--red);font-size:clamp(1.6rem,6vw,3.2rem);justify-content:center;line-height:1}
+.endings .en{white-space:nowrap;font-family:var(--poster);color:var(--red);font-size:clamp(1.35rem,5vw,2.6rem);justify-content:center;line-height:1}
 .endings .en .st{font-family:var(--sans);font-size:max(.75rem,.36em);font-weight:700;color:var(--muted);letter-spacing:0;text-transform:lowercase;margin-right:1px}
 @media (max-width:520px){.endings .en>span{display:flex;flex-direction:column;align-items:center;gap:3px}.endings .en .st{margin-right:0;line-height:1}}
 .vcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;min-width:0}
@@ -220,7 +223,7 @@ details.g[open] summary::after{content:"–"}
 .th{padding:0 18px 18px;display:flex;flex-direction:column;gap:12px}
 .th ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
 .th .ex{font-family:var(--serif);font-size:1.15rem;font-weight:600}
-.th .note{background:var(--gold-soft);border-radius:10px;padding:10px 14px;font-size:.93rem}
+.th .note{font-size:.93rem}
 .th b.e{color:var(--red)}
 .big-num{font-family:var(--poster);font-size:2.6rem;color:var(--red);line-height:1}
 .sum-cell{font-family:var(--serif);font-size:1.2rem}
