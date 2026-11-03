@@ -1,12 +1,15 @@
-/* Mi español — синхронизация прогресса через Supabase.
-   Без настроек в supabase-config.js ничего не делает: всё живёт в localStorage, как раньше. */
+/* Mi español — синхронизация прогресса по коду, без входа и писем.
+   Код (например K7QM-3XRP-W9TD) создаётся на одном устройстве и вводится на другом.
+   Данные лежат в Supabase; без кода их не прочитать. Без кода синхронизации всё живёт в localStorage. */
 (function(){
 "use strict";
 const CFG=window.MI_SUPABASE||{};
 const ON=!!(CFG.url&&CFG.key);
-const LIB="vendor/supabase-2.117.3.js";
+const CODE_KEY="mi-espanol-sync";
+const ABC="ABCDEFGHJKMNPQRSTUVWXYZ23456789";
 const DAY=864e5,INT=[0,1,3,7,14];
-let draft="",ctx=null,sb=null,user=null,timer=null,dirty=false,lastSync=0,sent=false,sentTo="",msg="",busy=false;
+let code="",ctx=null,timer=null,dirty=false,lastSync=0,msg="",busy=false,joining=false;
+try{code=localStorage.getItem(CODE_KEY)||""}catch(e){}
 const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
 /* ---------- слияние двух состояний ---------- */
@@ -39,112 +42,83 @@ function merge(L,R){
   out.resetAt=r0;out._t=Math.max(L._t||0,R._t||0);
   return out;
 }
-const same=(a,b)=>{const c=o=>{const x=Object.assign({},o);delete x._t;return JSON.stringify(x,Object.keys(x).sort())};return c(a)===c(b)};
+const canon=v=>Array.isArray(v)?"["+v.map(canon).join(",")+"]":v&&typeof v==="object"?"{"+Object.keys(v).sort().map(k=>JSON.stringify(k)+":"+canon(v[k])).join(",")+"}":JSON.stringify(v===undefined?null:v);
+const same=(a,b)=>{const c=o=>{const x=Object.assign({},o);delete x._t;return canon(x)};return c(a)===c(b)};
 
-/* ---------- Supabase ---------- */
-function loadLib(){
-  if(window.supabase)return Promise.resolve();
-  return new Promise((ok,bad)=>{const s=document.createElement("script");s.src=LIB;s.onload=ok;s.onerror=bad;document.head.appendChild(s)});
-}
+/* ---------- код ---------- */
+const newCode=()=>{const r=crypto.getRandomValues(new Uint8Array(12));return[...r].map(n=>ABC[n%ABC.length]).join("").replace(/(.{4})(?=.)/g,"$1-")};
+const norm=s=>String(s||"").toUpperCase().replace(/[^A-Z0-9]/g,"");
+const pretty=s=>norm(s).replace(/(.{4})(?=.)/g,"$1-");
+const setCode=c=>{code=c;try{c?localStorage.setItem(CODE_KEY,c):localStorage.removeItem(CODE_KEY)}catch(e){}};
+
+/* ---------- сервер ---------- */
+const rpc=(fn,body)=>fetch(CFG.url+"/rest/v1/rpc/"+fn,{method:"POST",headers:{apikey:CFG.key,"Content-Type":"application/json"},body:JSON.stringify(body)})
+  .then(r=>r.ok?(r.status===204?null:r.json()):r.text().then(t=>{throw new Error(fn+" "+r.status+" "+t)}));
 async function pull(){
-  if(!sb||!user||busy)return;busy=true;
+  if(!code||busy)return;busy=true;
   try{
-    const {data,error}=await sb.from("progress").select("data").eq("user_id",user.id).maybeSingle();
-    if(error)throw error;
-    const local=ctx.get(),remote=data&&data.data||{};
-    const m=merge(local,remote);
+    const remote=await rpc("sync_get",{p_code:norm(code)});
+    const local=ctx.get(),m=merge(local,remote||{});
     const changedLocal=!same(m,local);
     if(changedLocal)ctx.set(m);
-    if(!data||!same(m,remote))await push(true);
+    if(!remote||!same(m,remote))await push(true);
     lastSync=Date.now();msg="";
     if(changedLocal)ctx.rerender();
   }catch(e){console.warn("sync pull",e);msg="Нет связи — синхронизирую позже"}
   finally{busy=false;paint()}
 }
 async function push(now){
-  if(!sb||!user)return;
+  if(!code)return;
   if(!now){dirty=true;clearTimeout(timer);timer=setTimeout(()=>push(true),1500);return}
   clearTimeout(timer);
-  try{
-    const {error}=await sb.from("progress").upsert({user_id:user.id,data:ctx.get(),updated_at:new Date().toISOString()});
-    if(error)throw error;
-    dirty=false;lastSync=Date.now();msg="";
-  }catch(e){dirty=true;console.warn("sync push",e);msg="Нет связи — синхронизирую позже"}
+  try{await rpc("sync_put",{p_code:norm(code),p_data:ctx.get()});dirty=false;lastSync=Date.now();msg=""}
+  catch(e){dirty=true;console.warn("sync push",e);msg="Нет связи — синхронизирую позже"}
   paint();
-}
-async function start(){
-  await loadLib();
-  sb=window.supabase.createClient(CFG.url,CFG.key,{auth:{flowType:"pkce",detectSessionInUrl:true,persistSession:true,autoRefreshToken:true,storageKey:"mi-espanol-auth"}});
-  sb.auth.onAuthStateChange((ev,session)=>{
-    const was=user&&user.id;user=session&&session.user||null;if(user)handoff="";
-    if(user&&user.id!==was)setTimeout(pull,0);
-    paint();
-  });
-  const {data}=await sb.auth.getSession();user=data.session&&data.session.user||null;if(user)handoff="";
-  if(user)pull();
-  paint();
-  window.addEventListener("online",()=>{if(dirty)push(true);else pull()});
-  document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")pull();else if(dirty)push(true)});
 }
 
 /* ---------- карточка во вкладке «Progreso» ---------- */
-// На iPhone ссылка из письма открывается в Safari, а у приложения с экрана «Домой» своё хранилище.
-// Поэтому Safari может передать вход приложению одноразовым кодом (refresh token) и сам из него выйти.
-const STANDALONE=navigator.standalone===true||(window.matchMedia&&matchMedia("(display-mode: standalone)").matches);
-const MOBILE=/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
-let handoff="";
 const note=t=>t?'<p class="muted" style="font-size:.88rem">'+esc(t)+'</p>':"";
-const handIn='<p style="font-size:.95rem">Вошла в Safari? Нажми там «Перенести вход в приложение» и вставь код сюда:</p>'+
-  '<div class="row"><input type="text" id="syhand" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Код из Safari" style="max-width:220px"><button class="btn sm" data-sync="hand">Войти</button></div>';
 function card(){
   if(!ON)return"";
-  if(user)return'<div class="h3">Синхронизация</div><p>Вход: <b>'+esc(user.email)+'</b></p>'+
-    note(msg||(dirty?"Сохраняю…":lastSync?"Прогресс одинаковый на всех устройствах · "+new Date(lastSync).toLocaleTimeString("ru-RU",{hour:"2-digit",minute:"2-digit"}):"Синхронизирую…"))+
-    '<div class="row">'+(MOBILE&&!STANDALONE?'<button class="btn sm" data-sync="handoff">Перенести вход в приложение</button>':"")+'<button class="btn ghost sm" data-sync="out">Выйти</button></div>';
-  if(handoff)return'<div class="h3">Синхронизация</div><p>Код для приложения скопирован. Открой «Mi español» с экрана «Домой» → Progreso и вставь его в поле «Код из Safari».</p>'+
-    '<p style="font-family:var(--ipa);overflow-wrap:anywhere;user-select:all">'+esc(handoff)+'</p>'+
-    '<div class="row"><button class="btn ghost sm" data-sync="copy">Скопировать ещё раз</button></div>'+note(msg||"В Safari вход больше не нужен — код работает один раз.");
-  if(sent)return'<div class="h3">Синхронизация</div><p>Письмо отправлено на <b>'+esc(sentTo)+'</b>. Открой ссылку из письма'+(STANDALONE?" — она откроется в Safari.":" на этом устройстве.")+'</p>'+
-    (STANDALONE?handIn:"")+'<div class="row"><button class="btn ghost sm" data-sync="back">Другой e-mail</button></div>'+note(msg);
-  return'<div class="h3">Синхронизация</div><p class="muted">Войди по e-mail — коробки карточек, упражнения, ответы в «Sobre mí» и твои факты будут одинаковыми на телефоне и ноутбуке. Без входа всё хранится в этом браузере.</p>'+
-    '<div class="row"><input type="email" autocomplete="email" id="symail" value="'+esc(draft)+'" placeholder="твой e-mail" style="max-width:260px"><button class="btn sm" data-sync="send">Прислать ссылку</button></div>'+
-    (STANDALONE?handIn:"")+note(msg);
+  if(code)return'<div class="h3">Синхронизация</div>'+
+    '<p>Код этого устройства — введи его на телефоне или ноутбуке, и прогресс станет общим:</p>'+
+    '<p style="font-family:var(--sans);font-weight:700;font-size:1.35rem;letter-spacing:.08em;color:var(--wine);user-select:all">'+esc(pretty(code))+'</p>'+
+    note(msg||(dirty?"Сохраняю…":lastSync?"Синхронизировано · "+new Date(lastSync).toLocaleTimeString("ru-RU",{hour:"2-digit",minute:"2-digit"}):"Синхронизирую…"))+
+    '<div class="row"><button class="btn ghost sm" data-sync="copy">Скопировать код</button><button class="btn ghost sm" data-sync="off">Отключить здесь</button></div>';
+  return'<div class="h3">Синхронизация</div><p class="muted">Коробки карточек, упражнения, ответы в «Sobre mí» и твои факты — одинаковые на телефоне и ноутбуке. Без паролей и писем: только код.</p>'+
+    (joining?'<div class="row"><input type="text" id="sycode" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="XXXX-XXXX-XXXX" style="max-width:220px"><button class="btn sm" data-sync="join">Подключить</button><button class="btn ghost sm" data-sync="cancel">Отмена</button></div>'
+     :'<div class="row"><button class="btn sm" data-sync="new">Включить синхронизацию</button><button class="btn ghost sm" data-sync="enter">У меня уже есть код</button></div>')+
+    note(msg);
 }
 function paint(){const el=document.getElementById("sync");if(el)el.innerHTML=card()}
-const copy=t=>{try{return navigator.clipboard.writeText(t).then(()=>true,()=>false)}catch(e){return Promise.resolve(false)}};
 async function act(a){
-  if(!sb)return;
-  if(a==="send"){
-    const email=draft=(document.getElementById("symail").value||"").trim();
-    if(!/^\S+@\S+\.\S+$/.test(email)){msg="Проверь адрес";paint();return}
-    msg="Отправляю…";paint();
-    const {error}=await sb.auth.signInWithOtp({email,options:{emailRedirectTo:location.origin+location.pathname}});
-    if(error){msg=/rate|seconds/i.test(error.message)?"Подожди минуту и попробуй ещё раз":"Не получилось отправить письмо";console.warn(error);paint();return}
-    sent=true;sentTo=email;msg="";paint();
-  }else if(a==="hand"){
-    const rt=(document.getElementById("syhand").value||"").trim();
-    if(!rt){msg="Вставь код из Safari";paint();return}
-    msg="Проверяю…";paint();
-    const {error}=await sb.auth.refreshSession({refresh_token:rt});
-    if(error){msg="Код не подошёл — получи в Safari новый";console.warn(error);paint();return}
-    sent=false;msg="";paint();
-  }else if(a==="handoff"){
-    const {data}=await sb.auth.getSession();if(!data.session)return;
-    if(dirty)await push(true);
-    sb.auth.stopAutoRefresh();try{localStorage.removeItem("mi-espanol-auth")}catch(e){}
-    handoff=data.session.refresh_token;user=null;
-    msg=await copy(handoff)?"":"Скопируй код вручную — выдели его и нажми «Скопировать».";paint();
-  }else if(a==="copy"){msg=await copy(handoff)?"Скопировано":"Выдели код и скопируй вручную";paint()}
-  else if(a==="back"){sent=false;msg="";paint()}
-  else if(a==="out"){if(dirty)await push(true);await sb.auth.signOut();user=null;msg="";paint()}
+  if(a==="new"){setCode(newCode());msg="";paint();await push(true)}
+  else if(a==="enter"){joining=true;msg="";paint();const i=document.getElementById("sycode");if(i)i.focus()}
+  else if(a==="cancel"){joining=false;msg="";paint()}
+  else if(a==="join"){
+    const c=norm(document.getElementById("sycode").value);
+    if(c.length!==12){msg="В коде 12 символов — проверь";paint();return}
+    msg="Подключаю…";paint();
+    try{const remote=await rpc("sync_get",{p_code:c});if(!remote){msg="Такого кода нет — проверь буквы";paint();return}}
+    catch(e){console.warn(e);msg="Нет связи — попробуй позже";paint();return}
+    setCode(c);joining=false;msg="";await pull();
+  }
+  else if(a==="copy"){try{await navigator.clipboard.writeText(pretty(code));msg="Код скопирован"}catch(e){msg="Выдели код и скопируй вручную"}paint()}
+  else if(a==="off"){if(dirty)await push(true);setCode("");lastSync=0;msg="Синхронизация на этом устройстве выключена. Прогресс остался здесь.";paint()}
 }
 document.addEventListener("click",e=>{const t=e.target.closest("[data-sync]");if(t)act(t.dataset.sync)});
-document.addEventListener("keydown",e=>{if(e.key!=="Enter")return;if(e.target.id==="symail")act("send");if(e.target.id==="syhand")act("hand")});
+document.addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.id==="sycode")act("join")});
 
 window.MiSync={
   on:ON,merge,
-  attach(c){ctx=c;if(ON)start().catch(e=>{console.warn("sync",e)})},
-  changed(){if(user)push(false)},
+  attach(c){
+    ctx=c;if(!ON)return;
+    if(code)pull();
+    window.addEventListener("online",()=>{if(dirty)push(true);else pull()});
+    document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")pull();else if(dirty)push(true)});
+    setInterval(()=>{if(document.visibilityState==="visible"&&!dirty)pull()},60000);
+  },
+  changed(){if(code)push(false)},
   mount(el){el.hidden=!ON;el.innerHTML=card()}
 };
 })();

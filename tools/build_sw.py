@@ -2,7 +2,7 @@
 import hashlib, json, os, re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FILES = ["./", "index.html", "styles.css", "app.js", "sync.js", "supabase-config.js", "manifest.webmanifest"]
-for d in ("data", "img", "fonts", "icons", "vendor"):
+for d in ("data", "img", "fonts", "icons"):
     FILES += sorted(f"{d}/{f}" for f in os.listdir(os.path.join(ROOT, d)) if not f.startswith(".") and not f.endswith("LICENSE"))
 h = hashlib.sha1()
 for f in FILES[1:]:
