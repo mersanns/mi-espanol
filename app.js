@@ -60,12 +60,42 @@ function showPop(el){
   if(e){h+='<span class="pr">'+esc(a&&NRU[k]||e[0])+'</span>';if(e[1]&&e[1]!==k)h+='<span class="pn">'+(e[2]?esc(e[2])+" · ":"")+'от <b>'+esc(e[1])+'</b></span>';else if(e[2])h+='<span class="pn">'+esc(e[2])+'</span>'}
   else h+='<span class="pn">Нет в словаре — нажми на динамик, чтобы послушать.</span>';
   if(ru){const blk=el.closest(".readblk");h+=ru.length>220&&blk?'<button class="btn soft sm psent" data-act="poptr">'+ic("translate")+'Перевод всего текста</button>':'<div class="psent">'+esc(ru).replace(/\n/g,"<br>")+'</div>'}
-  pop.innerHTML=h;pop.hidden=false;
-  const r=el.getBoundingClientRect(),pw=pop.offsetWidth,ph=pop.offsetHeight;
+  pop.innerHTML=h;placePop(el.getBoundingClientRect());say(w)}
+function placePop(r){pop.hidden=false;const pw=pop.offsetWidth,ph=pop.offsetHeight;
   let x=Math.min(Math.max(12,r.left+r.width/2-pw/2),innerWidth-pw-12),y=r.bottom+8;if(y+ph>innerHeight-10)y=r.top-ph-8;
-  pop.style.left=x+"px";pop.style.top=Math.max(10,y)+"px";say(w)}
+  pop.style.left=x+"px";pop.style.top=Math.max(10,y)+"px"}
 function hidePop(){pop.hidden=true;if(popEl)popEl.classList.remove("on");popEl=null}
-document.addEventListener("click",e=>{const w=e.target.closest(".w");if(w){e.stopPropagation();showPop(w);return}
+
+/* ---------- перевод выделенной фразы ---------- */
+const pkey=s=>String(s).toLowerCase().replace(/[¿?¡!.,;:«»"()…—–-]/g," ").replace(/\s+/g," ").trim();
+let PH=null;const ONL=new Map();
+function phraseRu(t){
+  if(!PH){PH=new Map();Object.entries(D.lex).forEach(([k,v])=>{if(k.includes(" "))PH.set(pkey(k),v[0])});D.cards.forEach(c=>{PH.set(pkey(c.es),c.ru);const m=/^(el|la|los|las) (.+)$/.exec(c.es);if(m&&!PH.has(pkey(m[2])))PH.set(pkey(m[2]),c.ru)});Object.entries(TR).forEach(([k,v])=>PH.set(pkey(k.replace(/\[([^\]]*)\]/g,(_,a)=>a.split("/")[0])),v))}
+  return PH.get(pkey(t))}
+function gloss(w){const k=w.toLowerCase(),kf=k.normalize("NFD").replace(/[̀-ͯ]/g,""),e=D.lex[k]||D.lex[kf],a=ART[k]||ART[kf];
+  return e?String(a&&NRU[k]||e[0]).split(/[;,(]/)[0].trim():"—"}
+function selPhrase(){const s=getSelection();if(!s||s.isCollapsed||!s.rangeCount)return null;
+  const t=s.toString().replace(/\s+/g," ").trim(),ws=t.match(WRE)||[];
+  if(ws.length<2||t.length>300||!view.contains(s.anchorNode))return null;return{t,ws,r:s.getRangeAt(0).getBoundingClientRect()}}
+function showPhrase(p){
+  if(popEl)popEl.classList.remove("on");popEl=null;
+  const known=phraseRu(p.t);
+  let h='<div class="row between" style="flex-wrap:nowrap;align-items:flex-start"><span class="pw pph">'+esc(p.t)+'</span>'+spk(p.t)+'</div>';
+  h+=known?'<span class="pr">'+esc(known)+'</span>':'<span class="pr" id="ponl"><span class="pn">перевожу…</span></span>';
+  h+='<div class="pwords">'+p.ws.map(w=>'<span><b>'+esc(w)+'</b> '+esc(gloss(w))+'</span>').join("")+'</div>';
+  pop.innerHTML=h;placePop(p.r);
+  if(known)return;
+  const key=pkey(p.t),put=v=>{const el=document.getElementById("ponl");if(el)el.innerHTML=v;placePop(p.r)};
+  const got=ONL.get(key);if(got)return put(esc(got)+' <span class="pn">· онлайн-перевод</span>');
+  if(!navigator.onLine)return put('<span class="pn">Без интернета — только перевод по словам.</span>');
+  const ctl=new AbortController();setTimeout(()=>ctl.abort(),6000);
+  fetch("https://api.mymemory.translated.net/get?langpair=es|ru&q="+encodeURIComponent(p.t),{signal:ctl.signal}).then(r=>r.json()).then(d=>{
+    const v=d&&d.responseData&&d.responseData.translatedText;if(!v||d.responseStatus!==200)throw 0;ONL.set(key,v);put(esc(v)+' <span class="pn">· онлайн-перевод</span>')})
+   .catch(()=>put('<span class="pn">Не получилось перевести целиком — вот перевод по словам.</span>'))}
+let selT=0;
+document.addEventListener("selectionchange",()=>{clearTimeout(selT);selT=setTimeout(()=>{const p=selPhrase();if(p)showPhrase(p)},450)});
+document.addEventListener("click",e=>{if(!e.target.closest("#pop")&&selPhrase()){e.stopPropagation();return}
+  const w=e.target.closest(".w");if(w){e.stopPropagation();showPop(w);return}
   const s=e.target.closest('[data-act="say"]');if(s){e.preventDefault();say(s.dataset.t);return}
   const pt=e.target.closest('[data-act="poptr"]');if(pt){e.stopPropagation();const b=popEl&&popEl.closest(".readblk"),r=b&&b.querySelector(".ru-text");if(r){r.hidden=false;r.scrollIntoView({block:"nearest",behavior:"smooth"})}hidePop();return}
   if(!e.target.closest("#pop"))hidePop()},true);
@@ -389,6 +419,14 @@ function route(){
   if(r!=="play")window.scrollTo(0,0);
   ({play:renderPlay,cuaderno:vCuaderno,ex:()=>vEx(sub),palabras:vPalabras,verbos:vVerbos,sobremi:vSobre,practica:()=>vPractica(sub),gramatica:vGram,cultura:vCultura,progreso:vProgreso}[r]||vInicio)()}
 function go(h){if(location.hash===h)route();else location.hash=h}
+/* слова в теории тоже нажимаются */
+function wordify(root){
+  const tw=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),ns=[];
+  while(tw.nextNode()){const n=tw.currentNode;if(/[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]/.test(n.data)&&!n.parentElement.closest(".w,button,a,input,textarea,select,svg,summary"))ns.push(n)}
+  ns.forEach(n=>{const t=document.createElement("template");t.innerHTML=words(n.data,"");
+    t.content.querySelectorAll(".w").forEach(w=>{const p=w.previousSibling,q=w.nextSibling;if(p&&p.nodeType===3&&/-$/.test(p.data)||q&&q.nodeType===3&&/^-/.test(q.data))w.replaceWith(w.textContent)});
+    n.replaceWith(t.content)})}
+new MutationObserver(()=>view.querySelectorAll(".th:not([data-wd])").forEach(el=>{el.dataset.wd="1";wordify(el)})).observe(view,{childList:true,subtree:true});
 window.addEventListener("hashchange",route);
 
 /* ---------- events ---------- */

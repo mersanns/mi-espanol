@@ -152,6 +152,9 @@ input[type=text]:focus,input[type=email]:focus,textarea:focus,input[type=search]
 #pop .part{font-weight:600;color:var(--muted);font-size:.8em}
 #pop .psent{margin-top:6px;padding-top:8px;border-top:1px dashed var(--line2);font-size:.9rem;line-height:1.4;max-height:40vh;overflow:auto}
 #pop button.psent{align-self:flex-start;border-top:0;margin-top:6px}
+#pop .pph{font-size:1.2rem;line-height:1.2}
+#pop .pwords{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:6px;padding-top:8px;border-top:1px dashed var(--line2);font-size:.82rem;color:var(--muted)}
+#pop .pwords b{color:var(--ink);font-weight:600}
 .trl{font-size:.92rem;color:var(--muted);margin-top:4px;line-height:1.4}
 .spk{border:0;background:var(--wine-soft);color:var(--wine);width:34px;height:34px;border-radius:50%;display:inline-grid;place-items:center;flex:0 0 auto}
 .spk svg{width:18px;height:18px;fill:currentColor}
