@@ -9,7 +9,7 @@
   --poster:"Soyuz Grotesk","Arial Black",Impact,sans-serif;
   --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
   --hand:"Caveat","Segoe Print",cursive;
-  --sans:"Spectral",Georgia,"Times New Roman",serif;
+  --sans:Arial,"Helvetica Neue",Helvetica,sans-serif;
   --ipa:"Gentium Plus","Charis SIL",Georgia,serif;
 }
 *{box-sizing:border-box}
