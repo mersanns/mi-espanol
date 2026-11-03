@@ -52,11 +52,51 @@ function words(t,ru){
   if(ru===undefined)ru=TR[t];const ds=ru?' data-s="'+sid(ru)+'"':"";
   let out="",last=0;String(t).replace(WRE,(m,i)=>{out+=esc(t.slice(last,i)).replace(/\n/g,"<br>")+'<span class="w" data-w="'+esc(m)+'"'+ds+'>'+esc(m)+'</span>';last=i+m.length;return m});
   return out+esc(String(t).slice(last)).replace(/\n/g,"<br>")}
+/* испанское слово → IPA (как в карточках: Испания, без аллофонов) */
+const IPAX={"méxico":"ˈmexiko","mexicano":"mexiˈkano","mexicana":"mexiˈkana","mexicanos":"mexiˈkanos","mexicanas":"mexiˈkanas"};
+function ipaWord(w){
+  w=w.toLowerCase().normalize("NFC");if(IPAX[w])return IPAX[w];
+  const T=[],V="aeiouáéíóúü",FR="eiéí",n=w.length;
+  for(let i=0;i<n;i++){const c=w[i],d=w[i+1]||"",e=w[i+2]||"";
+    if(c==="c"&&d==="h"){T.push({p:"tʃ"});i++}
+    else if(c==="l"&&d==="l"){T.push({p:"ʝ"});i++}
+    else if(c==="r"&&d==="r"){T.push({p:"r"});i++}
+    else if(c==="q"&&d==="u"){T.push({p:"k"});i++}
+    else if(c==="g"&&d==="u"&&FR.includes(e)){T.push({p:"g"});i++}
+    else if(c==="g"&&d==="ü"){T.push({p:"g"},{p:"w",g:1});i++}
+    else if(c==="c")T.push({p:FR.includes(d)?"θ":"k"});
+    else if(c==="g")T.push({p:FR.includes(d)?"x":"g"});
+    else if(c==="z")T.push({p:"θ"});
+    else if(c==="j")T.push({p:"x"});
+    else if(c==="ñ")T.push({p:"ɲ"});
+    else if(c==="h")continue;
+    else if(c==="v")T.push({p:"b"});
+    else if(c==="x")T.push({p:"ks"});
+    else if(c==="y"){if(d&&V.includes(d))T.push({p:"ʝ"});else T.push({v:1,p:"i",weak:1})}
+    else if(c==="r")T.push({p:i===0||"lns".includes(w[i-1])?"r":"ɾ"});
+    else if(V.includes(c)){const acc="áéíóú".includes(c),b={á:"a",é:"e",í:"i",ó:"o",ú:"u",ü:"u"}[c]||c;T.push({v:1,p:b,acc,weak:!acc&&"iu".includes(b)})}
+    else T.push({p:c})}
+  // ядра слогов: слабый гласный рядом с другим гласным становится глайдом
+  for(let i=0;i<T.length;i++){const t=T[i];if(!t.v||!t.weak)continue;const nx=T[i+1],pv=T[i-1];
+    if(nx&&nx.v&&!(nx.weak&&nx.p===t.p)){t.v=0;t.g=1;t.p=t.p==="i"?"j":"w"}
+    else if(pv&&pv.v){t.v=0;t.g=2}}
+  const nuc=T.map((t,i)=>t.v?i:-1).filter(i=>i>=0);
+  if(nuc.length<2)return T.map(t=>t.p).join("");
+  let s=nuc.findIndex(i=>T[i].acc);
+  if(s<0)s=/[aeiouns]$/.test(w.normalize("NFD").replace(/[̀-ͯ]/g,""))?nuc.length-2:nuc.length-1;
+  // начало ударного слога
+  let k=nuc[s];while(k>0&&T[k-1].g===1)k--;
+  if(s>0){const prev=nuc[s-1];let j=prev+1;while(j<k&&T[j].g===2)j++;const cons=T.slice(j,k).map(t=>t.p),m=cons.length;
+    let take=m===0?0:m===1?1:(/^[pbtdkgf]$/.test(cons[m-2])&&/^[lɾ]$/.test(cons[m-1])?2:1);k-=take}
+  else k=0;
+  return T.slice(0,k).map(t=>t.p).join("")+"ˈ"+T.slice(k).map(t=>t.p).join("")}
+function ipaText(t){return String(t).replace(/[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+/g,w=>ipaWord(w)).replace(/[¿?¡!.,;:«»"()…—–]/g,"").replace(/\s+/g," ").trim()}
 const pop=$("#pop");let popEl=null;
 function showPop(el){
   const w=el.dataset.w,k=w.toLowerCase(),kf=k.normalize("NFD").replace(/[\u0300-\u036f]/g,""),e=D.lex[k]||D.lex[kf],a=ART[k]||ART[kf],ru=el.dataset.s?SENT[el.dataset.s]:"";
   if(popEl)popEl.classList.remove("on");popEl=el;el.classList.add("on");
   let h='<div class="row between" style="flex-wrap:nowrap"><span class="pw">'+(a?'<span class="part">'+esc(a)+'</span> ':"")+esc(w)+'</span>'+spk(a?a.split("/")[0]+" "+w:w)+'</div>';
+  h+='<span class="ipa">['+esc(ipaWord(w))+']</span>';
   if(e){h+='<span class="pr">'+esc(a&&NRU[k]||e[0])+'</span>';if(e[1]&&e[1]!==k)h+='<span class="pn">'+(e[2]?esc(e[2])+" · ":"")+'от <b>'+esc(e[1])+'</b></span>';else if(e[2])h+='<span class="pn">'+esc(e[2])+'</span>'}
   else h+='<span class="pn">Нет в словаре — нажми на динамик, чтобы послушать.</span>';
   if(ru){const blk=el.closest(".readblk");h+=ru.length>220&&blk?'<button class="btn soft sm psent" data-act="poptr">'+ic("translate")+'Перевод всего текста</button>':'<div class="psent">'+esc(ru).replace(/\n/g,"<br>")+'</div>'}
@@ -81,6 +121,7 @@ function showPhrase(p){
   if(popEl)popEl.classList.remove("on");popEl=null;
   const known=phraseRu(p.t);
   let h='<div class="row between" style="flex-wrap:nowrap;align-items:flex-start"><span class="pw pph">'+esc(p.t)+'</span>'+spk(p.t)+'</div>';
+  h+='<span class="ipa">['+esc(ipaText(p.t))+']</span>';
   h+=known?'<span class="pr">'+esc(known)+'</span>':'<span class="pr" id="ponl"><span class="pn">перевожу…</span></span>';
   h+='<div class="pwords">'+p.ws.map(w=>'<span><b>'+esc(w)+'</b> '+esc(gloss(w))+'</span>').join("")+'</div>';
   pop.innerHTML=h;placePop(p.r);
