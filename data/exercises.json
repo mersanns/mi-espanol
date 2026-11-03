@@ -1,0 +1,2587 @@
+{
+ "ex": [
+  {
+   "id": "1",
+   "t": "Артикли",
+   "es": "Completar con el artículo determinado / indeterminado.",
+   "ru": "Поставь определённый артикль (el / la).",
+   "k": "gap",
+   "items": [
+    "[el] día",
+    "[la] noche",
+    "[la] profesión",
+    "[el] apellido",
+    "[el] país",
+    "[el] problema",
+    "[el] nombre",
+    "[la] nacionalidad",
+    "[el] idioma",
+    "[la] ciudad",
+    "[el] amigo",
+    "[el] coche"
+   ],
+   "p": 1,
+   "note": "Неопределённый: un día, una noche… — та же логика.",
+   "cols": null,
+   "l": "l1",
+   "hw": false
+  },
+  {
+   "id": "2",
+   "t": "Классификация",
+   "es": "Clasificar los sustantivos.",
+   "ru": "Разложи слова: EL или LA?",
+   "k": "choice",
+   "items": [
+    [
+     "atención",
+     "el|la",
+     1
+    ],
+    [
+     "cama",
+     "el|la",
+     1
+    ],
+    [
+     "casa",
+     "el|la",
+     1
+    ],
+    [
+     "cine",
+     "el|la",
+     0
+    ],
+    [
+     "ciudad",
+     "el|la",
+     1
+    ],
+    [
+     "cuaderno",
+     "el|la",
+     0
+    ],
+    [
+     "cumpleaños",
+     "el|la",
+     0
+    ],
+    [
+     "día",
+     "el|la",
+     0
+    ],
+    [
+     "expresión",
+     "el|la",
+     1
+    ],
+    [
+     "foto",
+     "el|la",
+     1
+    ],
+    [
+     "habitación",
+     "el|la",
+     1
+    ],
+    [
+     "hotel",
+     "el|la",
+     0
+    ],
+    [
+     "idioma",
+     "el|la",
+     0
+    ],
+    [
+     "lámpara",
+     "el|la",
+     1
+    ],
+    [
+     "lápiz",
+     "el|la",
+     0
+    ],
+    [
+     "leche",
+     "el|la",
+     1
+    ],
+    [
+     "libro",
+     "el|la",
+     0
+    ],
+    [
+     "luz",
+     "el|la",
+     1
+    ],
+    [
+     "mano",
+     "el|la",
+     1
+    ],
+    [
+     "minuto",
+     "el|la",
+     0
+    ],
+    [
+     "museo",
+     "el|la",
+     0
+    ],
+    [
+     "noche",
+     "el|la",
+     1
+    ],
+    [
+     "página",
+     "el|la",
+     1
+    ],
+    [
+     "planeta",
+     "el|la",
+     0
+    ],
+    [
+     "problema",
+     "el|la",
+     0
+    ],
+    [
+     "radio",
+     "el|la",
+     1
+    ],
+    [
+     "teatro",
+     "el|la",
+     0
+    ],
+    [
+     "teléfono",
+     "el|la",
+     0
+    ],
+    [
+     "universidad",
+     "el|la",
+     1
+    ],
+    [
+     "vaso",
+     "el|la",
+     0
+    ],
+    [
+     "ventana",
+     "el|la",
+     1
+    ],
+    [
+     "viernes",
+     "el|la",
+     0
+    ]
+   ],
+   "p": 1,
+   "note": null,
+   "cols": null,
+   "l": "l1",
+   "hw": true
+  },
+  {
+   "id": "3",
+   "t": "Артикли",
+   "es": "Completar con el artículo determinado.",
+   "ru": "Поставь el или la.",
+   "k": "gap",
+   "items": [
+    "[la] casa",
+    "[el] coche",
+    "[el] dolor",
+    "[la] habitación",
+    "[el] águila",
+    "[el] perro",
+    "[la] flor",
+    "[el] camión",
+    "[el] alumno",
+    "[el] sistema",
+    "[la] mano",
+    "[la] clase",
+    "[el] paraguas",
+    "[el] aula",
+    "[la] ciudad",
+    "[el] hospital"
+   ],
+   "p": 1,
+   "note": "El águila и el aula — женский род, но перед ударным a- ставят el.",
+   "cols": null,
+   "l": "l1",
+   "hw": false
+  },
+  {
+   "id": "4A",
+   "t": "Множественное число",
+   "es": "Poner en plural con artículo determinado.",
+   "ru": "Поставь во мн. число с артиклем.",
+   "k": "gap",
+   "items": [
+    "el nombre → [los nombres]",
+    "la universidad → [las universidades]",
+    "el país → [los países]",
+    "la información → [las informaciones]",
+    "la noche → [las noches]",
+    "la palabra → [las palabras]",
+    "el número → [los números]",
+    "la familia → [las familias]",
+    "el problema → [los problemas]",
+    "la naranja → [las naranjas]"
+   ],
+   "p": 2,
+   "note": null,
+   "cols": null,
+   "l": "l1",
+   "hw": false
+  },
+  {
+   "id": "4B",
+   "t": "Род и мн. число",
+   "es": "Indica si los siguientes nombres son masculinos (M) o femeninos (F) y escribe el plural.",
+   "ru": "Мужской или женский род? Затем мн. число.",
+   "k": "gap",
+   "items": [
+    "camión: [M] → [camiones]",
+    "dormitorio: [M] → [dormitorios]",
+    "edificio: [M] → [edificios]",
+    "actriz: [F] → [actrices]",
+    "mapa: [M] → [mapas]",
+    "mano: [F] → [manos]",
+    "historia: [F] → [historias]",
+    "viaje: [M] → [viajes]",
+    "amigo: [M] → [amigos]",
+    "noche: [F] → [noches]"
+   ],
+   "p": 2,
+   "note": null,
+   "cols": null,
+   "l": "l1",
+   "hw": true
+  },
+  {
+   "id": "4C",
+   "t": "Мн. число",
+   "es": "Escribe el plural.",
+   "ru": "Напиши мн. число.",
+   "k": "gap",
+   "items": [
+    "mujer → [mujeres]",
+    "pez → [peces]",
+    "autobús → [autobuses]",
+    "actriz → [actrices]",
+    "habitación → [habitaciones]",
+    "mamá → [mamás]",
+    "pantalones → [pantalones]",
+    "hotel → [hoteles]",
+    "universidad → [universidades]",
+    "televisión → [televisiones]",
+    "niño → [niños]",
+    "hermana → [hermanas]",
+    "león → [leones]",
+    "día → [días]",
+    "clase → [clases]",
+    "foto → [fotos]",
+    "banana → [bananas]",
+    "jueves → [jueves]"
+   ],
+   "p": 2,
+   "note": "Pantalones и jueves не меняются.",
+   "cols": null,
+   "l": "l1",
+   "hw": false
+  },
+  {
+   "id": "5",
+   "t": "Местоимения",
+   "es": "Escribe el pronombre correspondiente.",
+   "ru": "Подставь местоимение по форме ser.",
+   "k": "gap",
+   "items": [
+    "[yo] soy",
+    "[tú] eres",
+    "[él/ella/usted] es",
+    "[nosotros/nosotras] somos",
+    "[vosotros/vosotras] sois",
+    "[ellos/ellas/ustedes] son"
+   ],
+   "p": 3,
+   "note": "В тетради это упражнение по картинкам — здесь та же идея на формах ser.",
+   "cols": null,
+   "l": "l1",
+   "hw": false
+  },
+  {
+   "id": "6A",
+   "t": "Ser",
+   "es": "Completar con el verbo ser.",
+   "ru": "Вставь ser в нужной форме.",
+   "k": "gap",
+   "items": [
+    "Yo [soy] estudiante.",
+    "Él [es] profesor de español.",
+    "Ellas [son] compañeras de clase.",
+    "María y yo [somos] amigas.",
+    "Tú [eres] mi amigo.",
+    "Ellos [son] hermanos.",
+    "¿[Son] ustedes de Moscú?",
+    "Vosotros [sois] simpáticos.",
+    "Nosotros [somos] de México.",
+    "Mis padres y yo no [somos] de aquí.",
+    "¿De dónde [sois] Juan y tú?",
+    "¿(Tú) [eres] la nueva estudiante?",
+    "Mi coche [es] rojo.",
+    "Canadá [es] un país.",
+    "¿[Es] usted española?",
+    "¿Vosotros [sois] catalanes?",
+    "Ellos [son] médicos.",
+    "Ella es de Viena y yo [soy] de París.",
+    "¿[Son] ustedes extranjeros?",
+    "Ana no [es] profesora.",
+    "Hola, ¿de dónde [sois] vosotros?",
+    "Ellas [son] Lucía y Nieves, [son] peruanas.",
+    "¿De dónde [son] ustedes?",
+    "Magdalena y yo [somos] brasileños."
+   ],
+   "p": 3,
+   "note": null,
+   "cols": null,
+   "l": "l2",
+   "hw": true
+  },
+  {
+   "id": "7",
+   "t": "Ser + также",
+   "es": "Completar.",
+   "ru": "Вставь ser, во второй части — ser и прилагательное.",
+   "k": "gap",
+   "items": [
+    "Yo [soy] rusa y él [es ruso].",
+    "Ellos [son] estudiantes y usted [es estudiante].",
+    "Nosotros [somos] de Moscú y tú [eres de Moscú].",
+    "Vosotros [sois] optimistas y Raúl [es optimista].",
+    "Pepa y Ana [son] secretarias y nosotras [somos secretarias].",
+    "Ustedes [son] mexicanos y nosotros [somos mexicanos]."
+   ],
+   "p": 3,
+   "note": null,
+   "cols": null,
+   "l": "l2",
+   "hw": false
+  },
+  {
+   "id": "8",
+   "t": "Национальности во мн. числе",
+   "es": "Transformar las frases según el ejemplo: Anne es de Suecia. Ulla y Anne son suecas.",
+   "ru": "Сделай как в примере.",
+   "k": "gap",
+   "items": [
+    "Roberto es de Brasil. Roberto y Joao son [brasileños].",
+    "Pierre es de Francia. Pierre y Sylvie son [franceses].",
+    "Sally es de EE. UU. Sally y Mike son [estadounidenses].",
+    "Cara es de Holanda. Cara y Jan son [holandeses].",
+    "Makoto es de Japón. Makoto y Dosik son [japoneses].",
+    "Mohamed es de Marruecos. Mohamed y Amina son [marroquíes].",
+    "Chung es de China. Chung y Lee son [chinos].",
+    "Wolfgang es de Alemania. Marta y Renate son [alemanas]."
+   ],
+   "p": 5,
+   "note": "Мужчина + женщина → мужской род мн. числа.",
+   "cols": null,
+   "l": "l3",
+   "hw": true
+  },
+  {
+   "id": "9",
+   "t": "Откуда это?",
+   "es": "Transformar según el ejemplo: El ron es de Cuba. Es cubano. Es un ron cubano.",
+   "ru": "Скажи, какой это: прилагательное от страны.",
+   "k": "gap",
+   "items": [
+    "Los mariachis son de México. Son [mexicanos].",
+    "El salmón es de Noruega. Es [noruego].",
+    "El café es de Colombia. Es [colombiano].",
+    "Las pirámides son de Egipto. Son [egipcias].",
+    "El oso panda es de China. Es [chino].",
+    "Los elefantes son de África. Son [africanos].",
+    "El canguro es de Australia. Es [australiano].",
+    "La guitarra es de España. Es [española].",
+    "La pasta es de Italia. Es [italiana]."
+   ],
+   "p": 5,
+   "note": null,
+   "cols": null,
+   "l": "l3",
+   "hw": true
+  },
+  {
+   "id": "11A",
+   "t": "Кто это и что это",
+   "es": "Completar las frases.",
+   "ru": "Дополни: существительное + национальность.",
+   "k": "gap",
+   "items": [
+    "El yen es la [moneda] [japonesa].",
+    "Gabriel García Márquez es un [escritor] [colombiano].",
+    "Burdeos es una [ciudad] [francesa].",
+    "Julia Roberts es una [actriz] [estadounidense].",
+    "Hanoi es la [capital] [vietnamita].",
+    "Montreal y Edmonton son [ciudades] [canadienses].",
+    "Lisboa es la [capital] [portuguesa]."
+   ],
+   "p": 5,
+   "note": null,
+   "cols": null,
+   "l": "l3",
+   "hw": false
+  },
+  {
+   "id": "11B",
+   "t": "Страна ↔ национальность",
+   "es": "País / nacionalidad. Nacionalidad / país.",
+   "ru": "Напиши национальность (м. и ж.) или страну.",
+   "k": "gap",
+   "items": [
+    "Japón → [japonés], [japonesa]",
+    "Suecia → [sueco], [sueca]",
+    "Polonia → [polaco], [polaca]",
+    "Marruecos → [marroquí], [marroquí]",
+    "Túnez → [tunecino], [tunecina]",
+    "Hungría → [húngaro], [húngara]",
+    "Brasil → [brasileño], [brasileña]",
+    "Noruega → [noruego], [noruega]",
+    "México → [mexicano], [mexicana]",
+    "Chipre → [chipriota], [chipriota]",
+    "Luxemburgo → [luxemburgués], [luxemburguesa]",
+    "egipcio → [Egipto]",
+    "holandés → [Holanda/Países Bajos]",
+    "alemana → [Alemania]",
+    "irlandés → [Irlanda]",
+    "británico → [Gran Bretaña/Reino Unido]",
+    "venezolano → [Venezuela]",
+    "ecuatoriano → [Ecuador]",
+    "belga → [Bélgica]",
+    "húngaro → [Hungría]",
+    "portugués → [Portugal]"
+   ],
+   "p": 6,
+   "note": null,
+   "cols": null,
+   "l": "l4",
+   "hw": true
+  },
+  {
+   "id": "11C",
+   "t": "Столицы",
+   "es": "Capital / país: Madrid es la capital de España / es la capital española.",
+   "ru": "Чья это столица? Напиши страну.",
+   "k": "gap",
+   "items": [
+    "Ámsterdam es la capital de [Holanda/los Países Bajos/Países Bajos].",
+    "Atenas es la capital de [Grecia].",
+    "Berlín es la capital de [Alemania].",
+    "Bruselas es la capital de [Bélgica].",
+    "Copenhague es la capital de [Dinamarca].",
+    "Dublín es la capital de [Irlanda].",
+    "Estocolmo es la capital de [Suecia].",
+    "Lisboa es la capital de [Portugal].",
+    "Londres es la capital de [Gran Bretaña/Reino Unido/Inglaterra].",
+    "París es la capital de [Francia].",
+    "Luxemburgo es la capital de [Luxemburgo].",
+    "Roma es la capital de [Italia].",
+    "Viena es la capital de [Austria].",
+    "Helsinki es la capital de [Finlandia]."
+   ],
+   "p": 6,
+   "note": null,
+   "cols": null,
+   "l": "l4",
+   "hw": true
+  },
+  {
+   "id": "12",
+   "t": "Имена и фамилии",
+   "es": "Nombres y apellidos. Isabel González Sánchez está casada con Raúl Díaz Bernal. El matrimonio tiene dos hijos: Francisco y Eva.",
+   "ru": "У испанцев две фамилии: первая отца + первая матери.",
+   "k": "gap",
+   "items": [
+    "Francisco [Díaz] [González]",
+    "Eva [Díaz] [González]",
+    "El marido de Eva se llama Arturo Gómez Moreno. Su hija: Rosa [Gómez] [Díaz]"
+   ],
+   "p": 6,
+   "note": null,
+   "cols": null,
+   "l": "l4",
+   "hw": false
+  },
+  {
+   "id": "13",
+   "t": "Feria internacional de turismo",
+   "es": "Feria internacional de turismo: escribe la nacionalidad.",
+   "ru": "Ярмарка туризма: какая национальность у участника?",
+   "k": "gap",
+   "items": [
+    "Rosa López Garmendia, Julià Tours: [española]",
+    "Markus Wessling, Lufthansa: [alemán]",
+    "Matthew Smith, British Airways: [británico/inglés]",
+    "Mustapha Madih, Dunia Tours: [marroquí]",
+    "Helga Sherling, Swiss: [suiza]",
+    "Olaf Svensson, SAS: [sueco]",
+    "Jennifer Curtis, TWA: [estadounidense]",
+    "Roland Dubois, Air France: [francés]",
+    "Carlos Eduardo Mendoza Díaz, Viasa: [venezolano]"
+   ],
+   "p": 6,
+   "note": "Подсказка — по названию компании.",
+   "cols": null,
+   "l": "l4",
+   "hw": false
+  },
+  {
+   "id": "14A",
+   "t": "Llamarse",
+   "es": "Completar con el verbo llamarse.",
+   "ru": "Вставь llamarse.",
+   "k": "gap",
+   "items": [
+    "Mis amigos [se llaman] Pedro y Ana.",
+    "¿Cómo [te llamas] (tú)?",
+    "Yo no [me llamo] Carmen, yo [me llamo] Marta.",
+    "Mi jefe [se llama] Antonio.",
+    "¿Vosotras [os llamáis] Juana e Inma?",
+    "Usted [se llama] Teresa, ¿verdad?",
+    "Tú [te llamas] Carlos, ¿no?"
+   ],
+   "p": 7,
+   "note": null,
+   "cols": null,
+   "l": "l4",
+   "hw": true
+  },
+  {
+   "id": "14B",
+   "t": "Llamarse: выбери",
+   "es": "Elige la forma correcta.",
+   "ru": "Выбери правильную форму.",
+   "k": "choice",
+   "items": [
+    [
+     "Hola, ¿cómo ___? − Me llamo César.",
+     "te llamas|me llamo",
+     0
+    ],
+    [
+     "¿Cómo ___ usted? − Me llamo Regina López.",
+     "se llama|os llamáis",
+     0
+    ],
+    [
+     "___ Antonio y soy de Venezuela.",
+     "Me llama|Me llamo",
+     1
+    ],
+    [
+     "___ Mónica y Maud. Somos de Canadá.",
+     "Nos llamamos|Nos llamáis",
+     0
+    ],
+    [
+     "¿Cómo ___?",
+     "os llamáis|os llamas",
+     0
+    ],
+    [
+     "Él ___ Pepe.",
+     "se llama|me llamo",
+     0
+    ],
+    [
+     "¿Ustedes ___ Jorge y Pedro? − Sí.",
+     "se llaman|se llama",
+     0
+    ]
+   ],
+   "p": 7,
+   "note": null,
+   "cols": null,
+   "l": "l4",
+   "hw": true
+  },
+  {
+   "id": "15",
+   "t": "Llamarse или ser",
+   "es": "Completar con llamarse o ser.",
+   "ru": "Llamarse — имя, ser — кто, откуда, профессия.",
+   "k": "gap",
+   "items": [
+    "Yo me llamo Marcelo. ¿Y tú, [cómo te llamas]? Yo [me llamo] José.",
+    "Vosotros [sois] suecos, ¿verdad? Sí, [somos] de Estocolmo.",
+    "¿Cómo [se llama] usted, por favor? [Me llamo] Marta Rico.",
+    "Y vosotros, ¿cómo [os llamáis]? [Me llamo] Javier. Y [yo me llamo/me llamo] Pedro.",
+    "Por favor, ¿los señores Martín? Sí, [somos] nosotros.",
+    "Usted [es] el señor Mateos, ¿verdad? Sí, [soy] yo.",
+    "Yo [soy] mexicano, ¿y ustedes? Nosotros [somos] chilenos.",
+    "¿Cómo [se llama] esta chica? Olga Ramiro. ¿[Es] española? No, [es] peruana."
+   ],
+   "p": 7,
+   "note": null,
+   "cols": null,
+   "l": "l4",
+   "hw": false
+  },
+  {
+   "id": "16",
+   "t": "Диалоги: знакомство",
+   "es": "Relaciona las imágenes con los diálogos. Escucha y repite.",
+   "ru": "Прочитай диалоги вслух: нажимай на слова, чтобы услышать.",
+   "k": "read",
+   "items": [
+    [
+     "Diálogo 1",
+     "— Hola, soy Marcelo. Soy italiano. ¿Y tú?, ¿cómo te llamas?\n— Yo soy Anne, soy francesa.\n— Encantado, Anne.",
+     "— Привет, я Марчело. Я итальянец. А ты, как тебя зовут?\n— Я Анна, француженка.\n— Очень приятно, Анна."
+    ],
+    [
+     "Diálogo 2",
+     "— Hola, George.\n— Hola, Michael. Mira, es Camile, es de Noruega.\n— Encantado, Camile.\n— Mucho gusto.",
+     "— Привет, Джордж.\n— Привет, Майкл. Смотри, это Камиль, она из Норвегии.\n— Очень приятно, Камиль.\n— Очень приятно."
+    ],
+    [
+     "Diálogo 3",
+     "— ¡Hola, Antonio! ¡Qué sorpresa!\n— ¡Hola, chicos! ¿Qué tal? Estas son Anne y Marie. Son francesas y estudian Turismo en mi universidad.\n— ¡Hola! ¿Qué tal? Yo me llamo Juan y esta es mi novia, Esther. Encantado.",
+     "— Привет, Антонио! Какой сюрприз!\n— Привет, ребята! Как дела? Это Анна и Мари. Они француженки и учатся на туризме в моём университете.\n— Привет! Как дела? Меня зовут Хуан, а это моя девушка Эстер. Очень приятно."
+    ],
+    [
+     "Diálogo 4",
+     "— Hola, Isabel. ¿Qué tal?\n— Hola, Jaime. Esta es mi amiga Claudia, es mexicana.\n— Encantado, Claudia.\n— Encantada.",
+     "— Привет, Исабель. Как дела?\n— Привет, Хайме. Это моя подруга Клаудия, она мексиканка.\n— Очень приятно, Клаудия.\n— Очень приятно."
+    ],
+    [
+     "Saludar y despedirse",
+     "Hola. Buenos días. Buenas tardes. Buenas noches.\nHasta luego. Hasta pronto. Hasta mañana. Adiós. Chao.",
+     "Привет. Доброе утро. Добрый день. Добрый вечер.\nДо скорого. До встречи. До завтра. До свидания. Пока."
+    ]
+   ],
+   "p": 8,
+   "note": null,
+   "cols": null,
+   "l": "l4",
+   "hw": true
+  },
+  {
+   "id": "17",
+   "t": "Профессии",
+   "es": "Profesiones: masculino y femenino.",
+   "ru": "Как образуется женский род профессии.",
+   "k": "read",
+   "items": [
+    [
+     "-o → -a",
+     "el bombero, el cocinero, el cartero, el arquitecto, el peluquero, el secretario, el abogado, el mecánico, el veterinario, el informático, el enfermero",
+     "bombera, cocinera, cartera…: -o меняется на -a"
+    ],
+    [
+     "согласная + a",
+     "el profesor, el director, el vendedor, el bailarín",
+     "la profesora, la directora, la vendedora, la bailarina"
+    ],
+    [
+     "не меняются: -ista, -ante",
+     "el deportista, el dentista, el cantante, el estudiante, el policía, el modelo, el piloto",
+     "la deportista, la dentista, la cantante… — меняется только артикль"
+    ],
+    [
+     "исключения",
+     "el jefe / la jefa, el dependiente / la dependienta, el actor / la actriz, el rey / la reina",
+     "начальник, продавец, актёр / актриса, король / королева"
+    ]
+   ],
+   "p": 9,
+   "note": null,
+   "cols": null,
+   "l": "l5",
+   "hw": false
+  },
+  {
+   "id": "19",
+   "t": "Окончания профессий",
+   "es": "La terminación de los sustantivos. Completar las palabras.",
+   "ru": "Допиши окончание (или оставь как есть).",
+   "k": "gap",
+   "items": [
+    "Mónica es [artista].",
+    "Mi padre es [profesor].",
+    "Doña María es [abogada].",
+    "José es [escritor].",
+    "Mi hijo es [cantante].",
+    "Marta y Laura son [dependientas].",
+    "Mi hermana es [camarera].",
+    "Ramón es [estudiante]."
+   ],
+   "p": 10,
+   "note": null,
+   "cols": null,
+   "l": "l5",
+   "hw": false
+  },
+  {
+   "id": "20",
+   "t": "Ser и llamarse",
+   "es": "Formar frases con los verbos ser y llamarse.",
+   "ru": "Составь фразу: как зовут и кем работает.",
+   "k": "gap",
+   "items": [
+    "Miguel / camarero → [Se llama Miguel y es camarero/Se llama Miguel. Es camarero.]",
+    "Lucía y Sara / abogadas → [Se llaman Lucía y Sara y son abogadas/Se llaman Lucía y Sara. Son abogadas.]",
+    "Nosotras (Miriam y Ana) / ingenieras → [Nos llamamos Miriam y Ana y somos ingenieras/Nos llamamos Miriam y Ana. Somos ingenieras.]",
+    "Pablo / fotógrafo → [Se llama Pablo y es fotógrafo/Se llama Pablo. Es fotógrafo.]",
+    "Mi madre Irene / médica → [Mi madre se llama Irene y es médica/Mi madre se llama Irene. Es médica.]",
+    "Vosotros (Luis y Adolfo) / estudiantes de Derecho → [Os llamáis Luis y Adolfo y sois estudiantes de Derecho/Os llamáis Luis y Adolfo. Sois estudiantes de Derecho.]",
+    "Ustedes (Ramón y Hugo) / informáticos → [Se llaman Ramón y Hugo y son informáticos/Ustedes se llaman Ramón y Hugo y son informáticos]",
+    "Tú (Óscar) / diseñador gráfico → [Te llamas Óscar y eres diseñador gráfico/Te llamas Óscar. Eres diseñador gráfico.]",
+    "Antonio / periodista → [Se llama Antonio y es periodista/Se llama Antonio. Es periodista.]"
+   ],
+   "p": 10,
+   "note": "Можно писать одним предложением через y.",
+   "cols": null,
+   "l": "l5",
+   "hw": false
+  },
+  {
+   "id": "21A",
+   "t": "Где они работают?",
+   "es": "¿Dónde trabajan?",
+   "ru": "Выбери место работы.",
+   "k": "choice",
+   "items": [
+    [
+     "médico / médica",
+     "hospital|tienda|taxi|hotel",
+     0
+    ],
+    [
+     "recepcionista",
+     "escuela|hotel|tribunal|taxi",
+     1
+    ],
+    [
+     "camarero / camarera",
+     "restaurante|hospital|empresa|tribunal",
+     0
+    ],
+    [
+     "cocinero / cocinera",
+     "oficina|taxi|restaurante|escuela",
+     2
+    ],
+    [
+     "abogado / abogada",
+     "tribunal|cocina|tienda|piscina",
+     0
+    ],
+    [
+     "ingeniero / ingeniera",
+     "empresa|restaurante|peluquería|hospital",
+     0
+    ],
+    [
+     "enfermero / enfermera",
+     "hotel|hospital|tienda|banco",
+     1
+    ],
+    [
+     "profesor / profesora",
+     "taxi|escuela|tribunal|comisaría",
+     1
+    ],
+    [
+     "taxista",
+     "taxi|hospital|escuela|oficina",
+     0
+    ],
+    [
+     "dependiente / dependienta",
+     "tienda|tribunal|hospital|avión",
+     0
+    ]
+   ],
+   "p": 10,
+   "note": null,
+   "cols": null,
+   "l": "l5",
+   "hw": true
+  },
+  {
+   "id": "22A",
+   "t": "Составь фразы",
+   "es": "Forma frases.",
+   "ru": "Подбери к подлежащему форму глагола.",
+   "k": "choice",
+   "items": [
+    [
+     "Antonio y María ___ a Latinoamérica.",
+     "viajan|visitan|estudiáis|escuchas",
+     "0,1"
+    ],
+    [
+     "Marc ___ las vacaciones en la playa.",
+     "pasa|trabajo|estudiáis|viajamos",
+     0
+    ],
+    [
+     "Nosotros ___ a Latinoamérica.",
+     "viajamos|visitan|pasa|trabajo",
+     0
+    ],
+    [
+     "Tú ___ música clásica.",
+     "escuchas|hablan|trabajo|pasa",
+     0
+    ],
+    [
+     "Yo ___ en un hotel.",
+     "trabajo|escuchas|viajamos|visitan",
+     0
+    ],
+    [
+     "Ustedes ___ español.",
+     "hablan|estudiáis|escuchas|pasa",
+     0
+    ],
+    [
+     "Vosotros ___ en la universidad.",
+     "estudiáis|estudian|trabajo|pasa",
+     0
+    ]
+   ],
+   "p": 12,
+   "note": null,
+   "cols": null,
+   "l": "l4",
+   "hw": true
+  },
+  {
+   "id": "22B",
+   "t": "Кто что делает",
+   "es": "¿Qué hacen? periodista, secretaria, estudiante, dependienta.",
+   "ru": "Кто так делает? Выбери профессию.",
+   "k": "choice",
+   "items": [
+    [
+     "Trabajar en una revista",
+     "periodista|secretaria|estudiante|dependienta",
+     0
+    ],
+    [
+     "Estudiar en una escuela",
+     "periodista|secretaria|estudiante|dependienta",
+     2
+    ],
+    [
+     "Trabajar en una oficina",
+     "periodista|secretaria|estudiante|dependienta",
+     1
+    ],
+    [
+     "Viajar por trabajo",
+     "periodista|secretaria|estudiante|dependienta",
+     0
+    ],
+    [
+     "Escribir artículos",
+     "periodista|secretaria|estudiante|dependienta",
+     0
+    ],
+    [
+     "Trabajar en una tienda",
+     "periodista|secretaria|estudiante|dependienta",
+     3
+    ],
+    [
+     "Escribir correos electrónicos",
+     "periodista|secretaria|estudiante|dependienta",
+     1
+    ],
+    [
+     "Hablar por teléfono",
+     "periodista|secretaria|estudiante|dependienta",
+     1
+    ],
+    [
+     "Aprender idiomas",
+     "periodista|secretaria|estudiante|dependienta",
+     2
+    ],
+    [
+     "Vender productos de decoración",
+     "periodista|secretaria|estudiante|dependienta",
+     3
+    ],
+    [
+     "Preparar los deberes",
+     "periodista|secretaria|estudiante|dependienta",
+     2
+    ],
+    [
+     "Hablar con los clientes",
+     "periodista|secretaria|estudiante|dependienta",
+     3
+    ]
+   ],
+   "p": 12,
+   "note": null,
+   "cols": null,
+   "l": "l5",
+   "hw": false
+  },
+  {
+   "id": "23A",
+   "t": "Настоящее время",
+   "es": "Completar con la forma correcta del verbo.",
+   "ru": "Поставь глагол в нужную форму.",
+   "k": "gap",
+   "items": [
+    "¿Dónde (vivir, tú) [vives]?",
+    "(Trabajar, ellos) [Trabajan] en un banco.",
+    "¿De dónde (ser, vosotros) [sois]?",
+    "¿(Ser) [Es] joven tu amigo?",
+    "(Vivir, nosotros) [Vivimos] aquí.",
+    "¿Qué libro (leer) ustedes [leen]?",
+    "¿Qué música (escuchar, tú) [escuchas]?",
+    "¿(Hablar) usted [habla] español?",
+    "¿Qué idiomas (hablar) [habla] tu amigo?",
+    "¿En qué país (vivir, tú) [vives]?",
+    "No (comer, yo) [como] aquí.",
+    "(Descansar, él) [Descansa] ahora.",
+    "¿Por qué no (comer, tú) [comes]?",
+    "Mi padre no (trabajar) [trabaja] ahora.",
+    "¿Cómo (llamarse, tú) [te llamas]?",
+    "¿Cómo (llamarse) usted [se llama]?",
+    "¿Qué (leer, tú) [lees]? — No (leer) [leo], (mirar) [miro] las fotos.",
+    "Marta (escuchar) [escucha] música clásica.",
+    "¿Dónde (comer, vosotros) [coméis]? — (Comer) [Comemos] en la cafetería de la facultad.",
+    "Ya (escribir, nosotros) [escribimos] y (leer) [leemos] bien en español.",
+    "¿(Comprar, vosotros) [Compráis] en el supermercado?",
+    "Hola, ¿(ser, tú) [eres] Miguel?",
+    "(Abrir, nosotros) [Abrimos] cuadernos para escribir un dictado."
+   ],
+   "p": 12,
+   "note": null,
+   "cols": null,
+   "l": "l5",
+   "hw": true
+  },
+  {
+   "id": "23B",
+   "t": "Настоящее время (2)",
+   "es": "Completar con la forma correcta del verbo.",
+   "ru": "Ещё тренировка на спряжение.",
+   "k": "gap",
+   "items": [
+    "Yo (trabajar) [trabajo] en la escuela.",
+    "¿(Estudiar) [Estudia] tu amigo mucho?",
+    "¿(Vivir) [Vive] usted bien?",
+    "Ustedes (comer) [comen] en el trabajo, ¿no?",
+    "Juan nunca (beber) [bebe] alcohol.",
+    "¿De qué (hablar) [hablan] ellos?",
+    "Yo (creer) [creo] que usted (trabajar) [trabaja] poco.",
+    "Mi familia (descansar) [descansa] en casa.",
+    "Paula (leer) [lee] libros.",
+    "¿(Estudiar, tú) [Estudias] en la universidad?",
+    "Yo no (fumar) [fumo] y no (beber) [bebo].",
+    "Tú no (ser) [eres] de Moscú, ¿no?",
+    "Mi amiga no (comprar) [compra] muchas cosas.",
+    "Los estudiantes (escribir) [escriben] mucho.",
+    "Tú (comer) [comes] mucho.",
+    "Yo (hablar) [hablo] italiano y francés.",
+    "Nosotros (escuchar) [escuchamos] música.",
+    "Ella (fumar) [fuma] poco, ¿y tú?",
+    "Nosotros (bailar) [bailamos] mal pero (cantar) [cantamos] bien."
+   ],
+   "p": 13,
+   "note": null,
+   "cols": null,
+   "l": "l5",
+   "hw": false
+  },
+  {
+   "id": "25",
+   "t": "También / tampoco",
+   "es": "También / tampoco. Soy obrero y Paco también es obrero. No soy obrero y Paco tampoco es obrero.",
+   "ru": "Утверждение → también, отрицание → tampoco.",
+   "k": "gap",
+   "items": [
+    "Soy inglesa y ellos [también] son ingleses.",
+    "Somos estudiantes y usted [también] es estudiante.",
+    "No soy de Londres y vosotros [tampoco] sois de Londres.",
+    "Soy de San Petersburgo y tú [también] eres de San Petersburgo.",
+    "No son camareros y yo [tampoco] soy camarero.",
+    "Pedro es español y Lucía [también] es española.",
+    "No te llamas Natalia y yo [tampoco] me llamo Natalia.",
+    "Ana no es secretaria y Paco [tampoco] es secretario.",
+    "Eres de Rusia y yo [también] soy de Rusia.",
+    "Él es estudiante y vosotros [también] sois estudiantes.",
+    "Como en el café y ella [también] come en el café.",
+    "Leemos mucho y usted [también] lee mucho.",
+    "Estudias inglés y yo [también] estudio inglés.",
+    "No fumas y él [tampoco] fuma.",
+    "Descanso poco y ellos [también] descansan poco.",
+    "Vivo aquí y vosotros [también] vivís aquí.",
+    "Trabajo mucho y usted [también] trabaja mucho.",
+    "No escriben mucho y nosotros [tampoco] escribimos mucho.",
+    "Escucho música y tú [también] escuchas música.",
+    "No compras coche y yo [tampoco] compro coche."
+   ],
+   "p": 14,
+   "note": "Вторая часть меняет форму глагола под новое подлежащее.",
+   "cols": null,
+   "l": "l6",
+   "hw": true
+  },
+  {
+   "id": "26",
+   "t": "Предлоги",
+   "es": "Preposiciones.",
+   "ru": "Вставь предлог: a, de, en, con.",
+   "k": "gap",
+   "items": [
+    "¿[A] qué te dedicas?",
+    "Alejandro es [de] Madrid, pero vive y estudia [en] Barcelona.",
+    "Pedro, amigo [de] Carlos, es camarero.",
+    "Yo siempre como [en] este restaurante.",
+    "Estudiamos [con] los chicos [de] Argentina.",
+    "Vivimos [con] los padres [en] una ciudad pequeña.",
+    "Hablo [con] Alberto [de] clases cada noche.",
+    "Luis trabaja [en] una empresa grande.",
+    "La mesa es [de] madera."
+   ],
+   "p": 14,
+   "note": null,
+   "cols": null,
+   "l": "l6",
+   "hw": false
+  },
+  {
+   "id": "27A",
+   "t": "Цвета",
+   "es": "¿De qué color son?",
+   "ru": "Какого цвета?",
+   "k": "choice",
+   "items": [
+    [
+     "el tomate",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "2"
+    ],
+    [
+     "el café",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "5"
+    ],
+    [
+     "el limón",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "1"
+    ],
+    [
+     "el plátano",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "1"
+    ],
+    [
+     "la lechuga",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "4"
+    ],
+    [
+     "el mar",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "3"
+    ],
+    [
+     "el azúcar",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "0"
+    ],
+    [
+     "el ajo",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "0"
+    ],
+    [
+     "el sol",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "1"
+    ],
+    [
+     "la piscina",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "3"
+    ],
+    [
+     "el árbol",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "4"
+    ],
+    [
+     "la noche",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "6"
+    ],
+    [
+     "el cielo",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "3"
+    ],
+    [
+     "la leche",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "0"
+    ],
+    [
+     "el gazpacho",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "2"
+    ],
+    [
+     "la manzana",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "2,4"
+    ],
+    [
+     "el pan",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "0,5"
+    ],
+    [
+     "la selva",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "4"
+    ],
+    [
+     "el chocolate",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "5"
+    ],
+    [
+     "el maíz",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "1"
+    ],
+    [
+     "la aceituna",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "4,6"
+    ],
+    [
+     "el tabaco",
+     "blanco|amarillo|rojo|azul|verde|marrón|negro",
+     "5"
+    ]
+   ],
+   "p": 15,
+   "note": null,
+   "cols": null,
+   "l": "l6",
+   "hw": true
+  },
+  {
+   "id": "27B",
+   "t": "Согласование прилагательных",
+   "es": "Concordancia: sustantivo + adjetivo.",
+   "ru": "Соедини с артиклем и согласуй прилагательное.",
+   "k": "gap",
+   "items": [
+    "cosa / bueno → [una cosa buena/la cosa buena/cosa buena]",
+    "plato / rico → [un plato rico/el plato rico/plato rico]",
+    "estudiante / malo → [un estudiante malo/una estudiante mala/el estudiante malo/estudiante malo]",
+    "niña / triste → [una niña triste/la niña triste/niña triste]",
+    "universidad / prestigioso → [una universidad prestigiosa/la universidad prestigiosa/universidad prestigiosa]",
+    "coche / pequeño → [un coche pequeño/el coche pequeño/coche pequeño]",
+    "ciudad / grande → [una ciudad grande/la ciudad grande/ciudad grande]",
+    "foto / bonito → [una foto bonita/la foto bonita/foto bonita]",
+    "parque / hermoso → [un parque hermoso/el parque hermoso/parque hermoso]",
+    "clase / interesante → [una clase interesante/la clase interesante/clase interesante]"
+   ],
+   "p": 15,
+   "note": null,
+   "cols": null,
+   "l": "l6",
+   "hw": true
+  },
+  {
+   "id": "28",
+   "t": "¿Cómo es / son?",
+   "es": "¿Cómo es / son?",
+   "ru": "Допиши окончание прилагательного.",
+   "k": "gap",
+   "items": [
+    "Las casas son [altas].",
+    "Los libros son [interesantes].",
+    "El hotel es [caro].",
+    "La mujer es [joven].",
+    "Las clases son [buenas].",
+    "Pedro y Ana son [pequeños].",
+    "Los problemas son [fáciles].",
+    "Las ciudades son [grandes].",
+    "Las chicas son [guapas]."
+   ],
+   "p": 15,
+   "note": null,
+   "cols": null,
+   "l": "l6",
+   "hw": false
+  },
+  {
+   "id": "29",
+   "t": "Tener",
+   "es": "Poner el verbo tener en la forma adecuada.",
+   "ru": "Поставь tener в нужную форму.",
+   "k": "gap",
+   "items": [
+    "Esta casa [tiene] muchas habitaciones.",
+    "Ustedes [tienen] un piso muy grande.",
+    "Pilar y yo [tenemos] clases particulares de matemáticas.",
+    "Tú [tienes] un buen trabajo.",
+    "Vosotros [tenéis] muchos juguetes.",
+    "Pilar [tiene] cinco años.",
+    "Juan y Carmen [tienen] un coche estupendo.",
+    "Ustedes [tienen] amigos en Chile.",
+    "¿Cuántas clases [tiene] Marisa hoy?",
+    "Vosotros siempre [tenéis] mucho trabajo.",
+    "¿Cuántos años [tiene] (usted)? — Yo [tengo] catorce.",
+    "¿[Tienes] (tú) dinero? — No, no [tengo].",
+    "¿Cuántos años [tiene] Manuel? — Manuel es joven, [tiene] 20 años.",
+    "Yo no [tengo] libros en ruso, sólo en español.",
+    "Mi hermana [tiene] un amigo español.",
+    "Los españoles [tienen] mucha energía.",
+    "(Yo) [Tengo] dos gatos y un perro.",
+    "¿Cuántos libros de gramática [tienes] (tú)?",
+    "Creo que (nosotros) [tenemos] mucho dinero.",
+    "Katia y Miguel [tienen] buena relación.",
+    "Vosotros [tenéis] mi dirección.",
+    "¿(Tú) [Tienes] un lápiz de sobra para mí?",
+    "Mis compañeros [tienen] muchos libros en ruso."
+   ],
+   "p": 15,
+   "note": null,
+   "cols": null,
+   "l": "l6",
+   "hw": false
+  },
+  {
+   "id": "29T",
+   "t": "Таблица: ser, tener, hablar, llamarse",
+   "es": "Completa la tabla.",
+   "ru": "Заполни таблицу спряжений.",
+   "k": "gap",
+   "items": [
+    "ser: yo soy · tú [eres] · él [es] · nosotros somos · vosotros [sois] · ellos [son]",
+    "tener: yo [tengo] · tú tienes · él [tiene] · nosotros [tenemos] · vosotros tenéis · ellos [tienen]",
+    "hablar: yo [hablo] · tú [hablas] · él habla · nosotros hablamos · vosotros [habláis] · ellos [hablan]",
+    "llamarse: yo [me] llamo · tú te [llamas] · él [se llama] · nosotros nos [llamamos] · vosotros [os] llamáis · ellos [se] llaman"
+   ],
+   "p": 15,
+   "note": null,
+   "cols": null,
+   "l": "l6",
+   "hw": false
+  },
+  {
+   "id": "30",
+   "t": "Ser или tener",
+   "es": "Ser o tener.",
+   "ru": "Ser или tener?",
+   "k": "gap",
+   "items": [
+    "Me llamo Patricia y [tengo] 22 años.",
+    "¡Hola! Yo [soy] Alfredo, ¿y tú?",
+    "Mónica no [tiene] 30 años, [tiene] 29.",
+    "Justin y Daniel [son] ingleses.",
+    "Tú y yo [somos] españoles.",
+    "Marga y Luis [tienen] una cafetería en el centro.",
+    "Carolina [es] de Ciudad de México."
+   ],
+   "p": 16,
+   "note": null,
+   "cols": null,
+   "l": "l6",
+   "hw": false
+  },
+  {
+   "id": "32A",
+   "t": "Mucho / poco",
+   "es": "Mucho, a, os, as — poco, a, os, as.",
+   "ru": "Согласуй mucho / poco с существительным.",
+   "k": "gap",
+   "items": [
+    "Tengo [mucho] sueño.",
+    "Clara tiene [muchos] amigos.",
+    "Paco tiene [muchas] ideas.",
+    "Tengo [mucha] sed.",
+    "Yo no hablo [muchos] idiomas.",
+    "Ella no escribe [muchos] mensajes.",
+    "Tengo [mucho] miedo.",
+    "Viajo a [muchos] países.",
+    "Tenemos [muchas] asignaturas este año.",
+    "Tenemos [mucha] prisa.",
+    "Tengo [mucho] frío.",
+    "Comemos [muchas] verduras.",
+    "Tienen [muchos] exámenes.",
+    "Leo [pocas] biografías.",
+    "Veo [pocos] documentales.",
+    "Practico [poco] deporte.",
+    "Tengo [poca] paciencia.",
+    "Tomo [poco] café.",
+    "Escucho [poca] música.",
+    "Camina [pocos] kilómetros al día.",
+    "Tengo [poco] dinero.",
+    "Tengo [pocas] vacaciones.",
+    "Tengo [poco] trabajo.",
+    "Tengo [pocos] alumnos.",
+    "Tengo [poco] tiempo.",
+    "Tengo [pocas] llamadas."
+   ],
+   "p": 17,
+   "note": null,
+   "cols": null,
+   "l": "l7",
+   "hw": false
+  },
+  {
+   "id": "32B",
+   "t": "Mucho / muy",
+   "es": "Mucho / muy.",
+   "ru": "Muy — перед прилагательным и наречием, mucho — с существительным.",
+   "k": "gap",
+   "items": [
+    "Pablo tiene [mucho] trabajo.",
+    "Pablo trabaja [muy] bien.",
+    "Marisa es [muy] simpática.",
+    "Marisa tiene [muchos] amigos.",
+    "La casa tiene [muchas] habitaciones.",
+    "La casa es [muy] grande.",
+    "La tienda es [muy] barata.",
+    "La tienda tiene [muchos] clientes.",
+    "El curso es [muy] aburrido.",
+    "Fernando tiene [mucho] sentido del humor."
+   ],
+   "p": 17,
+   "note": null,
+   "cols": null,
+   "l": "l7",
+   "hw": false
+  },
+  {
+   "id": "32C",
+   "t": "Mucho / poco / muy",
+   "es": "Mucho / poco / muy.",
+   "ru": "Вставь mucho, poco или muy (иногда подходят оба первых).",
+   "k": "gap",
+   "items": [
+    "No tiene [mucho] tiempo libre.",
+    "Camina [mucho/poco].",
+    "Come [mucho/poco].",
+    "Tiene [muchos/pocos] animales.",
+    "Descansa en el campo [muchos/pocos] fines de semana.",
+    "Conoce a [mucha/poca] gente importante.",
+    "Es [muy] ecologista.",
+    "Viaja [mucho/poco] al extranjero.",
+    "Habla [muy] poco.",
+    "Hace [mucho/poco] deporte.",
+    "Es [muy] simpático.",
+    "Le gustan [mucho] las plantas.",
+    "Habla lenguas extranjeras [muy] bien.",
+    "Tiene [mucho/poco] estrés."
+   ],
+   "p": 17,
+   "note": null,
+   "cols": null,
+   "l": "l7",
+   "hw": true
+  },
+  {
+   "id": "33",
+   "t": "Ответь по модели",
+   "es": "Contestar a las preguntas según el modelo: ¿Tiene Ud. amigos? — Sí, tengo muchos amigos. / No, no tengo muchos amigos. Tengo pocos.",
+   "ru": "Ответь по модели. Сверься с образцом.",
+   "k": "open",
+   "items": [
+    [
+     "¿Tiene usted libros españoles?",
+     "Sí, tengo muchos libros españoles. / No, no tengo muchos libros españoles. Tengo pocos."
+    ],
+    [
+     "¿Tienes sed?",
+     "Sí, tengo mucha sed. / No, no tengo mucha sed. Tengo poca."
+    ],
+    [
+     "¿Tenéis diccionarios?",
+     "Sí, tenemos muchos diccionarios. / No, no tenemos muchos diccionarios. Tenemos pocos."
+    ],
+    [
+     "¿Tienen problemas?",
+     "Sí, tienen muchos problemas. / No, no tienen muchos problemas. Tienen pocos."
+    ],
+    [
+     "¿Tenemos dinero?",
+     "Sí, tenemos mucho dinero. / No, no tenemos mucho dinero. Tenemos poco."
+    ],
+    [
+     "¿Tiene Paco socios en Europa?",
+     "Sí, tiene muchos socios en Europa. / No, no tiene muchos socios. Tiene pocos."
+    ],
+    [
+     "¿Tienes amigas en la universidad?",
+     "Sí, tengo muchas amigas en la universidad. / No, no tengo muchas amigas. Tengo pocas."
+    ]
+   ],
+   "p": 18,
+   "note": null,
+   "cols": null,
+   "l": "l7",
+   "hw": true
+  },
+  {
+   "id": "35",
+   "t": "Числа словами",
+   "es": "Escribe los números con letras.",
+   "ru": "Напиши число словами.",
+   "k": "gap",
+   "items": [
+    "21 euros → [veintiún] euros",
+    "10 flores → [diez] flores",
+    "31 días → [treinta y un] días",
+    "49 kilos → [cuarenta y nueve] kilos",
+    "15 escuelas → [quince] escuelas",
+    "51 libros → [cincuenta y un] libros",
+    "25 años → [veinticinco] años",
+    "61 semanas → [sesenta y una] semanas",
+    "67 kilos → [sesenta y siete] kilos",
+    "76 meses → [setenta y seis] meses",
+    "11 estudiantes → [once] estudiantes",
+    "45 kilómetros → [cuarenta y cinco] kilómetros",
+    "34 metros → [treinta y cuatro] metros",
+    "53 años → [cincuenta y tres] años",
+    "91 alumnas → [noventa y una] alumnas",
+    "5 letras → [cinco] letras",
+    "12 alumnos → [doce] alumnos",
+    "88 centímetros → [ochenta y ocho] centímetros",
+    "31 aulas → [treinta y una] aulas",
+    "13 casas → [trece] casas"
+   ],
+   "p": 18,
+   "note": "Uno перед словом м. р. → un (veintiún euros), перед ж. р. → una (treinta y una aulas).",
+   "cols": null,
+   "l": "l7",
+   "hw": false
+  },
+  {
+   "id": "36A",
+   "t": "Para и porque",
+   "es": "Estudio español para… / porque…",
+   "ru": "Para + инфинитив (цель), porque + глагол в форме (причина).",
+   "k": "read",
+   "items": [
+    [
+     "ESTUDIO ESPAÑOL PARA…",
+     "…viajar por España e Hispanoamérica. …hablar con hispanohablantes. …ver las películas de Almodóvar. …leer novelas. …escuchar canciones.",
+     "Учу испанский, чтобы путешествовать, говорить с носителями, смотреть фильмы Альмодовара, читать романы, слушать песни."
+    ],
+    [
+     "ESTUDIO ESPAÑOL PORQUE…",
+     "…quiero estudiar en España. …trabajo en contacto con Hispanoamérica. …paso las vacaciones en Ecuador. …hablo otras lenguas latinas.",
+     "Учу испанский, потому что хочу учиться в Испании, работаю с Латинской Америкой, провожу каникулы в Эквадоре, говорю на других романских языках."
+    ]
+   ],
+   "p": 20,
+   "note": null,
+   "cols": null,
+   "l": "l7",
+   "hw": false
+  },
+  {
+   "id": "36B",
+   "t": "Porque или para",
+   "es": "¿Porque o para?",
+   "ru": "Выбери porque или para.",
+   "k": "choice",
+   "items": [
+    [
+     "…leer periódicos en español.",
+     "porque|para",
+     1
+    ],
+    [
+     "…estudio Comercio Internacional.",
+     "porque|para",
+     0
+    ],
+    [
+     "…hablar con mis amigos irlandeses.",
+     "porque|para",
+     1
+    ],
+    [
+     "…tengo amigos de Sudamérica.",
+     "porque|para",
+     0
+    ],
+    [
+     "…escribir correos a Estados Unidos.",
+     "porque|para",
+     1
+    ],
+    [
+     "…quiero vivir en España.",
+     "porque|para",
+     0
+    ],
+    [
+     "…viajar por Hispanoamérica.",
+     "porque|para",
+     1
+    ],
+    [
+     "…buscar trabajo en Australia.",
+     "porque|para",
+     1
+    ]
+   ],
+   "p": 20,
+   "note": null,
+   "cols": null,
+   "l": "l7",
+   "hw": false
+  },
+  {
+   "id": "37A",
+   "t": "Почему они учат языки",
+   "es": "Relaciona las imágenes con los textos.",
+   "ru": "Прочитай тексты. Дома нужно составить не меньше 8 вопросов к ним.",
+   "k": "read",
+   "items": [
+    [
+     "Texto 1",
+     "Somos ingleses y estudiamos español porque vivimos en Argentina. Los niños hablan, leen y escriben muy bien en inglés y aprenden español y francés en una escuela internacional.",
+     "Мы англичане и учим испанский, потому что живём в Аргентине. Дети хорошо говорят, читают и пишут по-английски и учат испанский и французский в международной школе."
+    ],
+    [
+     "Texto 2",
+     "Yo estudio alemán por mi trabajo. En mi compañía trabajamos con el sector farmacéutico alemán y viajo mucho a Alemania.",
+     "Я учу немецкий из-за работы. Моя компания работает с немецкой фармацевтикой, и я много езжу в Германию."
+    ],
+    [
+     "Texto 3",
+     "Soy alemán. En mi universidad mis compañeros estudian inglés y chino, pero yo estudio francés para buscar trabajo y vivir en Francia, ahora hay mucho trabajo para ingenieros allí.",
+     "Я немец. В моём университете однокурсники учат английский и китайский, а я учу французский, чтобы найти работу и жить во Франции: там сейчас много работы для инженеров."
+    ],
+    [
+     "Texto 4",
+     "Soy brasileña y trabajo en una empresa multinacional. Estudio español porque escribo y leo muchos correos en español. Trabajamos con compañías hispanoamericanas.",
+     "Я бразильянка и работаю в международной компании. Учу испанский, потому что пишу и читаю много писем на испанском. Мы работаем с латиноамериканскими компаниями."
+    ],
+    [
+     "8 вопросов — образец",
+     "¿Dónde viven los ingleses? ¿Por qué estudian español? ¿Qué idiomas aprenden los niños? ¿Dónde estudian los niños? ¿Por qué estudia alemán el autor del texto 2? ¿Adónde viaja mucho? ¿Qué estudia el chico alemán? ¿Para qué estudia francés? ¿Dónde trabaja la chica brasileña? ¿Por qué estudia español?",
+     "Где живут англичане? Почему они учат испанский? Какие языки учат дети? Где учатся дети? Почему автор текста 2 учит немецкий? Куда он часто ездит? Что учит немец? Зачем он учит французский? Где работает бразильянка? Почему она учит испанский?"
+    ]
+   ],
+   "p": 20,
+   "note": null,
+   "cols": null,
+   "l": "l7",
+   "hw": true
+  },
+  {
+   "id": "37B",
+   "t": "Глаголы в текстах",
+   "es": "Aprender / vivir / hablar / trabajar. Leer / escribir / ser / aprender.",
+   "ru": "Вставь глаголы в правильной форме.",
+   "k": "gap",
+   "items": [
+    "[Vivo] en China porque mi papá [trabaja] en una compañía china.",
+    "En la escuela [aprendo] chino e inglés. Pero con mi familia [hablo] en español.",
+    "Nosotras [aprendemos] francés para leer los periódicos franceses, [somos] periodistas y [leemos] prensa internacional en diferentes idiomas.",
+    "También [escribimos] artículos en inglés y español."
+   ],
+   "p": 20,
+   "note": null,
+   "cols": null,
+   "l": "l7",
+   "hw": false
+  },
+  {
+   "id": "38",
+   "t": "Чат Карлоса и Сораи",
+   "es": "Lee este chat entre Carlos (C) y Soraya (S), dos nuevos amigos, e indica a qué persona corresponde cada información.",
+   "ru": "Прочитай чат и реши, о ком каждая фраза. Дома: представить Карлоса и Сораю.",
+   "k": "choice",
+   "items": [
+    [
+     "Vive en Bruselas.",
+     "Carlos|Soraya",
+     0
+    ],
+    [
+     "Es estudiante de cocina.",
+     "Carlos|Soraya",
+     1
+    ],
+    [
+     "Trabaja en una agencia de viajes.",
+     "Carlos|Soraya",
+     0
+    ],
+    [
+     "Habla francés.",
+     "Carlos|Soraya",
+     0
+    ],
+    [
+     "Tiene 21 años.",
+     "Carlos|Soraya",
+     1
+    ],
+    [
+     "Comprende italiano y portugués.",
+     "Carlos|Soraya",
+     0
+    ],
+    [
+     "Vive en Barcelona.",
+     "Carlos|Soraya",
+     1
+    ]
+   ],
+   "p": 21,
+   "note": null,
+   "cols": null,
+   "text": [
+    [
+     "Chat",
+     "Carlos: Hola, ¿cómo te llamas?\nSoraya: Me llamo Soraya. ¿Y tú?\nCarlos: Yo soy Carlos Pedralbes.\nSoraya: ¿Dónde vives, Carlos?\nCarlos: Vivo con mi familia en Bruselas, pero soy mexicano.\nSoraya: Entonces, ¿qué idiomas hablas?\nCarlos: Hablo español, francés e inglés, y comprendo italiano y portugués.\nSoraya: ¡Qué bien! ¿A qué te dedicas?\nCarlos: Pues trabajo en una agencia de viajes. Soy guía turístico. ¿Y tú, estudias o trabajas?\nSoraya: Soy estudiante de cocina y, por las tardes, trabajo de dependienta en una tienda de ropa. ¿Cuántos años tienes, Carlos?\nCarlos: Tengo 29 años. ¿Y tú, cuántos años tienes?\nSoraya: Yo, 21.\nCarlos: ¿Y dónde vives?\nSoraya: Vivo en Barcelona, aunque mi familia vive en Sevilla.\nCarlos: Pues ¡encantado de conocerte!\nSoraya: ¡Igualmente!\nCarlos: ¡Hablamos mañana, Soraya!\nSoraya: Vale. ¡Hasta mañana, Carlos!",
+     "Как тебя зовут? — Сорая. — Я Карлос Педральбес. Он живёт с семьёй в Брюсселе, но он мексиканец; говорит по-испански, по-французски и по-английски, понимает итальянский и португальский; работает в турагентстве гидом. Сорая учится на повара, а по вечерам работает продавщицей в магазине одежды. Карлосу 29, Сорае 21. Она живёт в Барселоне, а её семья — в Севилье."
+    ],
+    [
+     "Образец: представить Карлоса и Сораю",
+     "Este es Carlos Pedralbes. Es mexicano, pero vive con su familia en Bruselas. Habla español, francés e inglés y comprende italiano y portugués. Trabaja en una agencia de viajes, es guía turístico. Tiene 29 años. Esta es Soraya. Es estudiante de cocina y por las tardes trabaja de dependienta en una tienda de ropa. Tiene 21 años. Vive en Barcelona, pero su familia vive en Sevilla.",
+     "Это Карлос Педральбес. Он мексиканец, но живёт с семьёй в Брюсселе… Это Сорая. Она учится на повара…"
+    ]
+   ],
+   "l": "l7",
+   "hw": true
+  },
+  {
+   "id": "39",
+   "t": "Estudiar / hacer / tener",
+   "es": "¿Con qué verbo se usan estas palabras? Algunas pueden ir con más de uno.",
+   "ru": "С каким глаголом это слово?",
+   "k": "choice",
+   "items": [
+    [
+     "coche",
+     "estudiar|hacer|tener",
+     "2"
+    ],
+    [
+     "35 años",
+     "estudiar|hacer|tener",
+     "2"
+    ],
+    [
+     "idiomas",
+     "estudiar|hacer|tener",
+     "0"
+    ],
+    [
+     "yoga",
+     "estudiar|hacer|tener",
+     "1"
+    ],
+    [
+     "teléfono móvil",
+     "estudiar|hacer|tener",
+     "2"
+    ],
+    [
+     "Económicas",
+     "estudiar|hacer|tener",
+     "0"
+    ],
+    [
+     "gimnasia",
+     "estudiar|hacer|tener",
+     "1"
+    ],
+    [
+     "Sociología",
+     "estudiar|hacer|tener",
+     "0"
+    ],
+    [
+     "deporte",
+     "estudiar|hacer|tener",
+     "1"
+    ],
+    [
+     "en la Universidad de Salamanca",
+     "estudiar|hacer|tener",
+     "0"
+    ],
+    [
+     "Derecho",
+     "estudiar|hacer|tener",
+     "0"
+    ],
+    [
+     "muchos amigos",
+     "estudiar|hacer|tener",
+     "2"
+    ],
+    [
+     "japonés",
+     "estudiar|hacer|tener",
+     "0"
+    ],
+    [
+     "mucho trabajo",
+     "estudiar|hacer|tener",
+     "2,1"
+    ],
+    [
+     "Informática",
+     "estudiar|hacer|tener",
+     "0"
+    ]
+   ],
+   "p": 21,
+   "note": null,
+   "cols": null,
+   "l": "l7",
+   "hw": false
+  },
+  {
+   "id": "40",
+   "t": "Эльвира и Фелипе",
+   "es": "Completar las frases sobre Elvira y Felipe con los verbos ser, tener, estudiar, hacer o trabajar.",
+   "ru": "Вставь ser, tener, estudiar, hacer или trabajar.",
+   "k": "gap",
+   "items": [
+    "Elvira [es] economista.",
+    "Elvira [tiene] treinta y cinco años.",
+    "Elvira [trabaja] en una consultoría.",
+    "Elvira [tiene] mucho trabajo.",
+    "Elvira [estudia/habla] inglés y francés.",
+    "Elvira [tiene] dos teléfonos móviles.",
+    "Elvira [tiene] dos coches.",
+    "Elvira [hace] yoga todos los días.",
+    "Felipe [es] estudiante.",
+    "Felipe [tiene] veintidós años.",
+    "Felipe [estudia] Empresariales.",
+    "Felipe [trabaja] de camarero en un restaurante.",
+    "Felipe [estudia] japonés en una academia.",
+    "Felipe [hace] deporte todos los días.",
+    "Felipe [tiene] muchos amigos.",
+    "Felipe [tiene] una moto."
+   ],
+   "p": 22,
+   "note": null,
+   "cols": null,
+   "l": "l7",
+   "hw": false
+  },
+  {
+   "id": "41",
+   "t": "Письмо Анны",
+   "es": "Leer el texto y hacer preguntas.",
+   "ru": "Прочитай письмо и задай к нему вопросы.",
+   "k": "read",
+   "items": [
+    [
+     "Hola a todos",
+     "Somos dos chicas españolas de veinte años. Yo me llamo Anna y mi amiga se llama María. Vivimos en Barcelona, una ciudad fantástica, porque estudiamos Psicología en una universidad de esta ciudad, pero somos del sur de España. Después de las clases, estudiamos francés en una escuela y tenemos muchos amigos franceses. María también estudia japonés y tiene una amiga japonesa que se llama Yoko. Ella tiene veintitrés años y es muy simpática. Creo que es muy interesante estudiar otros idiomas y tener amigos de diferentes culturas. Muchos besos.",
+     "Мы две испанки двадцати лет. Меня зовут Анна, а мою подругу — Мария. Мы живём в Барселоне, потрясающем городе, потому что учимся на психологии в здешнем университете, но мы с юга Испании. После занятий мы учим французский в школе, и у нас много друзей-французов. Мария ещё учит японский, у неё есть подруга-японка Юко. Ей 23 года, она очень милая. По-моему, очень интересно учить другие языки и дружить с людьми разных культур. Целую."
+    ],
+    [
+     "Вопросы — образец",
+     "¿Cuántos años tienen las chicas? ¿Cómo se llaman? ¿Dónde viven? ¿Qué estudian? ¿De dónde son? ¿Qué estudian después de las clases? ¿Qué idioma estudia también María? ¿Cómo se llama su amiga japonesa? ¿Cuántos años tiene Yoko? ¿Cómo es Yoko?",
+     "Сколько лет девушкам? Как их зовут? Где они живут? Что изучают? Откуда они? Что учат после занятий? Какой язык ещё учит Мария? Как зовут её подругу-японку? Сколько лет Юко? Какая она?"
+    ]
+   ],
+   "p": 22,
+   "note": null,
+   "cols": null,
+   "l": "l7",
+   "hw": false
+  },
+  {
+   "id": "42",
+   "t": "Ir + a / en",
+   "es": "Completa con el verbo ir + a / en.",
+   "ru": "Ir + en = транспорт, ir + a = направление, a pie — пешком.",
+   "k": "gap",
+   "items": [
+    "Mi padre y yo [vamos] [en] bicicleta.",
+    "Pedro [va] siempre [a] pie.",
+    "Cuando estoy en el campo, [voy] [a] caballo.",
+    "¿Cómo [van] ustedes [a] trabajar? ¿[En] autobús o [a] pie?",
+    "¿[A] dónde [vas] (tú)? — [Voy] [a] la piscina."
+   ],
+   "p": 22,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "43A",
+   "t": "Текст: жизнь в Мадриде",
+   "es": "Completa el texto.",
+   "ru": "Поставь глаголы в настоящее время.",
+   "k": "gap",
+   "items": [
+    "Yo (trabajar) [trabajo] en una multinacional en Madrid, pero (ser) [soy] venezolana.",
+    "Madrid (ser) [es] una ciudad encantadora. (Tener) [Tiene] un metro muy cómodo y un servicio de autobuses eficiente.",
+    "Para ir al trabajo (coger) [cojo] el metro y el autobús. (Aprovechar) [Aprovecho] el trayecto para leer o redactar el último informe.",
+    "Cuando (llegar) [llego] a la oficina, (tomar) [tomo] una taza de café y después (iniciar) [inicio] las tareas del día.",
+    "Siempre (tener) [tengo] mucho trabajo."
+   ],
+   "p": 22,
+   "note": "Coger — cojo (g → j перед o).",
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "43B",
+   "t": "Текст: два пилота",
+   "es": "Completa el texto.",
+   "ru": "Поставь глаголы в настоящее время.",
+   "k": "gap",
+   "items": [
+    "Él (ser) [es] Francis y yo (llamarse) [me llamo] Hans.",
+    "(Ser) [Somos] amigos. (Trabajar) [Trabajamos] para dos compañías de aviación, Francis en una compañía francesa y yo en una compañía alemana.",
+    "Los dos (ser) [somos] pilotos; él (viajar) [viaja] por toda Europa y yo (ir) [voy] mucho a América Latina.",
+    "(Tener) [Tengo] mucha suerte porque (practicar) [practico] el español y ahora (comprender) [comprendo] casi todo."
+   ],
+   "p": 22,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "44A",
+   "t": "Порядковые: этажи",
+   "es": "Numerales ordinales: ¿En qué piso?",
+   "ru": "На каком этаже? (20 C = 2-й этаж, дверь C)",
+   "k": "gap",
+   "items": [
+    "Antonio Oliva (20 C) vive en el [segundo] piso.",
+    "Las oficinas de Servicios de Gas (110 A) están en el piso [once/undécimo].",
+    "La Sastrería Moderna (100 D) está en la [décima] planta.",
+    "Hay un despacho de abogados (30 D) en el [tercer] piso.",
+    "La familia de Molina Cardoso (120 A) vive en el piso [doce/duodécimo].",
+    "La oficina Salvado (10 A) está en el [primer] piso.",
+    "Las oficinas Hispanosa (140 D) están en el piso [catorce].",
+    "La academia Cervantes (40 B) está en la [cuarta] planta.",
+    "Julia Salinas (70 C) vive en el [séptimo] piso.",
+    "La Editorial Mundisa (90 D) está en el [noveno] piso."
+   ],
+   "p": 23,
+   "note": "Primero → primer, tercero → tercer перед сущ. м. р. После 10 обычно говорят количественными: el piso once.",
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "44B",
+   "t": "Монархи",
+   "es": "Lee los nombres.",
+   "ru": "Как читаются римские цифры у монархов.",
+   "k": "gap",
+   "items": [
+    "Juan Carlos I → Juan Carlos [primero]",
+    "Isabel I → Isabel [primera]",
+    "Alfonso XII → Alfonso [doce]",
+    "Luis XIV → Luis [catorce]",
+    "Iván IV → Iván [cuarto]",
+    "Catalina II → Catalina [segunda]",
+    "Alejandro III → Alejandro [tercero]",
+    "Pío IX → Pío [nono/noveno]",
+    "Carlos V → Carlos [quinto]",
+    "Benedicto XVI → Benedicto [dieciséis]"
+   ],
+   "p": 23,
+   "note": "До десятого — порядковые, дальше — количественные.",
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "50A",
+   "t": "Ser или estar (a)",
+   "es": "Completar las frases ser o estar.",
+   "ru": "Ser — кто / какой по сути, estar — где / в каком состоянии.",
+   "k": "gap",
+   "items": [
+    "¿Quién [es] tu mejor amigo?",
+    "(Yo) [soy] estudiante de español.",
+    "(Tú) [estás] en la clase ahora.",
+    "(Él) [es] profesor de historia.",
+    "(Nosotros) [estamos] cansados después de la lección.",
+    "(Vosotros) [sois] de España, ¿verdad?",
+    "(Ellos) [están] en el parque.",
+    "Usted [es] muy amable.",
+    "Mi casa [está] cerca de la escuela.",
+    "Hoy [es] miércoles.",
+    "¿Dónde [están] tus amigos?"
+   ],
+   "p": 27,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "50B",
+   "t": "Ser или estar (b)",
+   "es": "Completar las frases ser o estar.",
+   "ru": "Ser или estar?",
+   "k": "gap",
+   "items": [
+    "¿[Eres] (tú) de Colombia?",
+    "¿Dónde [están] Natalia y Javier?",
+    "Mi nombre [es] Ignacio.",
+    "[Estamos] (nosotros) bien, gracias.",
+    "Yo [estoy] en Múnich.",
+    "¿De dónde [son] ustedes?",
+    "¿Dónde [está] tu escuela?",
+    "¿Qué tal [está] Elena? — [Está] enferma.",
+    "No, Carlos no [es] de Madrid.",
+    "No comprenden español, [son] japoneses.",
+    "En la foto [estamos] (nosotros) en el aula.",
+    "Teresa [es] portuguesa.",
+    "Lucía [es] muy simpática y buena profesora.",
+    "El chico que [está] aquí [es] mi hijo.",
+    "¿[Está] casada Paula?",
+    "El café [está] rico."
+   ],
+   "p": 27,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "50C",
+   "t": "Ser или estar (c)",
+   "es": "Completar las frases ser o estar.",
+   "ru": "Ser или estar?",
+   "k": "gap",
+   "items": [
+    "El café [está] caliente.",
+    "Yo [estoy] cansado.",
+    "Estas rosas [son] blancas.",
+    "[Estás] guapa con ese sombrero, Lola.",
+    "El libro [es] interesante.",
+    "Paco, hoy no [estás] alegre. ¿Por qué? ¿Qué te pasa?",
+    "¿Dónde [estáis] (vosotros)? — [Estamos] en la biblioteca.",
+    "Carmen [es] guapa como su madre.",
+    "Sevilla [es] la capital de Andalucía. [Está] en el sur del país.",
+    "Estas naranjas [están] riquísimas.",
+    "Como Marcos [es] cirujano, trabaja mucho y está muy ocupado.",
+    "Las frutas [son] buenas para la salud.",
+    "Marta [está] enferma, por eso no [está] en clase.",
+    "Fernando y Carlos [son] profesores.",
+    "Bruno [es] inteligente."
+   ],
+   "p": 27,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "51",
+   "t": "Вопросительные слова",
+   "es": "Preguntas: completa con la palabra interrogativa.",
+   "ru": "Вставь вопросительное слово.",
+   "k": "gap",
+   "items": [
+    "¿De [quién] es el cuaderno?",
+    "¿[Cómo] te llamas?",
+    "¿[Quién] vive aquí?",
+    "¿[Dónde/Cómo] está tu amigo?",
+    "¿En [qué] empresa trabajas?",
+    "¿[Cómo] es en español «привет»?",
+    "¿[Cuál] es tu profesión?",
+    "¿[Quién] es esta chica?",
+    "¿[Cómo/De qué color/Dónde] es el coche de Juan?",
+    "¿[Por qué] está usted cansado?",
+    "¿[Cuántas] chicas estudian en tu grupo?",
+    "¿[Dónde/Cómo] estamos?",
+    "¿Los libros de [qué] escritor lee usted?",
+    "¿[De qué color/De quién/Cómo] son estas rosas?",
+    "¿[Qué] hacéis mañana?",
+    "¿[Cuándo/A qué hora] terminan las clases hoy?",
+    "¿[Cuál] de los dos idiomas es difícil para usted: el inglés o el español?",
+    "¿[Por qué] es importante estudiar idiomas?",
+    "¿En [qué] países tienes amigos?"
+   ],
+   "p": 28,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "53A",
+   "t": "Перевод на испанский",
+   "es": "Traduce al español.",
+   "ru": "Переведи и сравни с образцом.",
+   "k": "open",
+   "items": [
+    [
+     "Где работает твой друг?",
+     "¿Dónde trabaja tu amigo?"
+    ],
+    [
+     "Кто не занят сейчас?",
+     "¿Quién no está ocupado ahora?"
+    ],
+    [
+     "Я из Рима, но живу и учусь во Франции.",
+     "Soy de Roma, pero vivo y estudio en Francia."
+    ],
+    [
+     "Моя подруга отдыхает с друзьями в кафе.",
+     "Mi amiga descansa con sus amigos en la cafetería."
+    ],
+    [
+     "На каких языках ты говоришь?",
+     "¿Qué idiomas hablas?"
+    ],
+    [
+     "Вы говорите по-французски? — Да, но ещё плохо.",
+     "¿Habla usted francés? — Sí, pero todavía mal."
+    ],
+    [
+     "Мы тоже не говорим по-немецки.",
+     "Nosotros tampoco hablamos alemán."
+    ],
+    [
+     "Откуда твой друг? Как его зовут?",
+     "¿De dónde es tu amigo? ¿Cómo se llama?"
+    ],
+    [
+     "Я устала слушать музыку.",
+     "Estoy cansada de escuchar música."
+    ],
+    [
+     "Как поживает твоя семья?",
+     "¿Qué tal está tu familia?"
+    ],
+    [
+     "Педро женат на моей подруге. Её зовут Кармен, и она работает в банке.",
+     "Pedro está casado con mi amiga. Se llama Carmen y trabaja en un banco."
+    ],
+    [
+     "Ты не устал работать?",
+     "¿No estás cansado de trabajar?"
+    ],
+    [
+     "Мы тоже идём сегодня в кино.",
+     "Nosotros también vamos hoy al cine."
+    ],
+    [
+     "Моего друга зовут Хосе, он из Мексики.",
+     "Mi amigo se llama José, es de México."
+    ],
+    [
+     "У тебя есть мой электронный адрес?",
+     "¿Tienes mi correo electrónico?"
+    ],
+    [
+     "На какой улице живёт Ана? — Она живёт на проспекте Флорес.",
+     "¿En qué calle vive Ana? — Vive en la avenida Flores."
+    ],
+    [
+     "Мне 38, и я работаю в фирме моего отца.",
+     "Tengo 38 años y trabajo en la empresa de mi padre."
+    ],
+    [
+     "Как зовут твоего третьего мужа? — Это уже мой четвёртый, его зовут Хайме.",
+     "¿Cómo se llama tu tercer marido? — Ya es el cuarto, se llama Jaime."
+    ],
+    [
+     "Я занимаюсь спортом каждое утро.",
+     "Hago deporte todas las mañanas."
+    ],
+    [
+     "У тебя много друзей? — Много, но все живут в Перу.",
+     "¿Tienes muchos amigos? — Muchos, pero todos viven en Perú."
+    ],
+    [
+     "Чем вы занимаетесь? — Пишу статьи для научного журнала.",
+     "¿A qué se dedica usted? — Escribo artículos para una revista científica."
+    ]
+   ],
+   "p": 29,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "53B",
+   "t": "Перевод текста",
+   "es": "Traduce el texto.",
+   "ru": "Переведи текст про Катрин и сравни с образцом.",
+   "k": "read",
+   "items": [
+    [
+     "Me llamo Catherine",
+     "Me llamo Catherine. Mi apellido es Doré. Tengo 25 años, estoy soltera. Soy de Francia, mi ciudad natal es Burdeos. Ahora vivo en Madrid porque trabajo aquí y estudio en la Universidad de Madrid. Estudio español. El español no es difícil, pero todavía hablo mal español. Como estoy muy ocupada, trabajo mucho y estoy muy cansada, tengo poco tiempo para estudiar. Vivo en casa de mi amiga. Se llama Lolita. Es española y estudia francés. Es una chica muy buena. Hablamos en español. Hago deporte y juego al tenis tres días a la semana.",
+     "Меня зовут Катрин. Моя фамилия Доре. Мне 25 лет, я не замужем. Я из Франции, мой родной город — Бордо. Сейчас я живу в Мадриде, потому что здесь работаю и учусь в Мадридском университете…"
+    ]
+   ],
+   "p": 29,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "56",
+   "t": "Вкусы семьи",
+   "es": "Lee cuáles son los gustos de los miembros de esta familia.",
+   "ru": "Прочитай, что любит каждый член семьи.",
+   "k": "read",
+   "items": [
+    [
+     "La familia",
+     "A mi madre le encanta el cine clásico, las películas en blanco y negro, pero no le gusta verlas en casa, prefiere ir al cine y verlas en versión original. Como es profesora de inglés, no tiene problemas para comprender las películas americanas. También le gusta bastante la música. A veces va con mi hermana Teresa a conciertos, sobre todo cuando son de jazz. Teresa estudia piano, por eso le interesan mucho los conciertos, especialmente los de música clásica. También le gusta el cine, pero prefiere ver películas actuales. A mi padre le encantan los deportes; siempre que puede va a ver partidos de fútbol, de tenis o de baloncesto. También le gusta practicar deporte, pero solo correr y nadar. A mi hermano Pedro no le interesan demasiado los deportes. A él le gusta ir a museos y exposiciones de arte moderno o antiguo. Cuando va a exposiciones fotográficas, mi hermana lo acompaña porque le gusta mucho la fotografía.",
+     "Мама обожает классическое кино и чёрно-белые фильмы, но смотрит их в кинотеатре в оригинале. Ей нравится музыка, особенно джаз. Сестра Тереза учится играть на фортепиано, любит концерты классической музыки и современное кино. Папа обожает спорт: футбол, теннис, баскетбол, сам бегает и плавает. Брат Педро любит музеи и выставки, а на фотовыставки с ним ходит сестра."
+    ],
+    [
+     "Таблица — образец",
+     "Madre: el cine clásico, la música, el jazz. Padre: los deportes, correr, nadar. Hermana (Teresa): el piano, los conciertos de música clásica, el cine actual, la fotografía. Hermano (Pedro): los museos, las exposiciones de arte.",
+     "Мама: классическое кино, музыка. Папа: спорт. Сестра: фортепиано, концерты, кино, фото. Брат: музеи и выставки."
+    ]
+   ],
+   "p": 31,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "57",
+   "t": "Para presentarte",
+   "es": "Para presentarte: contesta a las preguntas.",
+   "ru": "Ответь о себе. Образцы ответов — во вкладке «Sobre mí».",
+   "k": "open",
+   "items": [
+    [
+     "¿Cuál es tu nombre?",
+     "Mi nombre es Anna."
+    ],
+    [
+     "¿Cuál es tu apellido?",
+     "Mi apellido es Dolgova."
+    ],
+    [
+     "¿Cuál es tu nacionalidad? / ¿De qué nacionalidad eres?",
+     "Soy rusa."
+    ],
+    [
+     "¿De qué país eres?",
+     "Soy de Rusia."
+    ],
+    [
+     "¿Cuál es tu ciudad natal?",
+     "Soy de la región de Krasnodar."
+    ],
+    [
+     "¿En qué ciudad vives?",
+     "Vivo en San Petersburgo, en Peterhof."
+    ],
+    [
+     "¿Cuál es tu dirección?",
+     "Vivo en la residencia de la universidad, en Peterhof."
+    ],
+    [
+     "¿Cuál es tu número de teléfono?",
+     "Mi número de teléfono es…"
+    ],
+    [
+     "¿Cuál es tu edad? / ¿Cuántos años tienes?",
+     "Tengo … años."
+    ],
+    [
+     "¿Cuál es tu estado civil?",
+     "Estoy soltera."
+    ],
+    [
+     "¿Dónde estudias o trabajas? ¿A qué te dedicas?",
+     "Soy estudiante. Estudio en la Universidad Estatal de San Petersburgo."
+    ],
+    [
+     "¿Qué carrera estudias?",
+     "Estudio Gestión (Management) en la Escuela Superior de Gestión."
+    ],
+    [
+     "¿Cuántos idiomas hablas?",
+     "Hablo ruso e inglés, y estudio español."
+    ],
+    [
+     "¿Qué idiomas estudias en la universidad? ¿Crees que es importante estudiar idiomas extranjeros?",
+     "Estudio inglés y español. Creo que es muy importante estudiar idiomas extranjeros."
+    ],
+    [
+     "¿Qué haces en las clases de español?",
+     "Leemos, escribimos, escuchamos y hablamos mucho."
+    ],
+    [
+     "¿A qué eres aficionada? ¿Cómo pasas tu tiempo libre?",
+     "Me gusta leer, escuchar música, hacer yoga, ver series y viajar."
+    ]
+   ],
+   "p": 31,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "fam",
+   "t": "Семья",
+   "es": "Completa: el hombre casado con mi hija es mi…",
+   "ru": "Кто это тебе?",
+   "k": "gap",
+   "items": [
+    "El hombre casado con mi hija es mi [yerno].",
+    "Los hijos de mi tía son mis [primos].",
+    "El padre de mi padre es mi [abuelo].",
+    "El marido de mi hermana es mi [cuñado].",
+    "La madre de mi marido es mi [suegra].",
+    "El hermano de mi padre es mi [tío].",
+    "Mi padre de bautismo es mi [padrino]."
+   ],
+   "p": 31,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "59",
+   "t": "¿Quién es quién?",
+   "es": "Completa el texto: Javier presenta su familia a Raúl.",
+   "ru": "Хавьер знакомит Рауля с семьёй. Дополни.",
+   "k": "gap",
+   "items": [
+    "Raúl, mira, te presento a Laura, Laura es mi [mujer/esposa];",
+    "Carmencita, María y Raquel son mis [hijas];",
+    "Juan es el [marido/esposo] de Carmencita; es mi [yerno];",
+    "Carlos es el [novio/pareja] de María.",
+    "Felipe es mi [yerno] también, es el [marido/esposo] de Raquel.",
+    "Y por último, Beatriz, mi [nieta].",
+    "En dos meses, Raquel va a tener un [niño/hijo] o una [niña/hija] y Laura y yo otro [nieto] u otra [nieta]."
+   ],
+   "p": 33,
+   "note": null,
+   "cols": null,
+   "text": [
+    [
+     "Texto",
+     "Javier y Laura son marido y mujer desde hace unos treinta años. Tienen tres hijas: Carmencita, María y Raquel. Carmencita está casada con Juan, un guapo abogado de Madrid. Tienen una hija, Beatriz, de dieciséis años. María está soltera, pero vive con Carlos; no tienen hijos. Raquel está casada también. Su marido, Felipe, es hermano de Juan, el marido de Carmencita. Felipe es de Extremadura pero vive en Barcelona desde hace muchos años. Trabaja en una editorial muy importante. Raquel está embarazada y va a tener al niño o la niña, no lo saben, dentro de dos meses. Hoy es el cumpleaños de Javier y toda la familia está reunida para comer. En la comida está también Raúl, un compañero de trabajo de Javier.",
+     "Хавьер и Лаура женаты лет тридцать, у них три дочери. Карменсита замужем за Хуаном, у них дочь Беатрис. Мария не замужем, живёт с Карлосом. Муж Ракель — Фелипе, брат Хуана. Ракель ждёт ребёнка. Сегодня день рождения Хавьера, вся семья в сборе, пришёл и его коллега Рауль."
+    ]
+   ],
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "60A",
+   "t": "Притяжательные",
+   "es": "Completa con el posesivo correspondiente.",
+   "ru": "Вставь притяжательное.",
+   "k": "gap",
+   "items": [
+    "pantalones (yo) → [mis] pantalones",
+    "padres (nosotros) → [nuestros] padres",
+    "amigas (vosotros) → [vuestras] amigas",
+    "alumnos (él) → [sus] alumnos",
+    "trabajo (yo) → [mi] trabajo",
+    "pasaporte (usted) → [su] pasaporte",
+    "piso (ella) → [su] piso",
+    "país (tú) → [tu] país",
+    "problemas (vosotras) → [vuestros] problemas",
+    "llaves (ellos) → [sus] llaves",
+    "revista (tú) → [tu] revista",
+    "primas (yo) → [mis] primas",
+    "profesor (ella) → [su] profesor",
+    "gafas (ustedes) → [sus] gafas"
+   ],
+   "p": 34,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "60B",
+   "t": "Кто кому кто",
+   "es": "Paula es mi madre. Yo soy su hijo.",
+   "ru": "Переверни родство.",
+   "k": "gap",
+   "items": [
+    "Miguel es el hijo de José. José es [su padre].",
+    "Tú eres mi sobrino. Yo soy [tu tío/tu tía].",
+    "Vosotros sois sus nietos. Ellos son [vuestros abuelos].",
+    "Ella es mi suegra. Yo soy [su yerno/su nuera].",
+    "Luis y María son primos de Ana. Ana es [su prima].",
+    "Pedro es el marido de Elena. Elena es [su mujer/su esposa].",
+    "Ella es la mujer del hijo de Pepe. Pepe es [su suegro].",
+    "Yo soy tu hermano. Tú eres [mi hermano/mi hermana].",
+    "Nosotros somos sus sobrinos. Ellos son [nuestros tíos]."
+   ],
+   "p": 34,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "61",
+   "t": "Ударные или безударные",
+   "es": "Posesivos tónicos o átonos. Marca la forma correcta.",
+   "ru": "Выбери правильную форму.",
+   "k": "choice",
+   "items": [
+    [
+     "¿Dónde están ___ padres?",
+     "tus|tuyos",
+     0
+    ],
+    [
+     "¿De quién es este teléfono? Es ___.",
+     "su|suyo",
+     1
+    ],
+    [
+     "Tengo una cosa ___ en mi casa.",
+     "tu|tuya",
+     1
+    ],
+    [
+     "No me gusta esa costumbre ___.",
+     "tu|tuya",
+     1
+    ],
+    [
+     "¿Cómo está ___ abuelo?",
+     "tu|tuyo",
+     0
+    ],
+    [
+     "No encuentro a ___ perro.",
+     "mi|mío",
+     0
+    ]
+   ],
+   "p": 34,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "62",
+   "t": "¿De quién es?",
+   "es": "¿De quién es…? Responde como en el ejemplo: ¿De quién es este coche? — Es suyo (de ellos).",
+   "ru": "Ответь: чьё это?",
+   "k": "gap",
+   "items": [
+    "¿De quién es esa moto? (yo) → [Es mía]",
+    "¿De quién son estos pantalones? (de mi hermana) → [Son suyos]",
+    "¿De quién es este niño? (de Luis y Clara) → [Es suyo]",
+    "¿De quién son esas entradas de cine? (de vosotros) → [Son vuestras]",
+    "¿De quién es este bocadillo? (tú) → [Es tuyo]",
+    "¿De quién es este bolígrafo? (de usted) → [Es suyo]",
+    "¿De quién son aquellos libros? (de nosotras) → [Son nuestros]",
+    "¿De quién es este jersey? (de la profesora) → [Es suyo]"
+   ],
+   "p": 34,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "63",
+   "t": "Mi или mío",
+   "es": "Completar con mi, tu, su… o mío, tuyo, suyo…",
+   "ru": "Безударное перед сущ., ударное — после.",
+   "k": "gap",
+   "items": [
+    "El hombre alto es [mi/su/tu] padre.",
+    "Tengo dos libros [tuyos/suyos].",
+    "Un amigo [mío] habla chino perfectamente.",
+    "Rocío me comenta que una prima [suya] vive en Colombia.",
+    "Voy al concierto con Andrés y [su] novia.",
+    "—¿Quién es Elisa? —Una prima [mía/suya].",
+    "—Necesito escribir una carta. —Usa [mi] ordenador. Ahora no lo necesito.",
+    "Amparo, yo y dos amigos [míos] queremos ir a Grecia.",
+    "¿Dónde podemos guardar [nuestra] ropa, Adela?",
+    "Mi madre tiene unas fotos [vuestras], de ti y de Alfonso."
+   ],
+   "p": 34,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "64",
+   "t": "El mío, el tuyo",
+   "es": "Completar con artículo + mío, tuyo, suyo…",
+   "ru": "Артикль + ударное притяжательное.",
+   "k": "gap",
+   "items": [
+    "—¿Es este tu abrigo? —No, [el mío] es gris.",
+    "—¿Son esas las fotos de Carlos? —No, [las suyas] son en color.",
+    "—¿Nos prestas el coche? —[El mío/El nuestro] está averiado.",
+    "—¿Son de Andrés esos dibujos? —No, [los suyos] son mejores.",
+    "—¿Es nuestra la habitación 10? —No, [la vuestra] es la 30.",
+    "—Mi madre es de Zamora. ¿Y [la tuya]? —[La mía] es de Ávila.",
+    "—¿Me prestas la bici? —¿Dónde está [la tuya]?",
+    "Este no es el abrigo de Inés. [El suyo] es negro.",
+    "—Mira. El perro de Jorge. —No, [el suyo] es más grande.",
+    "—¿Es esa vuestra profesora? —No, [la nuestra] es rubia."
+   ],
+   "p": 35,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "65",
+   "t": "Притяжательные: всё вместе",
+   "es": "Completar con los posesivos.",
+   "ru": "Вставь притяжательное.",
+   "k": "gap",
+   "items": [
+    "¿Cuál es [tu] color favorito, Berta?",
+    "Mi amigo y yo estudiamos español. Es [nuestro] idioma preferido.",
+    "La Sra. Valverde y [sus] hijos son simpáticos.",
+    "¿Dónde están Sol y Rocío? — En [su] casa.",
+    "Jorge, Juan, ¿dónde están [vuestros] libros?",
+    "[Tus] padres, Verónica, son muy simpáticos.",
+    "¿Cuáles son [sus] libros preferidos, señor López?",
+    "Chicos, ¿cómo se llama [vuestra] profesora?",
+    "Esta bolsa no es mía. ¿Es [tuya], Amparo?",
+    "Mi ciudad es grande y bonita, ¿y [la tuya], Manuel?",
+    "¿Es vuestro este coche? — No, [el nuestro] es más grande.",
+    "Mi deporte preferido es el tenis. ¿Y [el suyo], Sr. López? — [El mío] es el esquí.",
+    "¿Son los padres de Pedro? — No, [los suyos] son más jóvenes.",
+    "¿Son de ustedes estos paraguas? — Sí, son [nuestros].",
+    "Marta, un amigo [mío] estudia conmigo en la uni."
+   ],
+   "p": 35,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "66A",
+   "t": "e → ie",
+   "es": "Verbos con cambio e → ie.",
+   "ru": "Поставь глагол: e → ie (кроме nosotros, vosotros).",
+   "k": "gap",
+   "items": [
+    "Este año yo no (pensar) [pienso] ir de vacaciones.",
+    "Los Juegos Olímpicos (comenzar) [comienzan] en junio.",
+    "El camarero (cerrar) [cierra] el restaurante.",
+    "El equipo A (perder) [pierde] por dos a cero.",
+    "Ustedes (defender) [defienden] sus intereses.",
+    "Yo no (entender) [entiendo] este problema."
+   ],
+   "p": 36,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "66B",
+   "t": "o → ue",
+   "es": "Verbos con cambio o → ue.",
+   "ru": "Поставь глагол: o → ue (jugar: u → ue).",
+   "k": "gap",
+   "items": [
+    "Mi abuelo siempre (contar) [cuenta] muchas historias.",
+    "Mis hermanos (jugar) [juegan] al fútbol.",
+    "Yo no (recordar) [recuerdo] la fecha de su cumpleaños.",
+    "Yo no (encontrar) [encuentro] mis llaves.",
+    "Gloria y yo (volver) [volvemos] dentro de una hora.",
+    "Vosotros no (dormir) [dormís] muy bien."
+   ],
+   "p": 36,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  },
+  {
+   "id": "66C",
+   "t": "Всё вместе",
+   "es": "Pon los verbos en presente.",
+   "ru": "Смешанная тренировка.",
+   "k": "gap",
+   "items": [
+    "¿Cuándo (empezar) [empiezan] las clases? — No (recordar, yo) [recuerdo].",
+    "¿(Dormir, vosotros) [Dormís] hoy aquí? — Nosotros no, pero ellos sí (dormir) [duermen] aquí.",
+    "Yo no (entender) [entiendo] nada. Y tú, ¿entiendes las explicaciones?",
+    "Daniel (contar) [cuenta] historias muy interesantes de su país.",
+    "¿Cuándo (volver, vosotros) [volvéis]?",
+    "¿(Pensar) [Piensa] usted ir al cine?",
+    "¿(Cerrar, yo) [Cierro] las ventanas?",
+    "Siempre que jugamos con ellos al fútbol (perder, nosotros) [perdemos].",
+    "¿(Poder, yo) [Puedo] abrir la ventana? — Sí, claro.",
+    "No me gustan mucho los deportes, sólo (jugar) [juego] al tenis.",
+    "Esta noche (jugar) [juega/juegan] Real Madrid con Atlético."
+   ],
+   "p": 36,
+   "note": null,
+   "cols": null,
+   "l": "next",
+   "hw": false
+  }
+ ]
+}

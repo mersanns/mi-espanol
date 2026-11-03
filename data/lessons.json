@@ -1,0 +1,302 @@
+{
+ "lessons": [
+  {
+   "id": "l1",
+   "d": "15.09",
+   "t": "Фонетика, артикль, род и число, местоимения, ser",
+   "cls": [
+    "Фонетика",
+    "Артикли el / la / los / las, un / una",
+    "Род существительных (стр. 3)",
+    "Мн. число (стр. 4)",
+    "Личные местоимения",
+    "Ser (стр. 5)"
+   ],
+   "hw": [
+    "Фонетические упражнения 1–6, слова «аудирование 2»",
+    "Упр. 2, 4B",
+    "Учить слова, местоимения, ser"
+   ],
+   "ex": [
+    "1",
+    "2",
+    "3",
+    "4A",
+    "4B",
+    "4C",
+    "5"
+   ],
+   "gram": [
+    "art",
+    "plural",
+    "ser"
+   ],
+   "decks": [
+    "nouns"
+   ]
+  },
+  {
+   "id": "l2",
+   "d": "21.09",
+   "t": "Ser, вопросы ¿qué? ¿quién?, предлог de",
+   "cls": [
+    "Marta es estudiante. ¿Es Marta estudiante? — Sí / No…",
+    "¿Qué es? — Es un lápiz. ¿Qué es Paco? — профессия",
+    "¿Quién es este chico? — Es Paco",
+    "¿Qué + сущ.? — ¿qué ciudad?",
+    "DE: родительный падеж и «откуда»: ¿De qué país eres? — Soy de Rusia"
+   ],
+   "hw": [
+    "Пословицы, аудирование «abecedario» (control de semestre)",
+    "Dictado léxico: существительные, род, число, артикль (стр. 1, упр. 1, 2, 3, 4B)",
+    "Упр. 6A"
+   ],
+   "ex": [
+    "6A",
+    "7"
+   ],
+   "gram": [
+    "ser",
+    "qw"
+   ],
+   "decks": [
+    "nouns",
+    "qw"
+   ]
+  },
+  {
+   "id": "l3",
+   "d": "29.09",
+   "t": "Страны и национальности, глаголы на -ar, ¿dónde?",
+   "cls": [
+    "Nacionalidades, países (стр. 6)",
+    "San Petersburgo es una ciudad rusa. Madrid y Valencia son ciudades españolas",
+    "Спряжение -ar: cantar, trabajar, descansar, estudiar",
+    "¿Dónde estudias? — Estudio en la Universidad de San Petersburgo",
+    "¿Qué carrera estudias? — ADE",
+    "hablar con / de / en"
+   ],
+   "hw": [
+    "Учить страны и прилагательные (control de semestre)",
+    "Упр. 8, 9, 10"
+   ],
+   "ex": [
+    "8",
+    "9",
+    "11A"
+   ],
+   "gram": [
+    "nat",
+    "regular"
+   ],
+   "decks": [
+    "countries",
+    "nat",
+    "cities"
+   ]
+  },
+  {
+   "id": "l4",
+   "d": "06.10",
+   "t": "Llamarse, знакомство, предлоги de / a, правильные глаголы",
+   "cls": [
+    "Llamarse: me llamo, te llamas…",
+    "Feria internacional de turismo",
+    "Saludar / despedirse (стр. 11)",
+    "DE и A",
+    "Правильные глаголы cantar / comer / vivir"
+   ],
+   "hw": [
+    "Упр. 11B, C",
+    "Dictado léxico (страны, национальности) — control de semestre",
+    "Упр. 14A, B (llamarse)",
+    "Упр. 16B — записать аудирование",
+    "Упр. 22A"
+   ],
+   "ex": [
+    "11B",
+    "11C",
+    "12",
+    "13",
+    "14A",
+    "14B",
+    "15",
+    "16",
+    "22A"
+   ],
+   "gram": [
+    "llamarse",
+    "regular",
+    "prep"
+   ],
+   "decks": [
+    "phrases",
+    "countries",
+    "nat"
+   ]
+  },
+  {
+   "id": "l5",
+   "d": "13.10",
+   "t": "Профессии, ¿a qué te dedicas?, ¿por qué? / porque",
+   "cls": [
+    "Profesiones",
+    "¿A qué te dedicas? ¿Qué es Pedro? — Es médico",
+    "Pedro trabaja de / como médico",
+    "¿Dónde trabaja? Correos, periódico / revista",
+    "¿Por qué? — porque"
+   ],
+   "hw": [
+    "Упр. 18 (аудирование), 21A, B, C, 23A"
+   ],
+   "ex": [
+    "17",
+    "19",
+    "20",
+    "21A",
+    "22B",
+    "23A",
+    "23B"
+   ],
+   "gram": [
+    "regular",
+    "porque"
+   ],
+   "decks": [
+    "prof",
+    "things"
+   ]
+  },
+  {
+   "id": "l6",
+   "d": "20.10",
+   "t": "También / tampoco, прилагательные, цвета, tener",
+   "cls": [
+    "También: Yo también soy de Moscú",
+    "Tampoco: Yo tampoco soy española",
+    "Adjetivos: ¿Cómo es?",
+    "Colores: ¿De qué color?",
+    "Tener"
+   ],
+   "hw": [
+    "Упр. 25, 27",
+    "Control de semestre: глаголы, вопросы, профессии"
+   ],
+   "ex": [
+    "25",
+    "26",
+    "27A",
+    "27B",
+    "28",
+    "29",
+    "29T",
+    "30"
+   ],
+   "gram": [
+    "tambien",
+    "adj",
+    "tener"
+   ],
+   "decks": [
+    "colors",
+    "tener",
+    "prof",
+    "qw"
+   ]
+  },
+  {
+   "id": "l7",
+   "d": "27.10",
+   "t": "¿Cuánto?, mucho / poco / muy, числа, querer, ver, por / para",
+   "cls": [
+    "¿Cuántos años tienes? ¿Cuántas clases tenéis hoy?",
+    "mucho / poco / muy",
+    "Numerales cardinales",
+    "Querer, ver",
+    "¿Por qué? / ¿Para qué?: Estudio idiomas para viajar"
+   ],
+   "hw": [
+    "Упр. 24 (аудирование), 32C, 33",
+    "Упр. 37A — составить не меньше 8 вопросов",
+    "Упр. 38 — представить Карлоса и Сораю"
+   ],
+   "ex": [
+    "32A",
+    "32B",
+    "32C",
+    "33",
+    "35",
+    "36A",
+    "36B",
+    "37A",
+    "37B",
+    "38",
+    "39",
+    "40",
+    "41"
+   ],
+   "gram": [
+    "tener",
+    "numbers",
+    "porque",
+    "irregular"
+   ],
+   "decks": [
+    "numbers",
+    "verbs"
+   ]
+  },
+  {
+   "id": "next",
+   "d": "дальше",
+   "t": "Что ждёт дальше по тетради",
+   "cls": [
+    "Ir + a / en",
+    "Порядковые числительные",
+    "Ser и estar",
+    "Вопросы",
+    "Семья",
+    "Притяжательные",
+    "Глаголы с изменением корня"
+   ],
+   "hw": [],
+   "ex": [
+    "42",
+    "43A",
+    "43B",
+    "44A",
+    "44B",
+    "50A",
+    "50B",
+    "50C",
+    "51",
+    "53A",
+    "53B",
+    "56",
+    "57",
+    "fam",
+    "59",
+    "60A",
+    "60B",
+    "61",
+    "62",
+    "63",
+    "64",
+    "65",
+    "66A",
+    "66B",
+    "66C"
+   ],
+   "gram": [
+    "ir",
+    "serestar",
+    "pos",
+    "irregular"
+   ],
+   "decks": [
+    "family",
+    "days"
+   ]
+  }
+ ]
+}

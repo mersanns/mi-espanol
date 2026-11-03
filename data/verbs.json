@@ -1,0 +1,1400 @@
+{
+ "verbs": [
+  {
+   "v": "ser",
+   "k": "irr",
+   "ru": "быть (постоянное)"
+  },
+  {
+   "v": "estar",
+   "k": "irr",
+   "ru": "находиться; быть (состояние)"
+  },
+  {
+   "v": "tener",
+   "k": "irr",
+   "ru": "иметь"
+  },
+  {
+   "v": "hacer",
+   "k": "irr",
+   "ru": "делать"
+  },
+  {
+   "v": "ir",
+   "k": "irr",
+   "ru": "идти, ехать"
+  },
+  {
+   "v": "ver",
+   "k": "irr",
+   "ru": "видеть"
+  },
+  {
+   "v": "dar",
+   "k": "irr",
+   "ru": "давать"
+  },
+  {
+   "v": "saber",
+   "k": "irr",
+   "ru": "знать (факт), уметь"
+  },
+  {
+   "v": "poner",
+   "k": "irr",
+   "ru": "класть, ставить"
+  },
+  {
+   "v": "salir",
+   "k": "irr",
+   "ru": "выходить"
+  },
+  {
+   "v": "venir",
+   "k": "irr",
+   "ru": "приходить"
+  },
+  {
+   "v": "decir",
+   "k": "irr",
+   "ru": "говорить, сказать"
+  },
+  {
+   "v": "traer",
+   "k": "irr",
+   "ru": "приносить"
+  },
+  {
+   "v": "oír",
+   "k": "irr",
+   "ru": "слышать"
+  },
+  {
+   "v": "seguir",
+   "k": "irr",
+   "ru": "следовать; продолжать"
+  },
+  {
+   "v": "conocer",
+   "k": "zc",
+   "ru": "знать (человека, место)"
+  },
+  {
+   "v": "poder",
+   "k": "ue",
+   "ru": "мочь"
+  },
+  {
+   "v": "querer",
+   "k": "ie",
+   "ru": "хотеть; любить"
+  },
+  {
+   "v": "pensar",
+   "k": "ie",
+   "ru": "думать"
+  },
+  {
+   "v": "empezar",
+   "k": "ie",
+   "ru": "начинать"
+  },
+  {
+   "v": "entender",
+   "k": "ie",
+   "ru": "понимать"
+  },
+  {
+   "v": "sentir",
+   "k": "ie",
+   "ru": "чувствовать"
+  },
+  {
+   "v": "volver",
+   "k": "ue",
+   "ru": "возвращаться"
+  },
+  {
+   "v": "encontrar",
+   "k": "ue",
+   "ru": "находить"
+  },
+  {
+   "v": "dormir",
+   "k": "ue",
+   "ru": "спать"
+  },
+  {
+   "v": "contar",
+   "k": "ue",
+   "ru": "считать; рассказывать"
+  },
+  {
+   "v": "jugar",
+   "k": "ue",
+   "ru": "играть"
+  },
+  {
+   "v": "pedir",
+   "k": "i",
+   "ru": "просить; заказывать"
+  },
+  {
+   "v": "repetir",
+   "k": "i",
+   "ru": "повторять"
+  },
+  {
+   "v": "hablar",
+   "k": "reg",
+   "ru": "говорить"
+  },
+  {
+   "v": "trabajar",
+   "k": "reg",
+   "ru": "работать"
+  },
+  {
+   "v": "estudiar",
+   "k": "reg",
+   "ru": "учиться, изучать"
+  },
+  {
+   "v": "viajar",
+   "k": "reg",
+   "ru": "путешествовать"
+  },
+  {
+   "v": "pasar",
+   "k": "reg",
+   "ru": "проводить (время)"
+  },
+  {
+   "v": "escuchar",
+   "k": "reg",
+   "ru": "слушать"
+  },
+  {
+   "v": "preparar",
+   "k": "reg",
+   "ru": "готовить"
+  },
+  {
+   "v": "visitar",
+   "k": "reg",
+   "ru": "посещать"
+  },
+  {
+   "v": "presentar",
+   "k": "reg",
+   "ru": "представлять"
+  },
+  {
+   "v": "saludar",
+   "k": "reg",
+   "ru": "здороваться"
+  },
+  {
+   "v": "cantar",
+   "k": "reg",
+   "ru": "петь"
+  },
+  {
+   "v": "bailar",
+   "k": "reg",
+   "ru": "танцевать"
+  },
+  {
+   "v": "cocinar",
+   "k": "reg",
+   "ru": "готовить (еду)"
+  },
+  {
+   "v": "llamar",
+   "k": "reg",
+   "ru": "звать; звонить"
+  },
+  {
+   "v": "llegar",
+   "k": "reg",
+   "ru": "приходить, прибывать"
+  },
+  {
+   "v": "mirar",
+   "k": "reg",
+   "ru": "смотреть"
+  },
+  {
+   "v": "buscar",
+   "k": "reg",
+   "ru": "искать"
+  },
+  {
+   "v": "llevar",
+   "k": "reg",
+   "ru": "носить; везти"
+  },
+  {
+   "v": "dejar",
+   "k": "reg",
+   "ru": "оставлять; позволять"
+  },
+  {
+   "v": "esperar",
+   "k": "reg",
+   "ru": "ждать; надеяться"
+  },
+  {
+   "v": "necesitar",
+   "k": "reg",
+   "ru": "нуждаться"
+  },
+  {
+   "v": "ayudar",
+   "k": "reg",
+   "ru": "помогать"
+  },
+  {
+   "v": "comprar",
+   "k": "reg",
+   "ru": "покупать"
+  },
+  {
+   "v": "tomar",
+   "k": "reg",
+   "ru": "брать; пить"
+  },
+  {
+   "v": "entrar",
+   "k": "reg",
+   "ru": "входить"
+  },
+  {
+   "v": "terminar",
+   "k": "reg",
+   "ru": "заканчивать"
+  },
+  {
+   "v": "descansar",
+   "k": "reg",
+   "ru": "отдыхать"
+  },
+  {
+   "v": "fumar",
+   "k": "reg",
+   "ru": "курить"
+  },
+  {
+   "v": "comer",
+   "k": "reg",
+   "ru": "есть, кушать"
+  },
+  {
+   "v": "beber",
+   "k": "reg",
+   "ru": "пить"
+  },
+  {
+   "v": "leer",
+   "k": "reg",
+   "ru": "читать"
+  },
+  {
+   "v": "aprender",
+   "k": "reg",
+   "ru": "учить, учиться"
+  },
+  {
+   "v": "vender",
+   "k": "reg",
+   "ru": "продавать"
+  },
+  {
+   "v": "creer",
+   "k": "reg",
+   "ru": "верить; думать"
+  },
+  {
+   "v": "correr",
+   "k": "reg",
+   "ru": "бегать"
+  },
+  {
+   "v": "responder",
+   "k": "reg",
+   "ru": "отвечать"
+  },
+  {
+   "v": "comprender",
+   "k": "reg",
+   "ru": "понимать"
+  },
+  {
+   "v": "deber",
+   "k": "reg",
+   "ru": "быть должным"
+  },
+  {
+   "v": "vivir",
+   "k": "reg",
+   "ru": "жить"
+  },
+  {
+   "v": "escribir",
+   "k": "reg",
+   "ru": "писать"
+  },
+  {
+   "v": "abrir",
+   "k": "reg",
+   "ru": "открывать"
+  },
+  {
+   "v": "recibir",
+   "k": "reg",
+   "ru": "получать"
+  },
+  {
+   "v": "decidir",
+   "k": "reg",
+   "ru": "решать"
+  },
+  {
+   "v": "subir",
+   "k": "reg",
+   "ru": "подниматься; загружать"
+  },
+  {
+   "v": "compartir",
+   "k": "reg",
+   "ru": "делиться"
+  },
+  {
+   "v": "permitir",
+   "k": "reg",
+   "ru": "разрешать"
+  },
+  {
+   "v": "asistir",
+   "k": "reg",
+   "ru": "посещать (занятия)"
+  },
+  {
+   "v": "llamarse",
+   "k": "refl",
+   "ru": "называться"
+  },
+  {
+   "v": "levantarse",
+   "k": "refl",
+   "ru": "вставать"
+  },
+  {
+   "v": "ducharse",
+   "k": "refl",
+   "ru": "принимать душ"
+  },
+  {
+   "v": "despertarse",
+   "k": "refl-ie",
+   "ru": "просыпаться"
+  },
+  {
+   "v": "acostarse",
+   "k": "refl-ue",
+   "ru": "ложиться спать"
+  },
+  {
+   "v": "sentarse",
+   "k": "refl-ie",
+   "ru": "садиться"
+  },
+  {
+   "v": "vestirse",
+   "k": "refl-i",
+   "ru": "одеваться"
+  },
+  {
+   "v": "haber",
+   "k": "irr",
+   "ru": "быть, иметься"
+  },
+  {
+   "v": "preferir",
+   "k": "ie",
+   "ru": "предпочитать"
+  },
+  {
+   "v": "enseñar",
+   "k": "reg",
+   "ru": "учить, показывать"
+  },
+  {
+   "v": "nadar",
+   "k": "reg",
+   "ru": "плавать"
+  },
+  {
+   "v": "andar",
+   "k": "reg",
+   "ru": "ходить"
+  },
+  {
+   "v": "caminar",
+   "k": "reg",
+   "ru": "гулять, ходить пешком"
+  },
+  {
+   "v": "conducir",
+   "k": "zc",
+   "ru": "водить машину"
+  },
+  {
+   "v": "pagar",
+   "k": "reg",
+   "ru": "платить"
+  },
+  {
+   "v": "limpiar",
+   "k": "reg",
+   "ru": "убирать"
+  },
+  {
+   "v": "lavar",
+   "k": "reg",
+   "ru": "мыть"
+  },
+  {
+   "v": "preguntar",
+   "k": "reg",
+   "ru": "спрашивать"
+  },
+  {
+   "v": "recordar",
+   "k": "ue",
+   "ru": "помнить"
+  },
+  {
+   "v": "olvidar",
+   "k": "reg",
+   "ru": "забывать"
+  },
+  {
+   "v": "usar",
+   "k": "reg",
+   "ru": "использовать"
+  },
+  {
+   "v": "cambiar",
+   "k": "reg",
+   "ru": "менять"
+  },
+  {
+   "v": "reservar",
+   "k": "reg",
+   "ru": "бронировать"
+  },
+  {
+   "v": "gustar",
+   "k": "reg",
+   "ru": "нравиться"
+  },
+  {
+   "v": "encantar",
+   "k": "reg",
+   "ru": "очень нравиться"
+  },
+  {
+   "v": "interesar",
+   "k": "reg",
+   "ru": "интересовать"
+  },
+  {
+   "v": "cerrar",
+   "k": "ie",
+   "ru": "закрывать"
+  },
+  {
+   "v": "perder",
+   "k": "ie",
+   "ru": "терять; проигрывать"
+  },
+  {
+   "v": "defender",
+   "k": "ie",
+   "ru": "защищать"
+  },
+  {
+   "v": "comenzar",
+   "k": "ie",
+   "ru": "начинать"
+  },
+  {
+   "v": "costar",
+   "k": "ue",
+   "ru": "стоить"
+  },
+  {
+   "v": "mostrar",
+   "k": "ue",
+   "ru": "показывать"
+  },
+  {
+   "v": "resolver",
+   "k": "ue",
+   "ru": "решать"
+  },
+  {
+   "v": "iniciar",
+   "k": "reg",
+   "ru": "начинать"
+  },
+  {
+   "v": "aprovechar",
+   "k": "reg",
+   "ru": "использовать с пользой"
+  },
+  {
+   "v": "coger",
+   "k": "irr",
+   "ru": "брать; садиться на транспорт"
+  },
+  {
+   "v": "redactar",
+   "k": "reg",
+   "ru": "составлять (текст)"
+  },
+  {
+   "v": "practicar",
+   "k": "reg",
+   "ru": "практиковать"
+  },
+  {
+   "v": "cenar",
+   "k": "reg",
+   "ru": "ужинать"
+  },
+  {
+   "v": "desayunar",
+   "k": "reg",
+   "ru": "завтракать"
+  },
+  {
+   "v": "alquilar",
+   "k": "reg",
+   "ru": "арендовать"
+  },
+  {
+   "v": "bajar",
+   "k": "reg",
+   "ru": "спускаться; выходить"
+  },
+  {
+   "v": "facturar",
+   "k": "reg",
+   "ru": "сдавать багаж"
+  },
+  {
+   "v": "despegar",
+   "k": "reg",
+   "ru": "взлетать"
+  },
+  {
+   "v": "aterrizar",
+   "k": "reg",
+   "ru": "приземляться"
+  },
+  {
+   "v": "embarcar",
+   "k": "reg",
+   "ru": "садиться на борт"
+  },
+  {
+   "v": "probarse",
+   "k": "refl-ue",
+   "ru": "примерять"
+  },
+  {
+   "v": "dedicarse",
+   "k": "refl",
+   "ru": "заниматься (чем-то)"
+  },
+  {
+   "v": "matricularse",
+   "k": "refl",
+   "ru": "записываться"
+  },
+  {
+   "v": "acompañar",
+   "k": "reg",
+   "ru": "сопровождать"
+  },
+  {
+   "v": "prestar",
+   "k": "reg",
+   "ru": "одолжить"
+  },
+  {
+   "v": "guardar",
+   "k": "reg",
+   "ru": "хранить, убирать"
+  },
+  {
+   "v": "comentar",
+   "k": "reg",
+   "ru": "комментировать, говорить"
+  },
+  {
+   "v": "caer",
+   "k": "irr",
+   "ru": "падать"
+  },
+  {
+   "v": "traducir",
+   "k": "zc",
+   "ru": "переводить"
+  },
+  {
+   "v": "nacer",
+   "k": "zc",
+   "ru": "рождаться"
+  },
+  {
+   "v": "casarse",
+   "k": "refl",
+   "ru": "жениться, выходить замуж"
+  },
+  {
+   "v": "regalar",
+   "k": "reg",
+   "ru": "дарить"
+  }
+ ],
+ "vg": [
+  {
+   "id": "reg",
+   "t": "Правильные",
+   "x": "Основа + окончание. Так спрягается большинство глаголов.",
+   "v": [
+    {
+     "v": "hablar",
+     "k": "reg",
+     "ru": "говорить",
+     "f": [
+      "hablo",
+      "hablas",
+      "habla",
+      "hablamos",
+      "habláis",
+      "hablan"
+     ],
+     "c": true,
+     "ic": "chat-circle"
+    },
+    {
+     "v": "trabajar",
+     "k": "reg",
+     "ru": "работать",
+     "f": [
+      "trabajo",
+      "trabajas",
+      "trabaja",
+      "trabajamos",
+      "trabajáis",
+      "trabajan"
+     ],
+     "c": true,
+     "ic": "briefcase"
+    },
+    {
+     "v": "estudiar",
+     "k": "reg",
+     "ru": "учиться, изучать",
+     "f": [
+      "estudio",
+      "estudias",
+      "estudia",
+      "estudiamos",
+      "estudiáis",
+      "estudian"
+     ],
+     "c": true,
+     "ic": "student"
+    },
+    {
+     "v": "comer",
+     "k": "reg",
+     "ru": "есть, кушать",
+     "f": [
+      "como",
+      "comes",
+      "come",
+      "comemos",
+      "coméis",
+      "comen"
+     ],
+     "c": true,
+     "ic": "fork-knife"
+    },
+    {
+     "v": "leer",
+     "k": "reg",
+     "ru": "читать",
+     "f": [
+      "leo",
+      "lees",
+      "lee",
+      "leemos",
+      "leéis",
+      "leen"
+     ],
+     "c": true,
+     "ic": "book-open"
+    },
+    {
+     "v": "aprender",
+     "k": "reg",
+     "ru": "учить, учиться",
+     "f": [
+      "aprendo",
+      "aprendes",
+      "aprende",
+      "aprendemos",
+      "aprendéis",
+      "aprenden"
+     ],
+     "c": true,
+     "ic": "graduation-cap"
+    },
+    {
+     "v": "vivir",
+     "k": "reg",
+     "ru": "жить",
+     "f": [
+      "vivo",
+      "vives",
+      "vive",
+      "vivimos",
+      "vivís",
+      "viven"
+     ],
+     "c": true,
+     "ic": "house-line"
+    },
+    {
+     "v": "escribir",
+     "k": "reg",
+     "ru": "писать",
+     "f": [
+      "escribo",
+      "escribes",
+      "escribe",
+      "escribimos",
+      "escribís",
+      "escriben"
+     ],
+     "c": true,
+     "ic": "pen-nib"
+    },
+    {
+     "v": "abrir",
+     "k": "reg",
+     "ru": "открывать",
+     "f": [
+      "abro",
+      "abres",
+      "abre",
+      "abrimos",
+      "abrís",
+      "abren"
+     ],
+     "c": true,
+     "ic": "door-open"
+    }
+   ]
+  },
+  {
+   "id": "top",
+   "t": "Главные неправильные",
+   "x": "Их нужно выучить наизусть: они встречаются в каждом втором предложении.",
+   "v": [
+    {
+     "v": "ser",
+     "k": "irr",
+     "ru": "быть (постоянное)",
+     "f": [
+      "soy",
+      "eres",
+      "es",
+      "somos",
+      "sois",
+      "son"
+     ],
+     "c": true,
+     "ic": null
+    },
+    {
+     "v": "estar",
+     "k": "irr",
+     "ru": "находиться; быть (состояние)",
+     "f": [
+      "estoy",
+      "estás",
+      "está",
+      "estamos",
+      "estáis",
+      "están"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "tener",
+     "k": "irr",
+     "ru": "иметь",
+     "f": [
+      "tengo",
+      "tienes",
+      "tiene",
+      "tenemos",
+      "tenéis",
+      "tienen"
+     ],
+     "c": true,
+     "ic": null
+    },
+    {
+     "v": "ir",
+     "k": "irr",
+     "ru": "идти, ехать",
+     "f": [
+      "voy",
+      "vas",
+      "va",
+      "vamos",
+      "vais",
+      "van"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "hacer",
+     "k": "irr",
+     "ru": "делать",
+     "f": [
+      "hago",
+      "haces",
+      "hace",
+      "hacemos",
+      "hacéis",
+      "hacen"
+     ],
+     "c": true,
+     "ic": null
+    },
+    {
+     "v": "llamarse",
+     "k": "refl",
+     "ru": "называться",
+     "f": [
+      "me llamo",
+      "te llamas",
+      "se llama",
+      "nos llamamos",
+      "os llamáis",
+      "se llaman"
+     ],
+     "c": true,
+     "ic": null
+    }
+   ]
+  },
+  {
+   "id": "ie",
+   "t": "e → ie",
+   "x": "Гласная корня меняется в «ботинке»: yo, tú, él, ellos. В nosotros и vosotros — нет.",
+   "v": [
+    {
+     "v": "querer",
+     "k": "ie",
+     "ru": "хотеть; любить",
+     "f": [
+      "quiero",
+      "quieres",
+      "quiere",
+      "queremos",
+      "queréis",
+      "quieren"
+     ],
+     "c": true,
+     "ic": null
+    },
+    {
+     "v": "pensar",
+     "k": "ie",
+     "ru": "думать",
+     "f": [
+      "pienso",
+      "piensas",
+      "piensa",
+      "pensamos",
+      "pensáis",
+      "piensan"
+     ],
+     "c": false,
+     "ic": "lightbulb"
+    },
+    {
+     "v": "empezar",
+     "k": "ie",
+     "ru": "начинать",
+     "f": [
+      "empiezo",
+      "empiezas",
+      "empieza",
+      "empezamos",
+      "empezáis",
+      "empiezan"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "entender",
+     "k": "ie",
+     "ru": "понимать",
+     "f": [
+      "entiendo",
+      "entiendes",
+      "entiende",
+      "entendemos",
+      "entendéis",
+      "entienden"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "cerrar",
+     "k": "ie",
+     "ru": "закрывать",
+     "f": [
+      "cierro",
+      "cierras",
+      "cierra",
+      "cerramos",
+      "cerráis",
+      "cierran"
+     ],
+     "c": false,
+     "ic": "lock"
+    },
+    {
+     "v": "preferir",
+     "k": "ie",
+     "ru": "предпочитать",
+     "f": [
+      "prefiero",
+      "prefieres",
+      "prefiere",
+      "preferimos",
+      "preferís",
+      "prefieren"
+     ],
+     "c": false,
+     "ic": null
+    }
+   ]
+  },
+  {
+   "id": "ue",
+   "t": "o → ue",
+   "x": "Та же логика: o → ue. Jugar — единственный с u → ue.",
+   "v": [
+    {
+     "v": "poder",
+     "k": "ue",
+     "ru": "мочь",
+     "f": [
+      "puedo",
+      "puedes",
+      "puede",
+      "podemos",
+      "podéis",
+      "pueden"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "volver",
+     "k": "ue",
+     "ru": "возвращаться",
+     "f": [
+      "vuelvo",
+      "vuelves",
+      "vuelve",
+      "volvemos",
+      "volvéis",
+      "vuelven"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "dormir",
+     "k": "ue",
+     "ru": "спать",
+     "f": [
+      "duermo",
+      "duermes",
+      "duerme",
+      "dormimos",
+      "dormís",
+      "duermen"
+     ],
+     "c": false,
+     "ic": "moon-stars"
+    },
+    {
+     "v": "contar",
+     "k": "ue",
+     "ru": "считать; рассказывать",
+     "f": [
+      "cuento",
+      "cuentas",
+      "cuenta",
+      "contamos",
+      "contáis",
+      "cuentan"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "encontrar",
+     "k": "ue",
+     "ru": "находить",
+     "f": [
+      "encuentro",
+      "encuentras",
+      "encuentra",
+      "encontramos",
+      "encontráis",
+      "encuentran"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "recordar",
+     "k": "ue",
+     "ru": "помнить",
+     "f": [
+      "recuerdo",
+      "recuerdas",
+      "recuerda",
+      "recordamos",
+      "recordáis",
+      "recuerdan"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "jugar",
+     "k": "ue",
+     "ru": "играть",
+     "f": [
+      "juego",
+      "juegas",
+      "juega",
+      "jugamos",
+      "jugáis",
+      "juegan"
+     ],
+     "c": false,
+     "ic": "game-controller"
+    }
+   ]
+  },
+  {
+   "id": "i",
+   "t": "e → i",
+   "x": "Только у глаголов на -ir.",
+   "v": [
+    {
+     "v": "pedir",
+     "k": "i",
+     "ru": "просить; заказывать",
+     "f": [
+      "pido",
+      "pides",
+      "pide",
+      "pedimos",
+      "pedís",
+      "piden"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "repetir",
+     "k": "i",
+     "ru": "повторять",
+     "f": [
+      "repito",
+      "repites",
+      "repite",
+      "repetimos",
+      "repetís",
+      "repiten"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "seguir",
+     "k": "irr",
+     "ru": "следовать; продолжать",
+     "f": [
+      "sigo",
+      "sigues",
+      "sigue",
+      "seguimos",
+      "seguís",
+      "siguen"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "vestirse",
+     "k": "refl-i",
+     "ru": "одеваться",
+     "f": [
+      "me visto",
+      "te vistes",
+      "se viste",
+      "nos vestimos",
+      "os vestís",
+      "se visten"
+     ],
+     "c": false,
+     "ic": null
+    }
+   ]
+  },
+  {
+   "id": "yo",
+   "t": "Особая форма yo",
+   "x": "Неправильная только первая форма, остальные — как у правильных.",
+   "v": [
+    {
+     "v": "ver",
+     "k": "irr",
+     "ru": "видеть",
+     "f": [
+      "veo",
+      "ves",
+      "ve",
+      "vemos",
+      "veis",
+      "ven"
+     ],
+     "c": true,
+     "ic": "eye"
+    },
+    {
+     "v": "dar",
+     "k": "irr",
+     "ru": "давать",
+     "f": [
+      "doy",
+      "das",
+      "da",
+      "damos",
+      "dais",
+      "dan"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "saber",
+     "k": "irr",
+     "ru": "знать (факт), уметь",
+     "f": [
+      "sé",
+      "sabes",
+      "sabe",
+      "sabemos",
+      "sabéis",
+      "saben"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "poner",
+     "k": "irr",
+     "ru": "класть, ставить",
+     "f": [
+      "pongo",
+      "pones",
+      "pone",
+      "ponemos",
+      "ponéis",
+      "ponen"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "salir",
+     "k": "irr",
+     "ru": "выходить",
+     "f": [
+      "salgo",
+      "sales",
+      "sale",
+      "salimos",
+      "salís",
+      "salen"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "traer",
+     "k": "irr",
+     "ru": "приносить",
+     "f": [
+      "traigo",
+      "traes",
+      "trae",
+      "traemos",
+      "traéis",
+      "traen"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "conocer",
+     "k": "zc",
+     "ru": "знать (человека, место)",
+     "f": [
+      "conozco",
+      "conoces",
+      "conoce",
+      "conocemos",
+      "conocéis",
+      "conocen"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "conducir",
+     "k": "zc",
+     "ru": "водить машину",
+     "f": [
+      "conduzco",
+      "conduces",
+      "conduce",
+      "conducimos",
+      "conducís",
+      "conducen"
+     ],
+     "c": false,
+     "ic": "steering-wheel"
+    },
+    {
+     "v": "coger",
+     "k": "irr",
+     "ru": "брать; садиться на транспорт",
+     "f": [
+      "cojo",
+      "coges",
+      "coge",
+      "cogemos",
+      "cogéis",
+      "cogen"
+     ],
+     "c": false,
+     "ic": null
+    }
+   ]
+  },
+  {
+   "id": "irr",
+   "t": "Совсем неправильные",
+   "x": "Меняется почти всё.",
+   "v": [
+    {
+     "v": "venir",
+     "k": "irr",
+     "ru": "приходить",
+     "f": [
+      "vengo",
+      "vienes",
+      "viene",
+      "venimos",
+      "venís",
+      "vienen"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "decir",
+     "k": "irr",
+     "ru": "говорить, сказать",
+     "f": [
+      "digo",
+      "dices",
+      "dice",
+      "decimos",
+      "decís",
+      "dicen"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "oír",
+     "k": "irr",
+     "ru": "слышать",
+     "f": [
+      "oigo",
+      "oyes",
+      "oye",
+      "oímos",
+      "oís",
+      "oyen"
+     ],
+     "c": false,
+     "ic": null
+    },
+    {
+     "v": "haber",
+     "k": "irr",
+     "ru": "быть, иметься",
+     "f": [
+      "he",
+      "has",
+      "ha",
+      "hemos",
+      "habéis",
+      "han"
+     ],
+     "c": false,
+     "ic": null
+    }
+   ]
+  }
+ ]
+}

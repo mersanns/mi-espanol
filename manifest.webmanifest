@@ -1,0 +1,17 @@
+{
+  "name": "Mi español",
+  "short_name": "Mi español",
+  "description": "Тренажёр испанского: карточки, тетрадь, глаголы, грамматика и культура",
+  "lang": "ru",
+  "start_url": "./#inicio",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#8B2E2E",
+  "background_color": "#E9DFCC",
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}

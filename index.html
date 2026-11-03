@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mi español</title>
+<meta name="description" content="Тренажёр испанского: карточки, тетрадь, глаголы, грамматика и культура">
+<meta name="theme-color" content="#8B2E2E">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Mi español">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Gentium+Plus&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="mast">
+  <a class="logo" href="#inicio"><b>ESPAÑOL</b><span class="heartline">♥</span><i>cada día es una nueva oportunidad para aprender</i></a>
+  <div class="modes" role="group" aria-label="Режим"><button data-mode="curso">Мой курс</button><button data-mode="a1">A1 · путешествия</button></div>
+</header>
+<nav class="idx" aria-label="Разделы"><div class="in" id="tabs"></div></nav>
+<main class="wrap"><div class="sheet" id="view"><div class="boot" role="status"><b>ESPAÑOL</b><span class="heartline">♥</span><i>cargando…</i></div></div></main>
+<div id="pop" hidden></div>
+<script src="app.js" defer></script>
+</body>
+</html>

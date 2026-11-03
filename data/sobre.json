@@ -1,0 +1,204 @@
+{
+ "sobre": [
+  {
+   "g": "Знакомство",
+   "q": [
+    {
+     "q": "¿Cómo te llamas?",
+     "ru": "Как тебя зовут?",
+     "a": "Me llamo Anna."
+    },
+    {
+     "q": "¿Cuál es tu apellido?",
+     "ru": "Какая у тебя фамилия?",
+     "a": "Mi apellido es Dolgova."
+    },
+    {
+     "q": "¿Cómo se escribe?",
+     "ru": "Как это пишется?",
+     "a": "Se escribe D-O-L-G-O-V-A."
+    },
+    {
+     "q": "¿Cuántos años tienes?",
+     "ru": "Сколько тебе лет?",
+     "a": "Tengo ___ años."
+    },
+    {
+     "q": "¿Cuándo es tu cumpleaños?",
+     "ru": "Когда у тебя день рождения?",
+     "a": "Mi cumpleaños es el ___ de ___."
+    },
+    {
+     "q": "¿Cuál es tu estado civil?",
+     "ru": "Какое у тебя семейное положение?",
+     "a": "Estoy soltera."
+    }
+   ]
+  },
+  {
+   "g": "Откуда я",
+   "q": [
+    {
+     "q": "¿De dónde eres?",
+     "ru": "Откуда ты?",
+     "a": "Soy de Rusia, de la región de Krasnodar."
+    },
+    {
+     "q": "¿Cuál es tu nacionalidad?",
+     "ru": "Какая у тебя национальность?",
+     "a": "Soy rusa."
+    },
+    {
+     "q": "¿Cuál es tu ciudad natal?",
+     "ru": "Какой твой родной город?",
+     "a": "Mi ciudad natal está en la región de Krasnodar, en el sur de Rusia."
+    },
+    {
+     "q": "¿Dónde vives?",
+     "ru": "Где ты живёшь?",
+     "a": "Vivo en San Petersburgo, en Peterhof, en la residencia de la universidad."
+    },
+    {
+     "q": "¿Con quién vives?",
+     "ru": "С кем ты живёшь?",
+     "a": "Vivo con una compañera en la residencia."
+    },
+    {
+     "q": "¿Cómo es tu ciudad?",
+     "ru": "Какой твой город?",
+     "a": "San Petersburgo es una ciudad muy bonita y grande. Tiene muchos museos y canales."
+    }
+   ]
+  },
+  {
+   "g": "Учёба",
+   "q": [
+    {
+     "q": "¿A qué te dedicas?",
+     "ru": "Чем ты занимаешься?",
+     "a": "Soy estudiante. También soy bloguera."
+    },
+    {
+     "q": "¿Dónde estudias?",
+     "ru": "Где ты учишься?",
+     "a": "Estudio en la Universidad Estatal de San Petersburgo, en la Escuela Superior de Gestión."
+    },
+    {
+     "q": "¿Qué carrera estudias?",
+     "ru": "На какой специальности ты учишься?",
+     "a": "Estudio Gestión (Management). Estoy en segundo curso."
+    },
+    {
+     "q": "¿Qué asignaturas tienes?",
+     "ru": "Какие у тебя предметы?",
+     "a": "Tengo Estadística, Marketing, Finanzas, Inglés, Español y Emprendimiento."
+    },
+    {
+     "q": "¿Cuántas clases tienes hoy?",
+     "ru": "Сколько у тебя сегодня пар?",
+     "a": "Hoy tengo ___ clases."
+    },
+    {
+     "q": "¿Qué idiomas hablas?",
+     "ru": "На каких языках ты говоришь?",
+     "a": "Hablo ruso e inglés, y estudio español."
+    },
+    {
+     "q": "¿Por qué estudias español?",
+     "ru": "Почему ты учишь испанский?",
+     "a": "Estudio español porque me gusta y para viajar por España y Latinoamérica."
+    },
+    {
+     "q": "¿Qué haces en las clases de español?",
+     "ru": "Что вы делаете на уроках испанского?",
+     "a": "Leemos, escribimos, escuchamos y hablamos mucho."
+    }
+   ]
+  },
+  {
+   "g": "Моя жизнь",
+   "q": [
+    {
+     "q": "¿Tienes hermanos?",
+     "ru": "У тебя есть братья или сёстры?",
+     "a": "Sí, tengo ___. / No, no tengo hermanos."
+    },
+    {
+     "q": "¿Cómo eres?",
+     "ru": "Какая ты?",
+     "a": "Soy simpática, curiosa y creativa."
+    },
+    {
+     "q": "¿Qué haces en tu tiempo libre?",
+     "ru": "Что ты делаешь в свободное время?",
+     "a": "En mi tiempo libre leo, escucho música, hago yoga y veo series."
+    },
+    {
+     "q": "¿A qué eres aficionada?",
+     "ru": "Чем ты увлекаешься?",
+     "a": "Soy aficionada a los viajes y a los blogs. Tengo un blog sobre la vida en San Petersburgo."
+    },
+    {
+     "q": "¿Qué te gusta?",
+     "ru": "Что тебе нравится?",
+     "a": "Me gusta leer, viajar y tomar café."
+    },
+    {
+     "q": "¿Qué no te gusta?",
+     "ru": "Что тебе не нравится?",
+     "a": "No me gusta madrugar."
+    },
+    {
+     "q": "¿Trabajas?",
+     "ru": "Ты работаешь?",
+     "a": "Sí, trabajo en una startup. / No, ahora busco unas prácticas de marketing."
+    },
+    {
+     "q": "¿Cuál es tu número de teléfono?",
+     "ru": "Какой у тебя номер телефона?",
+     "a": "Mi número es el ___."
+    },
+    {
+     "q": "¿Cuál es tu correo electrónico?",
+     "ru": "Какой у тебя e-mail?",
+     "a": "Mi correo es ___ arroba gmail punto com."
+    }
+   ]
+  },
+  {
+   "g": "Вопросы собеседнику",
+   "q": [
+    {
+     "q": "¿Y tú?",
+     "ru": "А ты?",
+     "a": "Yo también. / Yo tampoco."
+    },
+    {
+     "q": "¿Qué tal?",
+     "ru": "Как дела?",
+     "a": "Muy bien, gracias. ¿Y tú?"
+    },
+    {
+     "q": "¿Cómo se dice … en español?",
+     "ru": "Как сказать … по-испански?",
+     "a": "Se dice…"
+    },
+    {
+     "q": "¿Puedes repetir, por favor?",
+     "ru": "Можешь повторить?",
+     "a": "Claro."
+    },
+    {
+     "q": "¿Qué significa…?",
+     "ru": "Что значит…?",
+     "a": "Significa…"
+    },
+    {
+     "q": "Mucho gusto. / Encantada.",
+     "ru": "Очень приятно.",
+     "a": "Igualmente."
+    }
+   ]
+  }
+ ]
+}

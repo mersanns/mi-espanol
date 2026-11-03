@@ -1,0 +1,399 @@
+{
+ "decks": [
+  {
+   "id": "nouns",
+   "title": "Существительные",
+   "blurb": "Слова из стр. 1–5 и упражнений",
+   "src": "Тетрадь, стр. 1–5",
+   "n": 99,
+   "lvl": "curso",
+   "ic": "book-open"
+  },
+  {
+   "id": "countries",
+   "title": "Страны",
+   "blurb": "Страны и регионы со стр. 4",
+   "src": "Тетрадь, стр. 4",
+   "n": 69,
+   "lvl": "curso",
+   "ic": "globe-hemisphere-west"
+  },
+  {
+   "id": "nat",
+   "title": "Национальности",
+   "blurb": "Муж. и жен. форма",
+   "src": "Тетрадь, стр. 4",
+   "n": 67,
+   "lvl": "curso",
+   "ic": "flag"
+  },
+  {
+   "id": "cities",
+   "title": "Города",
+   "blurb": "Города и столицы",
+   "src": "Тетрадь, стр. 4–6",
+   "n": 26,
+   "lvl": "curso",
+   "ic": "city"
+  },
+  {
+   "id": "prof",
+   "title": "Профессии",
+   "blurb": "Муж. / жен. род",
+   "src": "Тетрадь, стр. 9",
+   "n": 36,
+   "lvl": "curso",
+   "ic": "briefcase"
+  },
+  {
+   "id": "family",
+   "title": "Семья",
+   "blurb": "Родственники",
+   "src": "Тетрадь, «Familia»",
+   "n": 33,
+   "lvl": "curso",
+   "ic": "users-three"
+  },
+  {
+   "id": "things",
+   "title": "Места, вещи, досуг",
+   "blurb": "Из упр. 21–22, 53–64",
+   "src": "Тетрадь",
+   "n": 38,
+   "lvl": "curso",
+   "ic": "storefront"
+  },
+  {
+   "id": "colors",
+   "title": "Цвета",
+   "blurb": "Упр. 27",
+   "src": "Тетрадь",
+   "n": 11,
+   "lvl": "curso",
+   "ic": "palette"
+  },
+  {
+   "id": "verbs",
+   "title": "Глаголы",
+   "blurb": "Инфинитив и перевод",
+   "src": "Тетрадь и частотные",
+   "n": 83,
+   "lvl": "curso",
+   "ic": "lightning"
+  },
+  {
+   "id": "qw",
+   "title": "Вопросительные слова",
+   "blurb": "Что и как спросить",
+   "src": "Тетрадь, упр. 51",
+   "n": 14,
+   "lvl": "curso",
+   "ic": "question"
+  },
+  {
+   "id": "phrases",
+   "title": "Приветствия и знакомство",
+   "blurb": "Фразы для разговора",
+   "src": "Тетрадь, стр. 7–11",
+   "n": 29,
+   "lvl": "curso",
+   "ic": "chat-circle"
+  },
+  {
+   "id": "tener",
+   "title": "Выражения с tener",
+   "blurb": "Состояния и возраст",
+   "src": "Тетрадь, упр. 30",
+   "n": 12,
+   "lvl": "curso",
+   "ic": "hand"
+  },
+  {
+   "id": "numbers",
+   "title": "Числа",
+   "blurb": "Количественные и порядковые",
+   "src": "Тетрадь, упр. 35, 44",
+   "n": 45,
+   "lvl": "curso",
+   "ic": "hash"
+  },
+  {
+   "id": "days",
+   "title": "Дни и месяцы",
+   "blurb": "Дополнительно",
+   "src": "Сверх программы",
+   "n": 25,
+   "lvl": "curso",
+   "ic": "calendar"
+  },
+  {
+   "id": "class",
+   "title": "Фразы для урока",
+   "blurb": "Чтобы переспросить и понять",
+   "src": "Сверх программы",
+   "n": 15,
+   "lvl": "curso",
+   "ic": "chalkboard-teacher"
+  },
+  {
+   "id": "a1_cortesia",
+   "title": "Вежливость и разговор",
+   "blurb": "Самые нужные фразы",
+   "src": "A1",
+   "n": 30,
+   "lvl": "a1",
+   "ic": "hand-waving"
+  },
+  {
+   "id": "a1_aeropuerto",
+   "title": "Аэропорт",
+   "blurb": "Вылет, багаж, паспортный контроль",
+   "src": "A1",
+   "n": 30,
+   "lvl": "a1",
+   "ic": "airplane-tilt"
+  },
+  {
+   "id": "a1_transporte",
+   "title": "Транспорт",
+   "blurb": "Метро, автобус, такси, поезд",
+   "src": "A1",
+   "n": 30,
+   "lvl": "a1",
+   "ic": "bus"
+  },
+  {
+   "id": "a1_hotel",
+   "title": "Отель",
+   "blurb": "Бронь, номер, завтрак",
+   "src": "A1",
+   "n": 30,
+   "lvl": "a1",
+   "ic": "bed"
+  },
+  {
+   "id": "a1_ciudad",
+   "title": "Город и дорога",
+   "blurb": "Где это? Как пройти?",
+   "src": "A1",
+   "n": 40,
+   "lvl": "a1",
+   "ic": "map-trifold"
+  },
+  {
+   "id": "a1_restaurante",
+   "title": "В ресторане",
+   "blurb": "Заказать, попросить счёт",
+   "src": "A1",
+   "n": 36,
+   "lvl": "a1",
+   "ic": "fork-knife"
+  },
+  {
+   "id": "a1_comida",
+   "title": "Еда",
+   "blurb": "Продукты и блюда",
+   "src": "A1",
+   "n": 60,
+   "lvl": "a1",
+   "ic": "bread"
+  },
+  {
+   "id": "a1_bebidas",
+   "title": "Напитки",
+   "blurb": "Кофе, вода, сок",
+   "src": "A1",
+   "n": 20,
+   "lvl": "a1",
+   "ic": "coffee"
+  },
+  {
+   "id": "a1_compras",
+   "title": "Покупки и одежда",
+   "blurb": "Сколько стоит? Можно примерить?",
+   "src": "A1",
+   "n": 45,
+   "lvl": "a1",
+   "ic": "shopping-bag"
+  },
+  {
+   "id": "a1_tiempo",
+   "title": "Время и календарь",
+   "blurb": "Который час, когда",
+   "src": "A1",
+   "n": 34,
+   "lvl": "a1",
+   "ic": "clock"
+  },
+  {
+   "id": "a1_clima",
+   "title": "Погода",
+   "blurb": "Какая сегодня погода",
+   "src": "A1",
+   "n": 20,
+   "lvl": "a1",
+   "ic": "sun"
+  },
+  {
+   "id": "a1_cuerpo",
+   "title": "Тело и здоровье",
+   "blurb": "В аптеке и у врача",
+   "src": "A1",
+   "n": 35,
+   "lvl": "a1",
+   "ic": "first-aid-kit"
+  },
+  {
+   "id": "a1_emergencias",
+   "title": "Если что-то случилось",
+   "blurb": "Помощь и потери",
+   "src": "A1",
+   "n": 20,
+   "lvl": "a1",
+   "ic": "warning-circle"
+  },
+  {
+   "id": "a1_casa",
+   "title": "Дом",
+   "blurb": "Комнаты и вещи",
+   "src": "A1",
+   "n": 35,
+   "lvl": "a1",
+   "ic": "house"
+  },
+  {
+   "id": "a1_personas",
+   "title": "Люди",
+   "blurb": "Кто вокруг",
+   "src": "A1",
+   "n": 20,
+   "lvl": "a1",
+   "ic": "users"
+  },
+  {
+   "id": "a1_adjetivos",
+   "title": "Прилагательные",
+   "blurb": "Какой?",
+   "src": "A1",
+   "n": 60,
+   "lvl": "a1",
+   "ic": "sparkle"
+  },
+  {
+   "id": "a1_verbos",
+   "title": "Частые глаголы",
+   "blurb": "Действия на каждый день",
+   "src": "A1",
+   "n": 82,
+   "lvl": "a1",
+   "ic": "lightning"
+  },
+  {
+   "id": "a1_pequenas",
+   "title": "Маленькие слова",
+   "blurb": "Предлоги, связки, наречия",
+   "src": "A1",
+   "n": 50,
+   "lvl": "a1",
+   "ic": "puzzle-piece"
+  },
+  {
+   "id": "a1_ocio",
+   "title": "Досуг и природа",
+   "blurb": "Свободное время",
+   "src": "A1",
+   "n": 35,
+   "lvl": "a1",
+   "ic": "film-slate"
+  },
+  {
+   "id": "a1_trabajo",
+   "title": "Учёба и работа",
+   "blurb": "Университет, офис",
+   "src": "A1",
+   "n": 25,
+   "lvl": "a1",
+   "ic": "graduation-cap"
+  }
+ ],
+ "topics": [
+  {
+   "id": "art",
+   "title": "Род: el или la",
+   "sub": "Артикли в упр. 1–3",
+   "n": 16
+  },
+  {
+   "id": "plural",
+   "title": "Множественное число",
+   "sub": "Правила мн. ч.",
+   "n": 15
+  },
+  {
+   "id": "verbs",
+   "title": "Спряжение глаголов",
+   "sub": "Настоящее время, ser, llamarse (упр. 14, 23)",
+   "n": 28
+  },
+  {
+   "id": "serestar",
+   "title": "Ser или estar",
+   "sub": "Упр. 50",
+   "n": 19
+  },
+  {
+   "id": "tambien",
+   "title": "También / tampoco",
+   "sub": "Упр. 25",
+   "n": 12
+  },
+  {
+   "id": "prep",
+   "title": "Предлоги",
+   "sub": "Упр. 26",
+   "n": 9
+  },
+  {
+   "id": "adj",
+   "title": "Прилагательные",
+   "sub": "Упр. 27–28",
+   "n": 12
+  },
+  {
+   "id": "tener",
+   "title": "Tener, mucho / muy",
+   "sub": "Упр. 29–32",
+   "n": 12
+  },
+  {
+   "id": "qw",
+   "title": "Вопросительные слова",
+   "sub": "Упр. 51 и самостоятельная",
+   "n": 14
+  },
+  {
+   "id": "pos",
+   "title": "Притяжательные",
+   "sub": "Упр. 60–65",
+   "n": 8
+  },
+  {
+   "id": "num",
+   "title": "Числительные",
+   "sub": "Упр. 35, 44",
+   "n": 9
+  },
+  {
+   "id": "porque",
+   "title": "Porque и para",
+   "sub": "Упр. 36–37",
+   "n": 5
+  },
+  {
+   "id": "ir",
+   "title": "Ir + a / en",
+   "sub": "Упр. 42",
+   "n": 5
+  }
+ ]
+}
