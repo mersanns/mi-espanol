@@ -24,7 +24,10 @@
    "note": "Неопределённый: un día, una noche… — та же логика.",
    "cols": null,
    "l": "l1",
-   "hw": false
+   "hw": false,
+   "th": [
+    "art"
+   ]
   },
   {
    "id": "2",
@@ -198,7 +201,10 @@
    "note": null,
    "cols": null,
    "l": "l1",
-   "hw": true
+   "hw": true,
+   "th": [
+    "art"
+   ]
   },
   {
    "id": "3",
@@ -228,7 +234,10 @@
    "note": "El águila и el aula — женский род, но перед ударным a- ставят el.",
    "cols": null,
    "l": "l1",
-   "hw": false
+   "hw": false,
+   "th": [
+    "art"
+   ]
   },
   {
    "id": "4A",
@@ -252,7 +261,10 @@
    "note": null,
    "cols": null,
    "l": "l1",
-   "hw": false
+   "hw": false,
+   "th": [
+    "plural"
+   ]
   },
   {
    "id": "4B",
@@ -276,7 +288,11 @@
    "note": null,
    "cols": null,
    "l": "l1",
-   "hw": true
+   "hw": true,
+   "th": [
+    "art",
+    "plural"
+   ]
   },
   {
    "id": "4C",
@@ -308,7 +324,10 @@
    "note": "Pantalones и jueves не меняются.",
    "cols": null,
    "l": "l1",
-   "hw": false
+   "hw": false,
+   "th": [
+    "plural"
+   ]
   },
   {
    "id": "5",
@@ -328,7 +347,10 @@
    "note": "В тетради это упражнение по картинкам — здесь та же идея на формах ser.",
    "cols": null,
    "l": "l1",
-   "hw": false
+   "hw": false,
+   "th": [
+    "ser"
+   ]
   },
   {
    "id": "6A",
@@ -366,7 +388,10 @@
    "note": null,
    "cols": null,
    "l": "l2",
-   "hw": true
+   "hw": true,
+   "th": [
+    "ser"
+   ]
   },
   {
    "id": "7",
@@ -386,7 +411,11 @@
    "note": null,
    "cols": null,
    "l": "l2",
-   "hw": false
+   "hw": false,
+   "th": [
+    "ser",
+    "tambien"
+   ]
   },
   {
    "id": "8",
@@ -408,7 +437,10 @@
    "note": "Мужчина + женщина → мужской род мн. числа.",
    "cols": null,
    "l": "l3",
-   "hw": true
+   "hw": true,
+   "th": [
+    "nat"
+   ]
   },
   {
    "id": "9",
@@ -431,7 +463,10 @@
    "note": null,
    "cols": null,
    "l": "l3",
-   "hw": true
+   "hw": true,
+   "th": [
+    "nat"
+   ]
   },
   {
    "id": "11A",
@@ -452,7 +487,11 @@
    "note": null,
    "cols": null,
    "l": "l3",
-   "hw": false
+   "hw": false,
+   "th": [
+    "nat",
+    "adj"
+   ]
   },
   {
    "id": "11B",
@@ -487,7 +526,10 @@
    "note": null,
    "cols": null,
    "l": "l4",
-   "hw": true
+   "hw": true,
+   "th": [
+    "nat"
+   ]
   },
   {
    "id": "11C",
@@ -515,7 +557,10 @@
    "note": null,
    "cols": null,
    "l": "l4",
-   "hw": true
+   "hw": true,
+   "th": [
+    "nat"
+   ]
   },
   {
    "id": "12",
@@ -532,7 +577,10 @@
    "note": null,
    "cols": null,
    "l": "l4",
-   "hw": false
+   "hw": false,
+   "th": [
+    "names"
+   ]
   },
   {
    "id": "13",
@@ -555,7 +603,10 @@
    "note": "Подсказка — по названию компании.",
    "cols": null,
    "l": "l4",
-   "hw": false
+   "hw": false,
+   "th": [
+    "nat"
+   ]
   },
   {
    "id": "14A",
@@ -576,7 +627,10 @@
    "note": null,
    "cols": null,
    "l": "l4",
-   "hw": true
+   "hw": true,
+   "th": [
+    "llamarse"
+   ]
   },
   {
    "id": "14B",
@@ -625,7 +679,10 @@
    "note": null,
    "cols": null,
    "l": "l4",
-   "hw": true
+   "hw": true,
+   "th": [
+    "llamarse"
+   ]
   },
   {
    "id": "15",
@@ -647,7 +704,11 @@
    "note": null,
    "cols": null,
    "l": "l4",
-   "hw": false
+   "hw": false,
+   "th": [
+    "llamarse",
+    "ser"
+   ]
   },
   {
    "id": "16",
@@ -686,7 +747,11 @@
    "note": null,
    "cols": null,
    "l": "l4",
-   "hw": true
+   "hw": true,
+   "th": [
+    "llamarse",
+    "names"
+   ]
   },
   {
    "id": "17",
@@ -720,7 +785,10 @@
    "note": null,
    "cols": null,
    "l": "l5",
-   "hw": false
+   "hw": false,
+   "th": [
+    "prof"
+   ]
   },
   {
    "id": "19",
@@ -742,7 +810,10 @@
    "note": null,
    "cols": null,
    "l": "l5",
-   "hw": false
+   "hw": false,
+   "th": [
+    "prof"
+   ]
   },
   {
    "id": "20",
@@ -765,7 +836,11 @@
    "note": "Можно писать одним предложением через y.",
    "cols": null,
    "l": "l5",
-   "hw": false
+   "hw": false,
+   "th": [
+    "ser",
+    "llamarse"
+   ]
   },
   {
    "id": "21A",
@@ -829,7 +904,10 @@
    "note": null,
    "cols": null,
    "l": "l5",
-   "hw": true
+   "hw": true,
+   "th": [
+    "prof"
+   ]
   },
   {
    "id": "22A",
@@ -878,7 +956,10 @@
    "note": null,
    "cols": null,
    "l": "l4",
-   "hw": true
+   "hw": true,
+   "th": [
+    "regular"
+   ]
   },
   {
    "id": "22B",
@@ -952,7 +1033,11 @@
    "note": null,
    "cols": null,
    "l": "l5",
-   "hw": false
+   "hw": false,
+   "th": [
+    "regular",
+    "prof"
+   ]
   },
   {
    "id": "23A",
@@ -989,7 +1074,10 @@
    "note": null,
    "cols": null,
    "l": "l5",
-   "hw": true
+   "hw": true,
+   "th": [
+    "regular"
+   ]
   },
   {
    "id": "23B",
@@ -1022,7 +1110,10 @@
    "note": null,
    "cols": null,
    "l": "l5",
-   "hw": false
+   "hw": false,
+   "th": [
+    "regular"
+   ]
   },
   {
    "id": "25",
@@ -1056,7 +1147,10 @@
    "note": "Вторая часть меняет форму глагола под новое подлежащее.",
    "cols": null,
    "l": "l6",
-   "hw": true
+   "hw": true,
+   "th": [
+    "tambien"
+   ]
   },
   {
    "id": "26",
@@ -1079,7 +1173,10 @@
    "note": null,
    "cols": null,
    "l": "l6",
-   "hw": false
+   "hw": false,
+   "th": [
+    "prep"
+   ]
   },
   {
    "id": "27A",
@@ -1203,7 +1300,10 @@
    "note": null,
    "cols": null,
    "l": "l6",
-   "hw": true
+   "hw": true,
+   "th": [
+    "adj"
+   ]
   },
   {
    "id": "27B",
@@ -1227,7 +1327,10 @@
    "note": null,
    "cols": null,
    "l": "l6",
-   "hw": true
+   "hw": true,
+   "th": [
+    "adj"
+   ]
   },
   {
    "id": "28",
@@ -1250,7 +1353,10 @@
    "note": null,
    "cols": null,
    "l": "l6",
-   "hw": false
+   "hw": false,
+   "th": [
+    "adj"
+   ]
   },
   {
    "id": "29",
@@ -1287,7 +1393,10 @@
    "note": null,
    "cols": null,
    "l": "l6",
-   "hw": false
+   "hw": false,
+   "th": [
+    "tener"
+   ]
   },
   {
    "id": "29T",
@@ -1305,7 +1414,13 @@
    "note": null,
    "cols": null,
    "l": "l6",
-   "hw": false
+   "hw": false,
+   "th": [
+    "ser",
+    "tener",
+    "regular",
+    "llamarse"
+   ]
   },
   {
    "id": "30",
@@ -1326,7 +1441,11 @@
    "note": null,
    "cols": null,
    "l": "l6",
-   "hw": false
+   "hw": false,
+   "th": [
+    "ser",
+    "tener"
+   ]
   },
   {
    "id": "32A",
@@ -1366,7 +1485,10 @@
    "note": null,
    "cols": null,
    "l": "l7",
-   "hw": false
+   "hw": false,
+   "th": [
+    "tener"
+   ]
   },
   {
    "id": "32B",
@@ -1390,7 +1512,10 @@
    "note": null,
    "cols": null,
    "l": "l7",
-   "hw": false
+   "hw": false,
+   "th": [
+    "tener"
+   ]
   },
   {
    "id": "32C",
@@ -1418,7 +1543,10 @@
    "note": null,
    "cols": null,
    "l": "l7",
-   "hw": true
+   "hw": true,
+   "th": [
+    "tener"
+   ]
   },
   {
    "id": "33",
@@ -1460,7 +1588,10 @@
    "note": null,
    "cols": null,
    "l": "l7",
-   "hw": true
+   "hw": true,
+   "th": [
+    "tener"
+   ]
   },
   {
    "id": "35",
@@ -1494,7 +1625,10 @@
    "note": "Uno перед словом м. р. → un (veintiún euros), перед ж. р. → una (treinta y una aulas).",
    "cols": null,
    "l": "l7",
-   "hw": false
+   "hw": false,
+   "th": [
+    "numbers"
+   ]
   },
   {
    "id": "36A",
@@ -1518,7 +1652,10 @@
    "note": null,
    "cols": null,
    "l": "l7",
-   "hw": false
+   "hw": false,
+   "th": [
+    "porque"
+   ]
   },
   {
    "id": "36B",
@@ -1572,7 +1709,10 @@
    "note": null,
    "cols": null,
    "l": "l7",
-   "hw": false
+   "hw": false,
+   "th": [
+    "porque"
+   ]
   },
   {
    "id": "37A",
@@ -1611,7 +1751,11 @@
    "note": null,
    "cols": null,
    "l": "l7",
-   "hw": true
+   "hw": true,
+   "th": [
+    "porque",
+    "regular"
+   ]
   },
   {
    "id": "37B",
@@ -1629,7 +1773,11 @@
    "note": null,
    "cols": null,
    "l": "l7",
-   "hw": false
+   "hw": false,
+   "th": [
+    "regular",
+    "ser"
+   ]
   },
   {
    "id": "38",
@@ -1690,7 +1838,11 @@
     ]
    ],
    "l": "l7",
-   "hw": true
+   "hw": true,
+   "th": [
+    "regular",
+    "porque"
+   ]
   },
   {
    "id": "39",
@@ -1779,7 +1931,10 @@
    "note": null,
    "cols": null,
    "l": "l7",
-   "hw": false
+   "hw": false,
+   "th": [
+    "colloc"
+   ]
   },
   {
    "id": "40",
@@ -1809,7 +1964,10 @@
    "note": null,
    "cols": null,
    "l": "l7",
-   "hw": false
+   "hw": false,
+   "th": [
+    "colloc"
+   ]
   },
   {
    "id": "41",
@@ -1833,7 +1991,11 @@
    "note": null,
    "cols": null,
    "l": "l7",
-   "hw": false
+   "hw": false,
+   "th": [
+    "regular",
+    "qw"
+   ]
   },
   {
    "id": "42",
@@ -1852,7 +2014,10 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "ir"
+   ]
   },
   {
    "id": "43A",
@@ -1871,7 +2036,11 @@
    "note": "Coger — cojo (g → j перед o).",
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "yo",
+    "regular"
+   ]
   },
   {
    "id": "43B",
@@ -1889,7 +2058,11 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "yo",
+    "regular"
+   ]
   },
   {
    "id": "44A",
@@ -1913,7 +2086,10 @@
    "note": "Primero → primer, tercero → tercer перед сущ. м. р. После 10 обычно говорят количественными: el piso once.",
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "ordinal"
+   ]
   },
   {
    "id": "44B",
@@ -1937,7 +2113,10 @@
    "note": "До десятого — порядковые, дальше — количественные.",
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "ordinal"
+   ]
   },
   {
    "id": "50A",
@@ -1962,7 +2141,10 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "serestar"
+   ]
   },
   {
    "id": "50B",
@@ -1992,7 +2174,10 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "serestar"
+   ]
   },
   {
    "id": "50C",
@@ -2021,7 +2206,10 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "serestar"
+   ]
   },
   {
    "id": "51",
@@ -2054,7 +2242,10 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "qw"
+   ]
   },
   {
    "id": "53A",
@@ -2152,7 +2343,11 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "regular",
+    "serestar"
+   ]
   },
   {
    "id": "53B",
@@ -2171,7 +2366,12 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "names",
+    "serestar",
+    "regular"
+   ]
   },
   {
    "id": "56",
@@ -2195,7 +2395,11 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "gustar",
+    "family"
+   ]
   },
   {
    "id": "57",
@@ -2273,7 +2477,12 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "names",
+    "nat",
+    "tener"
+   ]
   },
   {
    "id": "fam",
@@ -2294,7 +2503,10 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "family"
+   ]
   },
   {
    "id": "59",
@@ -2322,7 +2534,10 @@
     ]
    ],
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "family"
+   ]
   },
   {
    "id": "60A",
@@ -2350,7 +2565,10 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "pos"
+   ]
   },
   {
    "id": "60B",
@@ -2373,7 +2591,11 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "pos",
+    "family"
+   ]
   },
   {
    "id": "61",
@@ -2417,7 +2639,11 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "pos",
+    "posx"
+   ]
   },
   {
    "id": "62",
@@ -2439,7 +2665,10 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "posx"
+   ]
   },
   {
    "id": "63",
@@ -2463,7 +2692,10 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "posx"
+   ]
   },
   {
    "id": "64",
@@ -2487,7 +2719,10 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "posx"
+   ]
   },
   {
    "id": "65",
@@ -2516,7 +2751,11 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "pos",
+    "posx"
+   ]
   },
   {
    "id": "66A",
@@ -2536,7 +2775,10 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "stem"
+   ]
   },
   {
    "id": "66B",
@@ -2556,7 +2798,10 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "stem"
+   ]
   },
   {
    "id": "66C",
@@ -2581,7 +2826,10 @@
    "note": null,
    "cols": null,
    "l": "next",
-   "hw": false
+   "hw": false,
+   "th": [
+    "stem"
+   ]
   }
  ]
 }

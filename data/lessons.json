@@ -127,7 +127,8 @@
    "gram": [
     "llamarse",
     "regular",
-    "prep"
+    "prep",
+    "names"
    ],
    "decks": [
     "phrases",
@@ -160,7 +161,8 @@
    ],
    "gram": [
     "regular",
-    "porque"
+    "porque",
+    "prof"
    ],
    "decks": [
     "prof",
@@ -239,7 +241,8 @@
     "tener",
     "numbers",
     "porque",
-    "irregular"
+    "irregular",
+    "colloc"
    ],
    "decks": [
     "numbers",
@@ -291,7 +294,12 @@
     "ir",
     "serestar",
     "pos",
-    "irregular"
+    "irregular",
+    "yo",
+    "ordinal",
+    "family",
+    "posx",
+    "stem"
    ],
    "decks": [
     "family",

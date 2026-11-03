@@ -225,11 +225,11 @@ details.g[open] summary::after{content:"–"}
 .toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font-weight:600;z-index:60}
 @media (max-width:520px){.stack>.row.between>.stkin{width:72px!important;margin-left:auto}.endings .pr{font-size:.68rem;padding:6px}.endings>div{padding:6px 4px}.item{font-size:1rem}.es-text{font-size:1.18rem}.exnum{font-size:3rem}.cover{min-height:250px}}
 /* ---------- boot screen ---------- */
-.boot{min-height:52vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:40px 16px}
-.boot b{font-family:var(--serif);font-weight:600;font-size:1.65rem;letter-spacing:.42em;color:var(--wine);line-height:1;padding-left:.42em}
-.boot .heartline{width:min(240px,70%);animation:bootbeat 1.4s ease-in-out infinite}
-.boot i{font-family:var(--hand);font-style:normal;font-size:1.3rem;color:var(--muted)}
-.boot.err i{color:var(--bad)}
-.boot.err .heartline{animation:none}
+.bootscr{min-height:52vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:40px 16px}
+.bootscr b{font-family:var(--serif);font-weight:600;font-size:1.65rem;letter-spacing:.42em;color:var(--wine);line-height:1;padding-left:.42em}
+.bootscr .heartline{width:min(240px,70%);animation:bootbeat 1.4s ease-in-out infinite}
+.bootscr i{font-family:var(--hand);font-style:normal;font-size:1.3rem;color:var(--muted)}
+.bootscr.err i{color:var(--bad)}
+.bootscr.err .heartline{animation:none}
 @keyframes bootbeat{50%{opacity:.35}}
-@media (prefers-reduced-motion:reduce){.boot .heartline{animation:none}}
+@media (prefers-reduced-motion:reduce){.bootscr .heartline{animation:none}}
